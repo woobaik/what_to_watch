@@ -1,10 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import './MovieMainPage.styles.scss'
+
+import MovieNavBar from '../movieNavBar/MovieNavigationBar.component'
 
 const MovieMainPage = props => {
     return (
-        <div>
-            Main Page
+        <div className='Movie-main-page'>
+            <MovieNavBar />
         </div>
     )
 }
