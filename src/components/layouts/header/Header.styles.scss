@@ -1,0 +1,40 @@
+.Header {
+    background-color: #def9d1;
+    font-family: 'Work Sans', sans-serif;    
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-and-text  {
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem 0;
+}
+
+.logo {
+    background: transparent;
+    width: 56px;    
+    height: 38px;
+    display: block;
+    margin-left: 3rem;
+   
+}
+
+.logo-name {
+    color: #26B9A7;
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
+.user-authenticate{
+    display: flex;
+    align-items: center;
+    margin-right: 3rem;
+}
+
+.user-button {
+    margin-left: 1rem;
+    border: none;
+    color: white;
+}
