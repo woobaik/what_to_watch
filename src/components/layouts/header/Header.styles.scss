@@ -1,21 +1,21 @@
 .Header {
-    background-color: #def9d1;
+    background-color: white;
     font-family: 'Work Sans', sans-serif;    
     font-weight: bold;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid #26B9A7;
 }
 
 .logo-and-text  {
     display: flex;
-    align-items: flex-end;
     padding: 1rem 0;
 }
 
 .logo {
     background: transparent;
-    width: 56px;    
-    height: 38px;
+    width: 28px;    
+    height: 19px;
     display: block;
     margin-left: 3rem;
    
@@ -23,8 +23,8 @@
 
 .logo-name {
     color: #26B9A7;
-    font-size: 2rem;
-    margin-left: 1rem;
+    font-size: 1rem;
+    margin-left: 0.5rem;
 }
 
 .user-authenticate{
@@ -38,3 +38,23 @@
     border: none;
     color: white;
 }
+
+@media (max-width: 700px) {
+    .logo-name {
+        display: none;
+    }
+}
+
+
+
+// custom bootstrap button 
+
+.btn-outline-primary {
+    color: #26B9A7;
+}
+
+.btn-outline-primary:hover {
+    background-color: #26B9A7 !important;
+    border: 1px solid #26B9A7 !important;
+}
+

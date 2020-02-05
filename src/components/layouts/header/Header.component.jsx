@@ -1,10 +1,10 @@
 import React from 'react'
 import './Header.styles.scss'
-
+import { Button } from 'react-bootstrap'
 
 const Header = () => {
     return (
-        <nav className='Header'>
+        <header className='Header'>
             <div className='logo-and-text'>
                 <img src='../../../assets/images/562x385.png' alt='logo' className='logo' />
                 <div className='logo-name'>
@@ -14,15 +14,15 @@ const Header = () => {
 
             <div className='user-authenticate'>
                 <div className='user-button'>
-                    <button>LOG IN</button>
+                    <Button variant="outline-primary" size='sm'>SIGN IN</Button>
                 </div>
 
                 <div className='user-button'>
-                    <button>SIGN UP</button>
+                    <Button variant="outline-success" size='sm'>SIGN UP</Button>
                 </div>
             </div>
 
-        </nav>
+        </header>
     )
 }
 
