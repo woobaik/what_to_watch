@@ -1,0 +1,19 @@
+.search-form {
+    display: flex;
+}
+
+#search {
+    width: 100%;
+    box-shadow: none;
+    font-size: 16px;
+    padding-left: 0.3rem;
+    outline: none;
+}
+
+#search-icon {
+    width: 65px;
+    border: 1px solid #d3d3d3;
+    background-color: #f8f8f8;
+    margin: 0;
+    border-left: none;
+}
