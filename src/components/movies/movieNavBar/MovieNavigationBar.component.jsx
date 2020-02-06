@@ -1,11 +1,13 @@
 import React from 'react'
 import './MovieNavigationBar.style.scss'
 
+import { Link } from 'react-router-dom'
+
 const MovieNavigationBar = () => {
     return (
         <div className='Movie-navigation'>
             <div className='dropdown-container'>
-                <span>MOVIES</span>
+                <Link to='/movies' exact role='span'>MOVIES</Link>
                 <div className='dropdown-hidden-container'>
                     <p className='dropdown-hidden-item'>POPULAR</p>
                     <p className='dropdown-hidden-item'>TOP RATED</p>

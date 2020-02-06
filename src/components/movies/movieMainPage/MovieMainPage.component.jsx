@@ -11,6 +11,7 @@ const MovieMainPage = props => {
             <Container>
 
                 <MovieCategory categoryName='On TV' />
+                <MovieCategory categoryName='In Theaters' />
 
 
             </Container>
