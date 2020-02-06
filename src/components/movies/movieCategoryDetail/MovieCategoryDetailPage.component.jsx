@@ -10,6 +10,7 @@ const MovieCategoryDetail = () => {
             <MovieCard />
             <MovieCard />
             <MovieCard />
+
         </Container>
 
     )

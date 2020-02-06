@@ -1,9 +1,17 @@
 import React from 'react'
 import './MovieCategoryDetailCard.styles.scss'
 
-const MovieCategoryDetailCard = () => {
+import { withRouter } from 'react-router-dom'
+
+const MovieCategoryDetailCard = (props) => {
+
+
+    const navigateToMovieDetail = () => {
+        props.history.push('/movies/:id')
+    }
     return (
-        <div className='Movie-category-detail-card'>
+
+        <div className='Movie-category-detail-card' onClick={navigateToMovieDetail}>
             <div className='category-detail-card-image'>
                 <img src='https://image.tmdb.org/t/p/w185_and_h278_bestv2/9O7gLzmreU0nGkIB6K3BsJbzvNv.jpg' alt='movie poster' />
             </div>
@@ -13,7 +21,7 @@ const MovieCategoryDetailCard = () => {
                         The Shawshank Redemption
                     </div>
                     <div className='category-detail-card-release-date'>
-
+                        Aeptember 23, 1994
                     </div>
                 </div>
                 <div className='category-detail-card-stroy'>
@@ -24,8 +32,8 @@ const MovieCategoryDetailCard = () => {
                 </div>
 
             </div>
-        </div>
+        </div >
     )
 }
 
-export default MovieCategoryDetailCard
+export default withRouter(MovieCategoryDetailCard)

@@ -5,7 +5,7 @@
     box-shadow: rgba(0,0,0,0.1) 0px 2px 8px 0px;
     margin: 1rem;
 
-    
+
     .category-detail-card-image {
         
     }
@@ -16,33 +16,45 @@
         height: 278px;
         box-sizing: border-box;
         padding: 16px;
+        position: relative;
 
 
 
 
         .category-detail-card-header {
-            font-weight: bold;
+
 
 
             .category-detail-card-title {
-
+                            font-weight: bold;
+                            font-size: 17.6px;
             }
 
             .category-detail-card-release-date {
-
+                color: rgba(0,0,0,0.6);
+                font-size: 16px;
             }
         }
 
 
 
         .category-detail-card-stroy {
+            margin-top: 30px;
+            color: rgb(77,77,77);
+            font-size: 14.4px;
+            line-height: 1rem;
 
         }
 
 
-        .category-detail-card-header {
-
-
+        .category-detail-card-footer {
+            border-top: 1px solid rgb(227,227,227);
+            box-sizing: border-box;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 16px;
         }
     }
 }
