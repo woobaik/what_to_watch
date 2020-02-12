@@ -1,0 +1,21 @@
+.ActorCard {
+    height: 281px;
+    width: 140px;
+    border: 1px solid #e3e3e3;
+    padding-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin: 1rem;
+
+    .actor-card-description {
+        padding-top: 1rem;
+
+        .actor-card-name {
+            font-weight: bold;
+        }
+
+        .actor-card-role {
+
+        }
+    }
+    
+}
