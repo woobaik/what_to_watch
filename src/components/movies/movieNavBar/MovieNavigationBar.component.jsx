@@ -7,7 +7,7 @@ const MovieNavigationBar = () => {
     return (
         <div className='Movie-navigation'>
             <div className='dropdown-container'>
-                <Link to='/movies' exact role='span'>MOVIES</Link>
+                <Link className='nav-button' to='/movies' exact role='span'>MOVIES</Link>
                 <div className='dropdown-hidden-container'>
                     <p className='dropdown-hidden-item'>POPULAR</p>
                     <p className='dropdown-hidden-item'>TOP RATED</p>
