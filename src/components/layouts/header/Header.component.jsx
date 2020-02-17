@@ -7,7 +7,7 @@ import SearchBar from '../../movies/movieSearchBar/MovieSearchBar.component'
 const Header = () => {
     return (
         <header className='Header'>
-            <Link exact to='/' className='logo-and-text'>
+            <Link to='/' className='logo-and-text'>
                 <img src='../../../assets/images/562x385.png' alt='logo' className='logo' />
                 <div className='logo-name'>
                     WHAT TO WATCH?

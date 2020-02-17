@@ -34,9 +34,8 @@ export const fetchTvList = () => {
         axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1
         `)
             .then((response) => {
-                console.log('THISIS RESPONSE!!!', response)
                 const tv = response.data.results
-                dispatch(fetchTvSuccess(tv))
+                dispatch(fetchTvListSuccess(tv))
             })
             .catch(error => {
                 dispatch(fetchTvError(error))

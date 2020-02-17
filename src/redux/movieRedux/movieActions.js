@@ -35,8 +35,8 @@ export const fetchMovieList = () => {
         dispatch(fetchMovieRequest())
         axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`)
             .then(response => {
-                console.log('THIS IS THE ONE', response.data)
-                const movieList = response.data
+
+                const movieList = response.data.results
                 dispatch(fetchMovieListSuccess(movieList))
 
             })
