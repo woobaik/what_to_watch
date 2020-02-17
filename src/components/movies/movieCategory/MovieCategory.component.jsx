@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './MovieCategory.styles.scss'
+import { connect } from 'react-redux'
+
 
 import MovieCard from '../movieCard/MovieCard.components'
 import { CardDeck } from 'react-bootstrap'
 
+import { fetchMovieList } from '../../../redux/movieRedux/movieActions'
+
 const MovieCategories = (props) => {
+    console.log('movieCategory props', props)
+    useEffect(() => {
+        props.fetchMovieList()
+    }, [])
+
     return (
         <CardDeck bsPrefix='card-deck'>
             <div className='category-title'>
@@ -22,4 +31,15 @@ const MovieCategories = (props) => {
     )
 }
 
-export default MovieCategories
+
+const mapStateToProps = (state) => {
+    return {
+        movieList: state
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return { fetchMovieList: () => dispatch(fetchMovieList()) }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MovieCategories)

@@ -1,4 +1,4 @@
-import { FETCH_MOVIE_REQUEST, FETCH_MOVIE_SUCCESS, FETCH_MOIVE_ERROR, FETCH_MOVIE_LIST_SUCCESS } from './movieActionTypes'
+import { FETCH_MOVIE_REQUEST, FETCH_MOVIE_SUCCESS, FETCH_MOVIE_ERROR, FETCH_MOVIE_LIST_SUCCESS } from './movieActionTypes'
 import axios from 'axios'
 
 const fetchMovieRequest = () => {
@@ -14,20 +14,50 @@ const fetchMovieListSuccess = (movies) => {
     }
 }
 
+const fetchMovieSuccess = (movie) => {
+    return {
+        type: FETCH_MOVIE_SUCCESS,
+        payload: movie
+    }
+}
+
 const fetchMovieError = (error) => {
     return {
-        type: FETCH_MOIVE_ERROR,
+        type: FETCH_MOVIE_ERROR,
         payload: error
     }
 }
 
 
 
-const fetchMovieList = () => {
+export const fetchMovieList = () => {
     return function (dispatch) {
+        dispatch(fetchMovieRequest())
+        axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`)
+            .then(response => {
+                console.log('THIS IS THE ONE', response.data)
+                const movieList = response.data
+                dispatch(fetchMovieListSuccess(movieList))
 
-        axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${REACT_APP_API_KEY}&language=en-US&page=1`)
-            .then(response => console.log(response))
-            .catch(error => console.log(error))
+            })
+            .catch(error => {
+                dispatch(fetchMovieError(error))
+                console.log('axios fail', error)
+            })
     }
 }
+
+// export const fetchMovie = () => {
+//     return (dispatch) => {
+//         dispatch(fetchMovieRequest)
+//         axios.get(`${MOVIE_ADDRESS}`)
+//             .then(response => {
+//                 dispatch(fetchMovieListSuccess(response))
+//                 console.log('axios success', response)
+//             })
+//             .then(error => {
+//                 dispatch(fetchMovieError(error))
+//                 console.log('axios fail', error)
+//             })
+//     }
+// }

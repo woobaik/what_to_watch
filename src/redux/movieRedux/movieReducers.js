@@ -1,4 +1,4 @@
-import { FETCH_MOVIE_REQUEST, FETCH_MOVIE_SUCCESS, FETCH_MOVIE_ERROR } from './movieActionTypes'
+import { FETCH_MOVIE_REQUEST, FETCH_MOVIE_SUCCESS, FETCH_MOVIE_ERROR, FETCH_MOVIE_LIST_SUCCESS } from './movieActionTypes'
 
 const initialState = {
     movies: [],
@@ -21,6 +21,11 @@ const movieReducer = (state = initialState, action) => {
                 loading: false
             }
 
+        case FETCH_MOVIE_LIST_SUCCESS:
+            return {
+                ...state,
+                movies: action.payload
+            }
         case FETCH_MOVIE_ERROR:
             return {
                 ...state,
