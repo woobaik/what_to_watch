@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from './redux/store'
 import './App.css';
 
 
@@ -12,18 +14,21 @@ import Footer from './components/layouts/footer/Footer.component'
 
 
 function App() {
+
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Switch>
-          <Route exact path='/' component={MovieMainPage} />
-          <Route exact path='/movies/:id' component={MovieDetailPage} />
-          <Route exact path='/movies' component={CategoryDetailPage} />
-        </Switch>
-        <Footer />
-      </div>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <div className="App">
+          <Header />
+          <Switch>
+            <Route exact path='/' component={MovieMainPage} />
+            <Route exact path='/movies/:id' component={MovieDetailPage} />
+            <Route exact path='/movies' component={CategoryDetailPage} />
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
+    </Provider>
   );
 }
 

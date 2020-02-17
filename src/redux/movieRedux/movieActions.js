@@ -1,4 +1,4 @@
-import { FETCH_MOVIE_REQUEST, FETCH_MOIVE_SUCCESS, FETCH_MOIVE_ERROR } from './movieActionTypes'
+import { FETCH_MOVIE_REQUEST, FETCH_MOVIE_SUCCESS, FETCH_MOIVE_ERROR, FETCH_MOVIE_LIST_SUCCESS } from './movieActionTypes'
 import axios from 'axios'
 
 const fetchMovieRequest = () => {
@@ -7,9 +7,9 @@ const fetchMovieRequest = () => {
     }
 }
 
-const fetchMovieSuccess = (movie) => {
+const fetchMovieListSuccess = (movies) => {
     return {
-        type: FETCH_MOVIE_SUCCESS,
+        type: FETCH_MOVIE_LIST_SUCCESS,
         payload: movies
     }
 }
@@ -21,9 +21,13 @@ const fetchMovieError = (error) => {
     }
 }
 
-const fetchMovie = () => {
-    return function () {
-        axios.get('https://jsonplaceholder.typicode.com/photos')
+
+
+const fetchMovieList = () => {
+    return function (dispatch) {
+
+        axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${REACT_APP_API_KEY}&language=en-US&page=1`)
             .then(response => console.log(response))
+            .catch(error => console.log(error))
     }
 }

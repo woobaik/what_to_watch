@@ -3,6 +3,7 @@ import './MovieCategory.styles.scss'
 
 import MovieCard from '../movieCard/MovieCard.components'
 import { CardDeck } from 'react-bootstrap'
+
 const MovieCategories = (props) => {
     return (
         <CardDeck bsPrefix='card-deck'>
