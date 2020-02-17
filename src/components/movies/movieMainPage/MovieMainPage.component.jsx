@@ -11,7 +11,8 @@ import HorizontalDivider from '../../layouts/divider/HorizontalDivider.component
 import { Container } from 'react-bootstrap'
 
 
-const MovieMainPage = ({ fetchMovieList }) => {
+const MovieMainPage = ({ fetchMovieList, fetchTvList }) => {
+
     useEffect(() => {
         fetchMovieList()
         fetchTvList()

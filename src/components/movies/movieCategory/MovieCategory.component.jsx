@@ -6,7 +6,19 @@ import { connect } from 'react-redux'
 import MovieCard from '../movieCard/MovieCard.components'
 import { CardDeck } from 'react-bootstrap'
 
+
+const videoCoverList = (videoList) => {
+    const limitVideo4 = videoList.slice(0, 4)
+    return limitVideo4
+}
+
 const MovieCategories = (props) => {
+    let videoList = []
+    if (props.categoryName === 'On TV') {
+        videoList = videoCoverList(props.tvList.tvList)
+    } else {
+        videoList = videoCoverList(props.movieList.movies)
+    }
     return (
         <CardDeck bsPrefix='card-deck'>
             <div className='category-title'>
@@ -14,10 +26,9 @@ const MovieCategories = (props) => {
             </div>
 
             <div className='Moive-category'>
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
+                {videoList.map((video) => {
+                    return <MovieCard key={video.id} video={video} />
+                })}
             </div>
         </CardDeck>
 

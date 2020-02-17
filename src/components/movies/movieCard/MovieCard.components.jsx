@@ -3,14 +3,15 @@ import './MovieCard.styles.scss'
 
 import { Card } from 'react-bootstrap'
 
-const MovieCard = () => {
+const MovieCard = ({ video }) => {
+    console.log(video)
+
     return (
         <Card className='bg-dark text-white'>
-            <Card.Img varient='top' src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/nIlAKIrLKxOeoEnc0Urb65yNCp.jpg" alt='Movie Thumbnail' />
+            <Card.Img varient='top' src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${video.poster_path}`} alt='Movie Thumbnail' />
             <div className='card-'>
-                Star Trek
+                {video.title ? video.title : video.name}
             </div>
-
         </Card>
     )
 }
