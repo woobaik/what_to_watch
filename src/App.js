@@ -21,8 +21,9 @@ function App() {
         <div className="App">
           <Header />
           <Switch>
-            <Route exact path='/movies/:id' component={MovieDetailPage} />
             <Route exact path='/movies' component={CategoryDetailPage} />
+            <Route exact path='/movies/:query' component={CategoryDetailPage} />
+            <Route exact path='/movie/:id' component={MovieDetailPage} />
             <Route path='/' component={MovieMainPage} />
           </Switch>
           <Footer />

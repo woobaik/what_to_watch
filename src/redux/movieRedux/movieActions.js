@@ -30,12 +30,15 @@ const fetchMovieError = (error) => {
 
 
 
-export const fetchMovieList = () => {
+export const fetchMovieList = (query = 'popular') => {
     return function (dispatch) {
         dispatch(fetchMovieRequest())
-        axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`)
+
+        // now_playing, popular, top_rated, upcoming
+        axios.get(`https://api.themoviedb.org/3/movie/${query}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`)
             .then(response => {
                 const movieList = response.data.results
+
                 dispatch(fetchMovieListSuccess(movieList))
 
             })
@@ -45,6 +48,8 @@ export const fetchMovieList = () => {
             })
     }
 }
+
+
 
 // export const fetchMovie = () => {
 //     return (dispatch) => {

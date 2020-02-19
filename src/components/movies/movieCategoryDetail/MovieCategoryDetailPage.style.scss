@@ -19,3 +19,15 @@
     justify-content: space-around;
     flex-wrap: wrap;   
 }
+
+@media (max-width: 1200px) {
+    .movie-category-detail-title {
+        text-align: center;
+    }
+}
+
+@media (max-width: 826px) {
+    .movie-category-detail-title {
+        margin-top: 7rem;
+    }
+}
