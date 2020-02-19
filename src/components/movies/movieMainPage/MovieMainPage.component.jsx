@@ -11,8 +11,7 @@ import HorizontalDivider from '../../layouts/divider/HorizontalDivider.component
 import { Container } from 'react-bootstrap'
 
 
-const MovieMainPage = ({ fetchMovieList, fetchTvList }) => {
-
+const MovieMainPage = ({ fetchTvList, fetchMovieList }) => {
     useEffect(() => {
         fetchMovieList()
         fetchTvList()
@@ -30,11 +29,7 @@ const MovieMainPage = ({ fetchMovieList, fetchTvList }) => {
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        movieList: state.movies
-    }
-}
+
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -45,4 +40,4 @@ const mapDispatchToProps = (dispatch) => {
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(MovieMainPage)
+export default connect(null, mapDispatchToProps)(MovieMainPage)

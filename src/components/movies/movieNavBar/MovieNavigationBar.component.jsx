@@ -9,7 +9,10 @@ const MovieNavigationBar = () => {
             <div className='dropdown-container'>
                 <Link className='nav-button' to='/movies' role='span'>MOVIES</Link>
                 <div className='dropdown-hidden-container'>
-                    <p className='dropdown-hidden-item'>POPULAR</p>
+                    <Link to='/movies'>
+                        <p className='dropdown-hidden-item'>POPULAR</p>
+                    </Link>
+
                     <p className='dropdown-hidden-item'>TOP RATED</p>
                     <p className='dropdown-hidden-item'>UPCOMING</p>
                     <p className='dropdown-hidden-item'>NOW PLAYING</p>
