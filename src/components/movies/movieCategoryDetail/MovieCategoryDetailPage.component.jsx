@@ -6,24 +6,38 @@ import MovieCard from '../movieCategoryDetailCard/MovieCategoryDetailCard.compon
 
 import { fetchMovieList } from '../../../redux/movieRedux/movieActions'
 
+// title maker depending props.match.params.query
+const titleMaker = (query) => {
+    // now_playing, popular, top_rated, upcoming
+    switch (query) {
+        case 'popular':
+            return 'Popular Movies'
+
+        case 'top-rated':
+            return 'Top Rated Movies'
+
+        case 'now-playing':
+            return 'Now Playing in Theaters'
+
+        case 'upcoming':
+            return 'Upcomig Movies'
+
+
+        default: return 'Popular Movies'
+    }
+
+}
 
 
 const MovieCategoryDetail = (props) => {
-
-
     useEffect(() => {
         props.fetchMovieList()
     }, [])
-
-    const title = () => {
-        console.log(this.props)
-        return "MOVIE TITLE"
-    }
-
+    console.log(props.match.params)
     return (
         <Container className='Movie-category-detail-page'>
             <div className='movie-category-detail-title'>
-                {title()}
+                {titleMaker(props.match.params.query)}
             </div>
             <div className='Movie-category-detail-page-content'>
                 <MovieCard />
