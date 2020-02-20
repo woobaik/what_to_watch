@@ -30,25 +30,23 @@ const titleMaker = (query) => {
 
 
 const MovieCategoryDetail = (props) => {
+
+    console.log('category list', props)
+
+
     useEffect(() => {
         props.fetchMovieList()
     }, [])
-    console.log(props.match.params)
+
     return (
         <Container className='Movie-category-detail-page'>
             <div className='movie-category-detail-title'>
                 {titleMaker(props.match.params.query)}
             </div>
             <div className='Movie-category-detail-page-content'>
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
+                {props.videoList.movies.map((movie) => {
+                    return <MovieCard key={movie.id} poster={movie.poster_path} title={movie.title} release_date={movie.release_date} overview={movie.overview} />
+                })}
             </div>
 
         </Container>
