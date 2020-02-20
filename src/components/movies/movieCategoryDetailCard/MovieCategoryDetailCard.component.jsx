@@ -6,8 +6,8 @@ const MovieCategoryDetailCard = (props) => {
     // key={movie.id} poster={poster_path} title={title} release_date={movie.release_date} overview={movie.overview}
 
 
-    const navigateToMovieDetail = (props) => {
-        props.history.push('/movies/:id')
+    const navigateToMovieDetail = () => {
+        props.history.push('/movie/:id')
     }
     return (
 
