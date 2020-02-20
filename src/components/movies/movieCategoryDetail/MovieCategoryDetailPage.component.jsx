@@ -11,19 +11,20 @@ import { fetchMovieList } from '../../../redux/movieRedux/movieActions'
 const MovieCategoryDetail = (props) => {
 
 
-
-
-
     useEffect(() => {
         props.fetchMovieList()
     }, [])
 
-    console.log(props)
+    const title = () => {
+        console.log(this.props)
+        return "MOVIE TITLE"
+    }
+
     return (
         <Container className='Movie-category-detail-page'>
             <div className='movie-category-detail-title'>
-                Popular Movies
-                </div>
+                {title()}
+            </div>
             <div className='Movie-category-detail-page-content'>
                 <MovieCard />
                 <MovieCard />
@@ -47,7 +48,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    console.log('mapDispatchToProps', ownProps)
+
     const query = ownProps.match.params.query ? ownProps.match.params.query.replace('-', '_') : 'popular'
     return {
         fetchMovieList: () => dispatch(fetchMovieList(query))

@@ -12,6 +12,7 @@ import { Container } from 'react-bootstrap'
 
 
 const MovieMainPage = ({ fetchTvList, fetchMovieList }) => {
+
     useEffect(() => {
         fetchMovieList()
         fetchTvList()
