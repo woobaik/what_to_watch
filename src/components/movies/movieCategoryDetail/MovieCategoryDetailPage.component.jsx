@@ -21,8 +21,6 @@ const titleMaker = (query) => {
 
         case 'upcoming':
             return 'Upcomig Movies'
-
-
         default: return 'Popular Movies'
     }
 
@@ -60,7 +58,6 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-
     const query = ownProps.match.params.query ? ownProps.match.params.query.replace('-', '_') : 'popular'
     return {
         fetchMovieList: () => dispatch(fetchMovieList(query))

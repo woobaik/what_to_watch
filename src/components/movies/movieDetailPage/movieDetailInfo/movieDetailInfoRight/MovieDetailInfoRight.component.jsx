@@ -1,8 +1,28 @@
 import React from 'react'
 import './MovieDetailInfoRightstyles.scss'
+
+import { connect } from 'react-redux'
 import { FaFacebookSquare, FaTwitterSquare, FaInstagram, FaLink } from 'react-icons/fa'
 
-const MovieDetailInfoRight = () => {
+const stringifyReleaseDate = (release_date) => {
+    if (!release_date) {
+        return 'FETCHING...'
+    }
+    const releaseDateArray = release_date.split('-')
+    let year = releaseDateArray[0]
+    let month = releaseDateArray[1]
+    let date = releaseDateArray[2].length > 1 ? releaseDateArray[2] : releaseDateArray[2].split('')[1]
+
+    const fullDate = new Date(year, month, date);
+    month = fullDate.toLocaleString('default', { month: 'long' })
+
+    return `${month} ${date}, ${year}`
+
+}
+
+const MovieDetailInfoRight = ({ videoInfo }) => {
+
+    console.log('DETAIL INFO RIGHT', videoInfo)
     return (
         <div className='MovieDetailInfoRight'>
             <div className='social-icons'>
@@ -18,17 +38,17 @@ const MovieDetailInfoRight = () => {
 
             <div className='right-info-item'>
                 <h5>Status</h5>
-                <h6>Released</h6>
+                <h6>{videoInfo.status}</h6>
 
             </div>
             <div className='right-info-item'>
                 <h5>Release Information</h5>
-                <h6>February 7, 2020</h6>
+                <h6>{stringifyReleaseDate(videoInfo.release_date)}</h6>
                 <h6>Theatrical</h6>
             </div>
             <div className='right-info-item'>
                 <h5>Original Language</h5>
-                <h6>English</h6>
+                <h6>{videoInfo.original_language}</h6>
             </div>
             <div className='right-info-item'>
                 <h5>Runtime</h5>
@@ -72,14 +92,12 @@ const MovieDetailInfoRight = () => {
                 <h5>Content Score</h5>
                 100
             </div>
-
-
-
-
-
-
         </div>
     )
 }
 
-export default MovieDetailInfoRight
+
+const mapStateToProps = (state) => {
+    return { videoInfo: state.movies.movie }
+}
+export default connect(mapStateToProps)(MovieDetailInfoRight)

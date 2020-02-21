@@ -3,24 +3,26 @@ import './MovieDetailHeader.styles.scss'
 
 import { FaPlay } from 'react-icons/fa'
 
-const MovieDetailHeader = () => {
+const MovieDetailHeader = (props) => {
+    //backdrop_path={backdrop_path} title={title} video={video} overview={overview}
+
     return (
         <div className='Movie-detail-header'>
             <div className="movie-detail-header-summary">
                 <div className='movie-detail-header-movie-poster'>
-                    <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/2CAL2433ZeIihfX1Hb2139CX0pW.jpg" alt='poster' />
+                    <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${props.poster_path}`} alt='poster' />
                 </div>
                 <div className='movie-detail-header-info'>
                     <div className='movie-detail-header-info-title'>
-                        Dilwale Dulhania Le Jayenge
-                        <span className='movie-detail-header-info-title-year'> (1995)</span>
+                        {props.title}
+                        <span className='movie-detail-header-info-title-year'> ({props.release_date ? props.release_date.split('-')[0] : ''})</span>
                     </div>
                     <div className="movie-detail-header-info-icons">
                         <FaPlay />  Play Trailer
                     </div>
                     <div className="movie-detail-header-info-overview">
                         <h3>Overview</h3>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, recusandae similique harum dolor molestiae tempore quod corrupti totam porro pariatur delectus dignissimos iusto a provident accusamus nam fuga possimus aliquid.
+                        {props.overview}
                     </div>
 
                     <div className="movie-detail-header-info-featured-crew">

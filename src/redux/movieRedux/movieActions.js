@@ -51,17 +51,17 @@ export const fetchMovieList = (query = 'popular') => {
 
 
 
-// export const fetchMovie = () => {
-//     return (dispatch) => {
-//         dispatch(fetchMovieRequest)
-//         axios.get(`${MOVIE_ADDRESS}`)
-//             .then(response => {
-//                 dispatch(fetchMovieListSuccess(response))
-//                 console.log('axios success', response)
-//             })
-//             .then(error => {
-//                 dispatch(fetchMovieError(error))
-//                 console.log('axios fail', error)
-//             })
-//     }
-// }
+export const fetchMovie = (movieId) => {
+    return (dispatch) => {
+        dispatch(fetchMovieRequest)
+
+        axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`)
+            .then(response => {
+                dispatch(fetchMovieSuccess(response.data))
+            })
+            .catch(error => {
+                dispatch(fetchMovieError(error))
+                console.log('axios fail', error)
+            })
+    }
+}

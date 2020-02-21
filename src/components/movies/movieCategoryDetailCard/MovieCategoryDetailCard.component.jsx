@@ -6,11 +6,10 @@ const MovieCategoryDetailCard = (props) => {
     // key={movie.id} poster={poster_path} title={title} release_date={movie.release_date} overview={movie.overview}
 
 
-
+    // getting slug for url address, remove symbols allow only character and numbers
     const navigateToMovieDetail = () => {
         let urlSafeTitle = props.title.toLowerCase().replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '').replace(/\s/g, '-')
         let slug = props.id + '-' + urlSafeTitle
-        console.log(slug)
         props.history.push(`/movie/${slug}`)
     }
     return (
