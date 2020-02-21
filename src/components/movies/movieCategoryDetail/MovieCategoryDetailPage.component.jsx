@@ -45,7 +45,7 @@ const MovieCategoryDetail = (props) => {
             </div>
             <div className='Movie-category-detail-page-content'>
                 {props.videoList.movies.map((movie) => {
-                    return <MovieCard key={movie.id} poster={movie.poster_path} title={movie.title} release_date={movie.release_date} overview={movie.overview} />
+                    return <MovieCard key={movie.id} id={movie.id} poster={movie.poster_path} title={movie.title} release_date={movie.release_date} overview={movie.overview} />
                 })}
             </div>
 

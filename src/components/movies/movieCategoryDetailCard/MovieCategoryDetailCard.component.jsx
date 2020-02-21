@@ -6,8 +6,12 @@ const MovieCategoryDetailCard = (props) => {
     // key={movie.id} poster={poster_path} title={title} release_date={movie.release_date} overview={movie.overview}
 
 
+
     const navigateToMovieDetail = () => {
-        props.history.push('/movie/:id')
+        let urlSafeTitle = props.title.toLowerCase().replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '').replace(/\s/g, '-')
+        let slug = props.id + '-' + urlSafeTitle
+        console.log(slug)
+        props.history.push(`/movie/${slug}`)
     }
     return (
 
