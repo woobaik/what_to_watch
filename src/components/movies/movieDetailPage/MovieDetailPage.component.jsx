@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import './MovieDetailPage.styles.scss'
 
 import { connect } from 'react-redux'
-import { fetchMovie } from '../../../redux/movieRedux/movieActions'
+import { fetchMovie, fetchCast } from '../../../redux/movieRedux/movieActions'
 
 import HorizontalDivider from '../../layouts/divider/HorizontalDivider.component'
 import MovieDetailInfo from './movieDetailInfo/MovieDetailinfo.component'
@@ -12,6 +12,7 @@ const MovieDetailPage = (props) => {
     console.log(props)
     useEffect(() => {
         props.fetchMovieData()
+        props.fetchCastData()
     }, [])
     return (
         <div className='Movie-detail-page'>
@@ -27,7 +28,8 @@ const MovieDetailPage = (props) => {
 const mapStateToProps = (state) => {
 
     return {
-        movie: state.movies.movie
+        movie: state.movies.movie,
+        cast: state.cast
     }
 }
 
@@ -35,7 +37,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
     const movieId = ownProps.match.params.id.split('-')[0]
     return {
-        fetchMovieData: () => { return dispatch(fetchMovie(movieId)) }
+        fetchMovieData: () => { return dispatch(fetchMovie(movieId)) },
+        fetchCastData: () => { return dispatch(fetchCast(movieId)) }
     }
 }
 

@@ -1,4 +1,4 @@
-import { FETCH_MOVIE_REQUEST, FETCH_MOVIE_SUCCESS, FETCH_MOVIE_ERROR, FETCH_MOVIE_LIST_SUCCESS } from './movieActionTypes'
+import { FETCH_CAST_SUCCESS, FETCH_MOVIE_REQUEST, FETCH_MOVIE_SUCCESS, FETCH_MOVIE_ERROR, FETCH_MOVIE_LIST_SUCCESS } from './movieActionTypes'
 import axios from 'axios'
 
 const fetchMovieRequest = () => {
@@ -18,6 +18,13 @@ const fetchMovieSuccess = (movie) => {
     return {
         type: FETCH_MOVIE_SUCCESS,
         payload: movie
+    }
+}
+
+const fetchCastSuccess = (cast) => {
+    return {
+        type: FETCH_CAST_SUCCESS,
+        payload: cast
     }
 }
 
@@ -64,4 +71,19 @@ export const fetchMovie = (movieId) => {
                 console.log('axios fail', error)
             })
     }
+}
+
+export const fetchCast = (movieId) => {
+    return (dispatch) => {
+        dispatch(fetchMovieRequest)
+        axios.get(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${process.env.REACT_APP_API_KEY}`)
+            .then((response) => {
+                console.log('AXIOS', response)
+                dispatch(fetchCastSuccess(response.data))
+            })
+            .catch(error => {
+                dispatch(fetchMovieError(error))
+            })
+    }
+
 }

@@ -1,14 +1,16 @@
 import React from 'react'
 import './ActorCard.styles.scss'
 
-const ActorCard = () => {
+const ActorCard = (props) => {
+
+    console.log(props)
     return (
         <div className='ActorCard'>
             {/* w138 h175 */}
-            <img src="https://image.tmdb.org/t/p/w138_and_h175_face/ecv9SBN9m1cEZFfSopph6wf8fk.jpg" alt="actor" />
+            <img src={`https://image.tmdb.org/t/p/w138_and_h175_face${props.profile_path}`} alt="actor" />
             <div className='actor-card-description'>
-                <p className='actor-card-name'>Margot Robbie</p>
-                <p className='actor-card-role'>Harleen Quinzel / Harley Quinn</p>
+                <p className='actor-card-name'>{props.name}</p>
+                <p className='actor-card-role'>{props.character}</p>
             </div>
         </div>
     )

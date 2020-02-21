@@ -33,7 +33,7 @@ const runtimeCalculator = (runtime) => {
 
 const MovieDetailInfoRight = ({ videoInfo }) => {
 
-    console.log('DETAIL INFO RIGHT', videoInfo)
+
     return (
         <div className='MovieDetailInfoRight'>
             <div className='social-icons'>
@@ -78,7 +78,7 @@ const MovieDetailInfoRight = ({ videoInfo }) => {
                 <h5>Genres</h5>
                 <ul>
                     {videoInfo.genres ? videoInfo.genres.map(genre => {
-                        return <li>{genre.name.toUpperCase()}</li>
+                        return <li key={genre.id}>{genre.name.toUpperCase()}</li>
                     }) : 'FETCHING'}
 
                 </ul>
