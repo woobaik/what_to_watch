@@ -4,6 +4,8 @@ import './MovieDetailInfoRightstyles.scss'
 import { connect } from 'react-redux'
 import { FaFacebookSquare, FaTwitterSquare, FaInstagram, FaLink } from 'react-icons/fa'
 
+import ISO6391 from 'iso-639-1'
+
 const stringifyReleaseDate = (release_date) => {
     if (!release_date) {
         return 'FETCHING...'
@@ -17,8 +19,17 @@ const stringifyReleaseDate = (release_date) => {
     month = fullDate.toLocaleString('default', { month: 'long' })
 
     return `${month} ${date}, ${year}`
-
 }
+
+const runtimeCalculator = (runtime) => {
+    if (!runtime) {
+        return 'FETCHING...'
+    }
+    let hours = Math.floor(runtime / 60)
+    let mins = runtime % 60
+    return `${hours}h ${mins}m`
+}
+
 
 const MovieDetailInfoRight = ({ videoInfo }) => {
 
@@ -48,27 +59,28 @@ const MovieDetailInfoRight = ({ videoInfo }) => {
             </div>
             <div className='right-info-item'>
                 <h5>Original Language</h5>
-                <h6>{videoInfo.original_language}</h6>
+                {/* ISO6391 is a external library for fetcing full name from shorten name */}
+                <h6>{ISO6391.getName(videoInfo.original_language)}</h6>
             </div>
             <div className='right-info-item'>
                 <h5>Runtime</h5>
-                <h6>1h 49m</h6>
+                <h6>{runtimeCalculator(videoInfo.runtime)}</h6>
             </div>
             <div className='right-info-item'>
                 <h5>Budget</h5>
-                <h6>$75,000,000.00</h6>
+                <h6>${videoInfo.budget ? videoInfo.budget.toLocaleString() : 'FETCHING...'}.00</h6>
             </div>
             <div className='right-info-item'>
                 <h5>Revenue</h5>
-                <h6>$84,500,000.00</h6>
+                <h6>${videoInfo.revenue ? videoInfo.revenue.toLocaleString() : 'FETCHING...'}.00</h6>
             </div>
             <div className='right-info-item'>
                 <h5>Genres</h5>
                 <ul>
-                    <li>ACTION</li>
-                    <li>CRIME</li>
-                    <li>COMEDY</li>
-                    <li></li>
+                    {videoInfo.genres ? videoInfo.genres.map(genre => {
+                        return <li>{genre.name.toUpperCase()}</li>
+                    }) : 'FETCHING'}
+
                 </ul>
             </div>
             <div className='right-info-item'>
