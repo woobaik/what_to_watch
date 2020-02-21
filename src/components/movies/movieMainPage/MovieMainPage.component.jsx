@@ -20,8 +20,6 @@ const MovieMainPage = ({ fetchTvList, fetchMovieList }) => {
     }, [])
     return (
         <div className='Movie-main-page'>
-            <MovieNavBar />
-            <HorizontalDivider />
             <Container>
                 <MovieCategory categoryName='On TV' />
                 <MovieCategory categoryName='In Theaters' />
