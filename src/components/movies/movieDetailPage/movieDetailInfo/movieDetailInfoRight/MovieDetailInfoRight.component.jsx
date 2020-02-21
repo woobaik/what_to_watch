@@ -31,8 +31,9 @@ const runtimeCalculator = (runtime) => {
 }
 
 
-const MovieDetailInfoRight = ({ videoInfo }) => {
+const MovieDetailInfoRight = ({ videoInfo, videoKeywords }) => {
 
+    console.log('KEYWORDS', videoKeywords)
 
     return (
         <div className='MovieDetailInfoRight'>
@@ -76,28 +77,19 @@ const MovieDetailInfoRight = ({ videoInfo }) => {
             </div>
             <div className='right-info-item'>
                 <h5>Genres</h5>
-                <ul>
+                <ul className='button-holder'>
                     {videoInfo.genres ? videoInfo.genres.map(genre => {
-                        return <li key={genre.id}>{genre.name.toUpperCase()}</li>
+                        return <button key={genre.id} className='custom-button'>{genre.name.toUpperCase()}</button>
                     }) : 'FETCHING'}
 
                 </ul>
             </div>
             <div className='right-info-item'>
                 <h5>Keywords</h5>
-                <ul>
-                    <li>
-                        dc comics
-                    </li>
-                    <li>
-                        based on comic
-                    </li>
-                    <li>
-                        woman director
-                    </li>
-                    <li>
-                        dc extended universe
-                    </li>
+                <ul className='button-holder'>
+                    {videoKeywords.keywords ? videoKeywords.keywords.map(keyword => {
+                        return <button key={keyword.id} className='custom-button'>{keyword.name}</button>
+                    }) : 'FETCHING...'}
                 </ul>
             </div>
             <div className='right-info-'>
@@ -110,6 +102,10 @@ const MovieDetailInfoRight = ({ videoInfo }) => {
 
 
 const mapStateToProps = (state) => {
-    return { videoInfo: state.movies.movie }
+    console.log('MAPSTATEPROPS', state.movies)
+    return {
+        videoInfo: state.movies.movie,
+        videoKeywords: state.movies.keywords
+    }
 }
 export default connect(mapStateToProps)(MovieDetailInfoRight)

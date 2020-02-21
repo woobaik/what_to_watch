@@ -6,6 +6,20 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     margin: 1rem 0.5rem;
 
+    .no-image-person {
+        height: 175px;
+        width: 140px;
+        background-color: #dbdbdb;
+        font-size: 8rem;
+        text-align: center;
+        line-height: 12rem;
+        color: #b5b5b5;
+    }
+
+    .no-image-person::before {
+        content: '';
+    }
+
     .actor-card-description {
         padding-top: 1rem;
 

@@ -2,17 +2,18 @@ import React, { useEffect } from 'react'
 import './MovieDetailPage.styles.scss'
 
 import { connect } from 'react-redux'
-import { fetchMovie, fetchCast } from '../../../redux/movieRedux/movieActions'
+import { fetchMovie, fetchCast, fetchMovieKeywords } from '../../../redux/movieRedux/movieActions'
 
 import HorizontalDivider from '../../layouts/divider/HorizontalDivider.component'
 import MovieDetailInfo from './movieDetailInfo/MovieDetailinfo.component'
 import MovieDetailHeader from './movieDetailHeader/MovieDetailHeader.component'
 
 const MovieDetailPage = (props) => {
-    console.log(props)
+    console.log('MOVIE DETAIL', props)
     useEffect(() => {
         props.fetchMovieData()
         props.fetchCastData()
+        props.fetchMovieKeywords()
     }, [])
     return (
         <div className='Movie-detail-page'>
@@ -26,7 +27,7 @@ const MovieDetailPage = (props) => {
 }
 
 const mapStateToProps = (state) => {
-
+    console.log(state)
     return {
         movie: state.movies.movie,
         cast: state.cast
@@ -38,7 +39,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     const movieId = ownProps.match.params.id.split('-')[0]
     return {
         fetchMovieData: () => { return dispatch(fetchMovie(movieId)) },
-        fetchCastData: () => { return dispatch(fetchCast(movieId)) }
+        fetchCastData: () => { return dispatch(fetchCast(movieId)) },
+        fetchMovieKeywords: () => { return dispatch(fetchMovieKeywords(movieId)) }
+
+
     }
 }
 
