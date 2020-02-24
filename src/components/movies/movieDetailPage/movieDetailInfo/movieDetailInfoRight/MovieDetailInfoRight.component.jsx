@@ -33,8 +33,6 @@ const runtimeCalculator = (runtime) => {
 
 const MovieDetailInfoRight = ({ videoInfo, videoKeywords }) => {
 
-    console.log('KEYWORDS', videoKeywords)
-
     return (
         <div className='MovieDetailInfoRight'>
             <div className='social-icons'>
@@ -102,7 +100,6 @@ const MovieDetailInfoRight = ({ videoInfo, videoKeywords }) => {
 
 
 const mapStateToProps = (state) => {
-    console.log('MAPSTATEPROPS', state.movies)
     return {
         videoInfo: state.movies.movie,
         videoKeywords: state.movies.keywords

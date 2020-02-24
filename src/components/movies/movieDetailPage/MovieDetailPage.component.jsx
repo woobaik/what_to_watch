@@ -10,7 +10,7 @@ import MovieDetailInfo from './movieDetailInfo/MovieDetailinfo.component'
 import MovieDetailHeader from './movieDetailHeader/MovieDetailHeader.component'
 
 const MovieDetailPage = (props) => {
-    console.log('MOVIE DETAIL', props)
+
     useEffect(() => {
         props.fetchMovieData()
         props.fetchCastData()
@@ -31,7 +31,7 @@ const MovieDetailPage = (props) => {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
+
     return {
         movie: state.movies.movie,
         cast: state.cast

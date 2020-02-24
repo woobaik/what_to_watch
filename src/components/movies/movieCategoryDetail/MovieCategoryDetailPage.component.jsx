@@ -28,7 +28,7 @@ const titleMaker = (query) => {
 
 
 const MovieCategoryDetail = (props) => {
-    console.log(props)
+
 
     useEffect(() => {
         props.fetchMovieList()
@@ -57,7 +57,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     const query = ownProps.match.params.query ? ownProps.match.params.query.replace('-', '_') : 'popular'
-    console.log(query)
+
     return {
         fetchMovieList: () => dispatch(fetchMovieList(query))
     }

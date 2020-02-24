@@ -5,7 +5,6 @@ import { MdPerson } from 'react-icons/md'
 
 const ActorCard = (props) => {
 
-    console.log(props)
     return (
         <div className='ActorCard'>
             {/* w138 h175 */}

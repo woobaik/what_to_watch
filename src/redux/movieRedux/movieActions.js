@@ -50,7 +50,6 @@ export const cleanUpMovie = () => {
 
 
 export const fetchMovieList = (query = 'popular') => {
-    console.log('fetchMOVIELIST', query)
     return function (dispatch) {
         dispatch(fetchMovieRequest())
 
@@ -64,7 +63,6 @@ export const fetchMovieList = (query = 'popular') => {
             })
             .catch(error => {
                 dispatch(fetchMovieError(error))
-                console.log('axios fail', error)
             })
     }
 }
@@ -81,7 +79,6 @@ export const fetchMovie = (movieId) => {
             })
             .catch(error => {
                 dispatch(fetchMovieError(error))
-                console.log('axios fail', error)
             })
     }
 }
@@ -91,7 +88,6 @@ export const fetchCast = (movieId) => {
         dispatch(fetchMovieRequest)
         axios.get(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${process.env.REACT_APP_API_KEY}`)
             .then((response) => {
-
                 dispatch(fetchCastSuccess(response.data))
             })
             .catch(error => {
@@ -106,7 +102,6 @@ export const fetchMovieKeywords = (movieId) => {
         dispatch(fetchMovieRequest)
         axios.get(`https://api.themoviedb.org/3/movie/${movieId}/keywords?api_key=${process.env.REACT_APP_API_KEY}`)
             .then((response) => {
-                console.log('AXIOS FETCH', response)
                 dispatch(fetchMovieKeyword(response.data))
             }).catch(error => {
                 dispatch(fetchMovieError(error))

@@ -6,8 +6,6 @@ import ActorCard from '../../../actorCard/ActorCard.component'
 import HorizontailDivider from '../../../../layouts/divider/HorizontalDivider.component'
 
 const MovieDetailInfoLeft = (props) => {
-    console.log('TOPCAST EXISTS?', props.topCast)
-
 
     return (
         <div className='movieDetailInfoLeft'>
