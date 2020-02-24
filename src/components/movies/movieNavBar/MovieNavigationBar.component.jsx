@@ -3,22 +3,31 @@ import './MovieNavigationBar.style.scss'
 
 import { Link } from 'react-router-dom'
 
+const LinkHiddenItem = (props) => {
+
+    return (<span className='dropdown-hidden-item'>1</span>)
+}
+
+
 const MovieNavigationBar = () => {
     return (
         <div className='Movie-navigation'>
             <div className='dropdown-container'>
                 <Link className='nav-button' to='/movies' role='span'>MOVIES</Link>
                 <div className='dropdown-hidden-container'>
-                    <Link to='/movies'>
-                        <p className='dropdown-hidden-item'>POPULAR</p>
+                    <Link to={'/movies'} className='dropdown-hidden-item'>
+                        Popular
+                    </Link>
+                    <Link to={'/movies/top-rated'} className='dropdown-hidden-item'>
+                        Top Rated
+                    </Link>
+                    <Link to={'/movies/upcoming'} className='dropdown-hidden-item'>
+                        Upcoming
+                    </Link>
+                    <Link to={'/movies/now-playing'} className='dropdown-hidden-item'>
+                        Now Playing
                     </Link>
 
-                    <Link to='movies/top-rated'>
-                        <p className='dropdown-hidden-item'>TOP RATED</p>
-                    </Link>
-
-                    <p className='dropdown-hidden-item'>UPCOMING</p>
-                    <p className='dropdown-hidden-item'>NOW PLAYING</p>
                 </div>
 
 
