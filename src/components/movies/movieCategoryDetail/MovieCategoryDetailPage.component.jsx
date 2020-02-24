@@ -28,13 +28,11 @@ const titleMaker = (query) => {
 
 
 const MovieCategoryDetail = (props) => {
-
-    console.log('category list', props)
-
+    console.log(props)
 
     useEffect(() => {
         props.fetchMovieList()
-    }, [])
+    }, [props.match.params])
 
     return (
         <Container className='Movie-category-detail-page'>
@@ -59,6 +57,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     const query = ownProps.match.params.query ? ownProps.match.params.query.replace('-', '_') : 'popular'
+    console.log(query)
     return {
         fetchMovieList: () => dispatch(fetchMovieList(query))
     }

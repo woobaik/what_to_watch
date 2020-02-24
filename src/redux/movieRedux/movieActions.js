@@ -45,6 +45,7 @@ const fetchMovieError = (error) => {
 
 
 export const fetchMovieList = (query = 'popular') => {
+    console.log('fetchMOVIELIST', query)
     return function (dispatch) {
         dispatch(fetchMovieRequest())
 
