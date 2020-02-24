@@ -28,12 +28,20 @@ const MovieNavigationBar = () => {
 
             </div>
             <div className='dropdown-container'>
-                <span>TV SHOWS</span>
+                <Link className='nav-button' to='/tvs' role='span'>TV SHOWS</Link>
                 <div className='dropdown-hidden-container'>
-                    <p className='dropdown-hidden-item'>POPULAR</p>
-                    <p className='dropdown-hidden-item'>TOP RATED</p>
-                    <p className='dropdown-hidden-item'>ON AIR</p>
-                    <p className='dropdown-hidden-item'>AIR TODAY</p>
+                    <Link to={'/tvs'} className='dropdown-hidden-item'>
+                        Popular
+                    </Link>
+                    <Link to={'/tvs/top-rated'} className='dropdown-hidden-item'>
+                        Top Rated
+                    </Link>
+                    <Link to={'/tvs/on-the-air'} className='dropdown-hidden-item'>
+                        On TV
+                    </Link>
+                    <Link to={'/tvs/airing-today'} className='dropdown-hidden-item'>
+                        Airing Today
+                    </Link>
                 </div>
             </div>
             <div className='dropdown-container'>

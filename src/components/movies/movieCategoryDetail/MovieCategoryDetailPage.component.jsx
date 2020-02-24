@@ -10,25 +10,40 @@ import { fetchMovieList } from '../../../redux/movieRedux/movieActions'
 const titleMaker = (query) => {
     // now_playing, popular, top_rated, upcoming
     switch (query) {
-        case 'popular':
+        case '/movies/popular':
             return 'Popular Movies'
 
-        case 'top-rated':
+        case '/movies/top-rated':
             return 'Top Rated Movies'
 
-        case 'now-playing':
+        case '/movies/now-playing':
             return 'Now Playing in Theaters'
 
-        case 'upcoming':
+        case '/movies/upcoming':
             return 'Upcomig Movies'
+
+        case '/tvs':
+            return 'Popular TV Shows'
+
+        case '/tvs/top-rated':
+            return 'Top Rated TV Shows'
+
+        case '/tvs/on-the-air':
+            return 'Currently Airing TV Shows'
+
+        case '/tvs/airing-today':
+            return 'TV Shows Airing Today'
+
         default: return 'Popular Movies'
     }
 
 }
 
 
-const MovieCategoryDetail = (props) => {
 
+
+const MovieCategoryDetail = (props) => {
+    console.log('MOVIE CATEGORY DETAIL', props.match.url)
 
     useEffect(() => {
         props.fetchMovieList()
@@ -37,7 +52,7 @@ const MovieCategoryDetail = (props) => {
     return (
         <Container className='Movie-category-detail-page'>
             <div className='movie-category-detail-title'>
-                {titleMaker(props.match.params.query)}
+                {titleMaker(props.match.url)}
             </div>
             <div className='Movie-category-detail-page-content'>
                 {props.videoList.movies.map((movie) => {

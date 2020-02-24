@@ -25,6 +25,8 @@ function App() {
           <Switch>
             <Route exact path='/movies' component={CategoryDetailPage} />
             <Route exact path='/movies/:query' component={CategoryDetailPage} />
+            <Route exact path='/tvs' component={CategoryDetailPage} />
+            <Route exact path='/tvs/:query' component={CategoryDetailPage} />
             <Route exact path='/movie/:id' component={MovieDetailPage} />
             <Route path='/' component={MovieMainPage} />
           </Switch>

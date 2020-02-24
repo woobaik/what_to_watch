@@ -1,4 +1,7 @@
 import React, { useEffect } from 'react'
+import { css } from '@emotion/core'
+
+import ClipLoader from 'react-spinners/ClipLoader'
 import './MovieMainPage.styles.scss'
 
 import { connect } from 'react-redux'
@@ -9,6 +12,12 @@ import MovieCategory from '../movieCategory/MovieCategory.component'
 import { Container } from 'react-bootstrap'
 
 
+//LOADING SPINNER
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
 
 const MovieMainPage = ({ fetchMovieList, fetchTvList }) => {
 
@@ -23,6 +32,13 @@ const MovieMainPage = ({ fetchMovieList, fetchTvList }) => {
                 <MovieCategory categoryName='On TV' />
                 <MovieCategory categoryName='In Theaters' />
             </Container>
+            <ClipLoader
+                css={override}
+                size={150}
+                //size={"150px"} this also works
+                color={"#123abc"}
+                loading={true}
+            />
         </div>
     )
 }
