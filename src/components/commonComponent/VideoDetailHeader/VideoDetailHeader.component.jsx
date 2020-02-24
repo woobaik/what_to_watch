@@ -1,5 +1,5 @@
 import React from 'react'
-import './MovieDetailHeader.styles.scss'
+import './VideoDetailHeader.styles.scss'
 
 import { FaPlay } from 'react-icons/fa'
 

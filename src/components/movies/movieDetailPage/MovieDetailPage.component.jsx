@@ -7,7 +7,7 @@ import { fetchMovie, fetchCast, fetchMovieKeywords, cleanUpMovie } from '../../.
 
 import HorizontalDivider from '../../layouts/divider/HorizontalDivider.component'
 import MovieDetailInfo from './movieDetailInfo/MovieDetailinfo.component'
-import MovieDetailHeader from './movieDetailHeader/MovieDetailHeader.component'
+import VideoDetailHeader from '../../commonComponent/VideoDetailHeader/VideoDetailHeader.component'
 
 const MovieDetailPage = (props) => {
     console.log('MOVIEDETAIL', props)
@@ -22,7 +22,7 @@ const MovieDetailPage = (props) => {
     return (
         <div className='Movie-detail-page'>
             {/* backdrop_path={props.movie.backdrop_path} title={title} video={video} overview={overview} poster_path={poster_path} */}
-            <MovieDetailHeader poster_path={props.movie.poster_path} backdrop_path={props.movie.backdrop_path} title={props.movie.title} video={props.movie.video} overview={props.movie.overview} release_date={props.movie.release_date} />
+            <VideoDetailHeader poster_path={props.movie.poster_path} backdrop_path={props.movie.backdrop_path} title={props.movie.title} video={props.movie.video} overview={props.movie.overview} release_date={props.movie.release_date} />
             <HorizontalDivider />
             <MovieDetailInfo status={props.movie.status} release_date={props.movie.release_date} original_language={props.movie.original_language} runtime={props.movie.runtime} budget={props.movie.budget} revenue={props.movie.revenue} genres={props.movie.genres} />
 

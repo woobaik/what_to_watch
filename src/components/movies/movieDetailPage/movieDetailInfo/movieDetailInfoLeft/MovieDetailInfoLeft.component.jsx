@@ -2,7 +2,7 @@ import React from 'react'
 import './MovieDetailInfoLeft.styles.scss'
 
 import { connect } from 'react-redux'
-import ActorCard from '../../../actorCard/ActorCard.component'
+import ActorCard from '../../../../commonComponent/actorCard/ActorCard.component'
 import HorizontailDivider from '../../../../layouts/divider/HorizontalDivider.component'
 
 const MovieDetailInfoLeft = (props) => {
