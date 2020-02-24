@@ -1,4 +1,4 @@
-import { FETCH_MOVIE_KEYWORD_SUCCESS, FETCH_CAST_SUCCESS, FETCH_MOVIE_REQUEST, FETCH_MOVIE_SUCCESS, FETCH_MOVIE_ERROR, FETCH_MOVIE_LIST_SUCCESS } from './movieActionTypes'
+import { CLEAN_UP_MOVIE, FETCH_MOVIE_KEYWORD_SUCCESS, FETCH_CAST_SUCCESS, FETCH_MOVIE_REQUEST, FETCH_MOVIE_SUCCESS, FETCH_MOVIE_ERROR, FETCH_MOVIE_LIST_SUCCESS } from './movieActionTypes'
 import axios from 'axios'
 
 const fetchMovieRequest = () => {
@@ -42,6 +42,11 @@ const fetchMovieError = (error) => {
     }
 }
 
+export const cleanUpMovie = () => {
+    return {
+        type: CLEAN_UP_MOVIE
+    }
+}
 
 
 export const fetchMovieList = (query = 'popular') => {

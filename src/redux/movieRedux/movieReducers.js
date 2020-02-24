@@ -1,4 +1,4 @@
-import { FETCH_MOVIE_KEYWORD_SUCCESS, FETCH_CAST_SUCCESS, FETCH_MOVIE_REQUEST, FETCH_MOVIE_SUCCESS, FETCH_MOVIE_ERROR, FETCH_MOVIE_LIST_SUCCESS } from './movieActionTypes'
+import { CLEAN_UP_MOVIE, FETCH_MOVIE_KEYWORD_SUCCESS, FETCH_CAST_SUCCESS, FETCH_MOVIE_REQUEST, FETCH_MOVIE_SUCCESS, FETCH_MOVIE_ERROR, FETCH_MOVIE_LIST_SUCCESS } from './movieActionTypes'
 
 const initialState = {
     movies: [],
@@ -47,6 +47,12 @@ const movieReducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 keywords: action.payload
+            }
+
+        case CLEAN_UP_MOVIE:
+            return {
+                ...state,
+                movie: []
             }
 
         default: return state

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import './MovieDetailPage.styles.scss'
 
 import { connect } from 'react-redux'
-import { fetchMovie, fetchCast, fetchMovieKeywords } from '../../../redux/movieRedux/movieActions'
+import { fetchMovie, fetchCast, fetchMovieKeywords, cleanUpMovie } from '../../../redux/movieRedux/movieActions'
 
 
 import HorizontalDivider from '../../layouts/divider/HorizontalDivider.component'
@@ -15,6 +15,8 @@ const MovieDetailPage = (props) => {
         props.fetchMovieData()
         props.fetchCastData()
         props.fetchMovieKeywords()
+
+        return props.cleanUpMovie
     }, [])
     return (
         <div className='Movie-detail-page'>
@@ -42,8 +44,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         fetchMovieData: () => { return dispatch(fetchMovie(movieId)) },
         fetchCastData: () => { return dispatch(fetchCast(movieId)) },
-        fetchMovieKeywords: () => { return dispatch(fetchMovieKeywords(movieId)) }
-
+        fetchMovieKeywords: () => { return dispatch(fetchMovieKeywords(movieId)) },
+        cleanUpMovie: () => { return dispatch(cleanUpMovie()) }
 
     }
 }
