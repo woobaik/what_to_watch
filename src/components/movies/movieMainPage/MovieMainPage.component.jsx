@@ -5,9 +5,7 @@ import { connect } from 'react-redux'
 import { fetchMovieList } from '../../../redux/movieRedux/movieActions'
 import { fetchTvList } from '../../../redux/tvRedux/tvActions'
 
-import MovieNavBar from '../movieNavBar/MovieNavigationBar.component'
 import MovieCategory from '../movieCategory/MovieCategory.component'
-import HorizontalDivider from '../../layouts/divider/HorizontalDivider.component'
 import { Container } from 'react-bootstrap'
 
 

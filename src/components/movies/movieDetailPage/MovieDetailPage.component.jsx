@@ -17,6 +17,7 @@ const MovieDetailPage = (props) => {
         props.fetchMovieKeywords()
 
         return props.cleanUpMovie
+        // eslint-disable-next-line 
     }, [])
     return (
         <div className='Movie-detail-page'>

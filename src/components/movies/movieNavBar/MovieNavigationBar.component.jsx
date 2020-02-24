@@ -3,11 +3,6 @@ import './MovieNavigationBar.style.scss'
 
 import { Link } from 'react-router-dom'
 
-const LinkHiddenItem = (props) => {
-
-    return (<span className='dropdown-hidden-item'>1</span>)
-}
-
 
 const MovieNavigationBar = () => {
     return (
