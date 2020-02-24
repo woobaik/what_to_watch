@@ -10,7 +10,7 @@ import MovieDetailInfo from './movieDetailInfo/MovieDetailinfo.component'
 import MovieDetailHeader from './movieDetailHeader/MovieDetailHeader.component'
 
 const MovieDetailPage = (props) => {
-
+    console.log('MOVIEDETAIL', props)
     useEffect(() => {
         props.fetchMovieData()
         props.fetchCastData()
@@ -21,7 +21,6 @@ const MovieDetailPage = (props) => {
     }, [])
     return (
         <div className='Movie-detail-page'>
-
             {/* backdrop_path={props.movie.backdrop_path} title={title} video={video} overview={overview} poster_path={poster_path} */}
             <MovieDetailHeader poster_path={props.movie.poster_path} backdrop_path={props.movie.backdrop_path} title={props.movie.title} video={props.movie.video} overview={props.movie.overview} release_date={props.movie.release_date} />
             <HorizontalDivider />
@@ -43,7 +42,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
     const movieId = ownProps.match.params.id.split('-')[0]
     return {
-        fetchMovieData: () => { return dispatch(fetchMovie(movieId)) },
+        fetchMovieData: () => {
+            return dispatch(fetchMovie(movieId))
+        },
         fetchCastData: () => { return dispatch(fetchCast(movieId)) },
         fetchMovieKeywords: () => { return dispatch(fetchMovieKeywords(movieId)) },
         cleanUpMovie: () => { return dispatch(cleanUpMovie()) }

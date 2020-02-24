@@ -11,7 +11,7 @@ const Header = () => {
     return (
         <Fragment>
             <header className='Header'>
-                <Link to='/' className='logo-and-text'>
+                <Link to='' className='logo-and-text'>
                     <img src='../../../assets/images/562x385.png' alt='logo' className='logo' />
                     <div className='logo-name'>
                         WHAT TO WATCH?

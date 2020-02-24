@@ -9,7 +9,8 @@ import MovieCategory from '../movieCategory/MovieCategory.component'
 import { Container } from 'react-bootstrap'
 
 
-const MovieMainPage = ({ fetchTvList, fetchMovieList }) => {
+
+const MovieMainPage = ({ fetchMovieList, fetchTvList }) => {
 
     useEffect(() => {
         fetchMovieList()
