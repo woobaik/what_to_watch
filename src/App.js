@@ -6,6 +6,7 @@ import './App.css';
 
 
 
+import ScrollToTop from './components/tools/scrollToTop/ScrollToTop'
 import Header from './components/layouts/header/Header.component'
 import MovieMainPage from './components/movies/movieMainPage/MovieMainPage.component'
 import CategoryDetailPage from './components/movies/movieCategoryDetail/MovieCategoryDetailPage.component'
@@ -18,6 +19,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
+        <ScrollToTop />
         <div className="App">
           <Header />
           <Switch>
