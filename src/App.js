@@ -27,7 +27,8 @@ function App() {
             <Route exact path='/movies/:query' component={CategoryDetailPage} />
             <Route exact path='/tvs' component={CategoryDetailPage} />
             <Route exact path='/tvs/:query' component={CategoryDetailPage} />
-            <Route exact path='/movie/:id' component={MovieDetailPage} />
+            <Route exact path='/tv/:query' component={MovieDetailPage} />
+            <Route exact path='/movie/:query' component={MovieDetailPage} />
             <Route path='/' component={MovieMainPage} />
           </Switch>
           <Footer />

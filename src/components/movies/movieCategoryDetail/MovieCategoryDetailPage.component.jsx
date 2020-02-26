@@ -57,7 +57,7 @@ const MovieCategoryDetail = (props) => {
             </div>
             <div className='Movie-category-detail-page-content'>
                 {props.match.url.slice(0, 4) === '/tvs' ? props.videoList.map((movie) => {
-                    return <MovieCard key={movie.id} id={movie.id} poster={movie.poster_path} title={movie.title} release_date={movie.release_date} overview={movie.overview} />
+                    return <MovieCard key={movie.id} id={movie.id} poster={movie.poster_path} title={movie.name} release_date={movie.first_air_date} overview={movie.overview} />
                 }) :
                     props.videoList.map((movie) => {
                         return <MovieCard key={movie.id} id={movie.id} poster={movie.poster_path} title={movie.title} release_date={movie.release_date} overview={movie.overview} />

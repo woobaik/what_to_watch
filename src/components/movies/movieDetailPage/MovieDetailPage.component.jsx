@@ -39,12 +39,10 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-
-    const movieId = ownProps.match.params.id.split('-')[0]
+    console.log('MAP STATE TO PROPS', ownProps)
+    const movieId = ownProps.match.params.query.split('-')[0]
     return {
-        fetchMovieData: () => {
-            return dispatch(fetchMovie(movieId))
-        },
+        fetchMovieData: () => { return dispatch(fetchMovie(movieId)) },
         fetchCastData: () => { return dispatch(fetchCast(movieId)) },
         fetchMovieKeywords: () => { return dispatch(fetchMovieKeywords(movieId)) },
         cleanUpMovie: () => { return dispatch(cleanUpMovie()) }
