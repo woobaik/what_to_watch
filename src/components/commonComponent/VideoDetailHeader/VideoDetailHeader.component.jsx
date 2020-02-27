@@ -11,8 +11,6 @@ const movieDetailHeaderStyle = (poster_path) => {
     }
 
 }
-
-
 const MovieDetailHeader = (props) => {
     //backdrop_path={backdrop_path} title={title} video={video} overview={overview}
 
