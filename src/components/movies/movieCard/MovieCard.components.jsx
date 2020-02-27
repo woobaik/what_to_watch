@@ -8,11 +8,16 @@ import { Card } from 'react-bootstrap'
 const MovieCard = (props) => {
 
     const navigateToMovieDetail = () => {
-
+        console.log('this is movie card fix this',props)
         let videoTitle = props.video.title || props.video.name
         let urlSafeTitle = videoTitle.toLowerCase().replace(/[&#,+()/$~%.'":*?<>{}]/g, '').replace(/\s/g, '-')
         let slug = props.video.id + '-' + urlSafeTitle
-        props.history.push(`/movie/${slug}`)
+        if (props.video.title) {
+            props.history.push(`/movie/${slug}`)
+        } else if (props.video.name) {
+            props.history.push(`/tv/${slug}`)
+        }
+        
     }
 
     // console.log(props)
