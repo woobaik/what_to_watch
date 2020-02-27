@@ -12,7 +12,6 @@ const MovieCategoryDetailCard = (props) => {
         let urlSafeTitle = props.title.toLowerCase().replace(/[&#,+()/$~%.'":*?<>{}]/g, '').replace(/\s/g, '-')
         let slug = props.id + '-' + urlSafeTitle
         let condition = props.match.url.split('/')[1]
-
         if (condition === 'tvs') {
             props.history.push(`/tv/${slug}`)
         } else if (condition === 'movies') {

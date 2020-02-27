@@ -1,10 +1,11 @@
-import { FETCH_TV_REQUEST, FETCH_TV_SUCCESS, FETCH_TV_ERROR, FETCH_TV_LIST_SUCCESS } from "./tvActionTypes"
+import { FETCH_TV_KEYWORDS, FETCH_TV_REQUEST, FETCH_TV_SUCCESS, FETCH_TV_ERROR, FETCH_TV_LIST_SUCCESS } from "./tvActionTypes"
 
 const initialState = {
     tvList: [],
     tv: [],
     loading: false,
-    error: null
+    error: null,
+    tvKeyword: []
 }
 
 const tvReducer = (state = initialState, action) => {
@@ -35,6 +36,14 @@ const tvReducer = (state = initialState, action) => {
                 tvList: action.payload
             }
 
+
+        case FETCH_TV_KEYWORDS: {
+            return {
+                ...state,
+                loading: false,
+                tvKeyword: action.payload
+            }
+        }
         default: return state
 
     }
