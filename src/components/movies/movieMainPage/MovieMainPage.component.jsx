@@ -23,7 +23,6 @@ const override = css`
 
 const MovieMainPage = props => {
 
-  console.log('MAIN PAGE PROPS', props)
   useEffect(() => {
     props.fetchMovieList()
     props.fetchTvList()
@@ -52,9 +51,6 @@ const MovieMainPage = props => {
 }
 
 const mapStateToProps = state => {
-  console.log('MainPage MapStateToProps', state)
-  console.log('Main Page MOVIE LOADING', state.movies.loading)
-  console.log('Main Page MOVIE LOADING', state.tvs.loading)
   return {
     loading: (state.movies.loading && state.tvs.loading)
   }

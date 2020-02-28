@@ -52,8 +52,6 @@ const rightInfoItem = (title, information) => {
 }
 
 const MovieDetailInfoRight = ({ videoInfo, videoKeywords }) => {
-  console.log("Right INFO", videoInfo)
-  console.log("Right INFO keyword", videoKeywords)
   // API Provides keywords in diffrent way depending on TV or Movie
   let keywordsOrResults = ""
   if (videoInfo.name) {
@@ -182,7 +180,6 @@ const MovieDetailInfoRight = ({ videoInfo, videoKeywords }) => {
 
 const mapStateToProps = (state, ownProps) => {
   if (ownProps.match.url.slice(0, 3) === "/tv") {
-    console.log("OWN PROPS state", state)
     return {
       videoInfo: state.tvs.tv,
       videoKeywords: state.tvs.tvKeywords

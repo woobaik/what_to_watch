@@ -58,7 +58,6 @@ const MovieCategoryDetail = props => {
     // eslint-disable-next-line
   }, [props.match.params])
 
-  console.log('loader 1:55',props)
   if (props.loading) {
     return (
       <SyncLoader
@@ -109,7 +108,7 @@ const MovieCategoryDetail = props => {
 
 const mapStateToProps = (state, ownProps) => {
   if (ownProps.match.url.slice(0, 4) === "/tvs") {
-    console.log('1:32', state.tvs.loading)
+
     return {
       videoList: state.tvs.tvList,
       loading: state.tvs.loading

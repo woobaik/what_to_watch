@@ -30,7 +30,6 @@ const override = css`
 `
 
 const MovieDetailPage = props => {
-  console.log('2:08', props.loading)
   useEffect(() => {
     props.fetchVideoeData()
     props.fetchCastData()
@@ -96,8 +95,6 @@ const MovieDetailPage = props => {
 const mapStateToProps = (state, ownProps) => {
   let loadingValue = undefined
 
-  console.log("MAPSTATETOPROPS OWNPROPS", ownProps)
-  console.log("STATE STATUS FROM MAPSTATUE", state)
   if (ownProps.match.url.slice(0, 3) === "/tv") {
     loadingValue = state.tvs.loading
   } else {
