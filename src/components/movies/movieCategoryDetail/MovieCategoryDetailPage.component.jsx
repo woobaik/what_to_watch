@@ -52,12 +52,13 @@ const titleMaker = query => {
 }
 
 const MovieCategoryDetail = props => {
+
   useEffect(() => {
     props.fetchVideoList()
     // eslint-disable-next-line
   }, [props.match.params])
 
-  console.log('loader 1:38',props)
+  console.log('loader 1:55',props)
   if (props.loading) {
     return (
       <SyncLoader

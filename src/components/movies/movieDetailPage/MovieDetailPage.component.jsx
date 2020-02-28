@@ -30,7 +30,7 @@ const override = css`
 `
 
 const MovieDetailPage = props => {
-  console.log("hoho", props)
+  console.log('2:08', props.loading)
   useEffect(() => {
     props.fetchVideoeData()
     props.fetchCastData()
@@ -50,7 +50,6 @@ const MovieDetailPage = props => {
   }
 
   // loading spinner
-
   if (props.loading) {
     return (
       <SyncLoader
@@ -95,21 +94,21 @@ const MovieDetailPage = props => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  let loading = undefined
+  let loadingValue = undefined
 
   console.log("MAPSTATETOPROPS OWNPROPS", ownProps)
   console.log("STATE STATUS FROM MAPSTATUE", state)
   if (ownProps.match.url.slice(0, 3) === "/tv") {
-    loading = state.tvs.loading
+    loadingValue = state.tvs.loading
   } else {
-    loading = state.movies.loading
+    loadingValue = state.movies.loading
   }
 
   return {
     movie: state.movies.movie,
     cast: state.casts,
     tv: state.tvs.tv,
-    loading: loading
+    loading: loadingValue
   }
 }
 

@@ -57,9 +57,7 @@ export const fetchMovieList = (query = 'popular') => {
         axios.get(`https://api.themoviedb.org/3/movie/${query}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`)
             .then(response => {
                 const movieList = response.data.results
-
                 dispatch(fetchMovieListSuccess(movieList))
-
             })
             .catch(error => {
                 dispatch(fetchMovieError(error))
@@ -71,8 +69,7 @@ export const fetchMovieList = (query = 'popular') => {
 
 export const fetchMovie = (movieId) => {
     return (dispatch) => {
-        dispatch(fetchMovieRequest)
-
+        dispatch(fetchMovieRequest())
         axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`)
             .then(response => {
                 dispatch(fetchMovieSuccess(response.data))

@@ -3,7 +3,7 @@ import { CLEAN_UP_MOVIE, FETCH_MOVIE_KEYWORD_SUCCESS, FETCH_CAST_SUCCESS, FETCH_
 const initialState = {
     movies: [],
     movie: [],
-    loading: false,
+    loading: true,
     error: null,
     cast: {},
     keywords: []
@@ -26,7 +26,8 @@ const movieReducer = (state = initialState, action) => {
         case FETCH_MOVIE_LIST_SUCCESS:
             return {
                 ...state,
-                movies: action.payload
+                movies: action.payload,
+                loading: false,
             }
         case FETCH_MOVIE_ERROR:
             return {
