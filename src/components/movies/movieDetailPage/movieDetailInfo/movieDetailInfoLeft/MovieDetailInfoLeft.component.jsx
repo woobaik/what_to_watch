@@ -16,7 +16,7 @@ const MovieDetailInfoLeft = (props) => {
                 <div className='actor-card-container'>
                     {props.topCast ? props.topCast.filter(
                         (cast, index) => index < 5).map((cast) => {
-                            return <ActorCard key={cast.cast_id} name={cast.name} profile_path={cast.profile_path} character={cast.character} />
+                            return <ActorCard key={cast.cast_id ? cast.cast_id : cast.credit_id} name={cast.name} profile_path={cast.profile_path} character={cast.character} />
                         }) : 'Loading...'}
                 </div>
                 <p className='full-cast-link'>Full Cast & Crew</p>
@@ -29,8 +29,7 @@ const MovieDetailInfoLeft = (props) => {
 
 
 const mapStateToProps = (state, ownProps) =>   {
-    console.log('THIS IS THE ONE STATE', state)
-    console.log('and here is the result', state.tvs.cast)
+
     if (ownProps.match.url.slice(0,3) === '/tv') {
         return {
             topCast: state.tvs.cast

@@ -41,7 +41,6 @@ const MovieDetailPage = (props) => {
 }
 
 const mapStateToProps = (state) => {
-    console.log('MAP STATE TO PROPS MOVIE DETAIL PAGE', state)
     return {
         movie: state.movies.movie,
         cast: state.casts,
