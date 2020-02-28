@@ -44,10 +44,11 @@ const titleMaker = (query) => {
 
 
 const MovieCategoryDetail = (props) => {
-    console.log('MOVIE CATEGORY DETAIL', props)
+   
 
     useEffect(() => {
         props.fetchVideoList()
+        // eslint-disable-next-line 
     }, [props.match.params])
 
     return (
@@ -70,8 +71,7 @@ const MovieCategoryDetail = (props) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    console.log('MapStateToProps', state, ownProps)
-    console.log('OWN PROPS', ownProps.match.url.slice(0, 4))
+
     if (ownProps.match.url.slice(0, 4) === '/tvs') {
         return {
             videoList: state.tvs.tvList
@@ -85,7 +85,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
     const query = ownProps.match.params.query ? ownProps.match.params.query.replace(/-/g, '_') : 'popular'
 
-    console.log('wht on the air not working', query)
     if (ownProps.match.url.slice(0, 4) === '/tvs') {
         return {
             fetchVideoList: () => dispatch(fetchTvList(query))

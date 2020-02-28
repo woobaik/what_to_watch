@@ -4,11 +4,11 @@ import './MovieCategoryDetailCard.styles.scss'
 import { withRouter } from 'react-router-dom'
 const MovieCategoryDetailCard = (props) => {
     // key={movie.id} poster={poster_path} title={title} release_date={movie.release_date} overview={movie.overview}
-    console.log('OWWW CHEEET', props)
+  
 
     // getting slug for url address, remove symbols allow only character and numbers
     const navigateToMovieDetail = () => {
-        console.log('IMPORTANT', props.match.url)
+        
         let urlSafeTitle = props.title.toLowerCase().replace(/[&#,+()/$~%.'":*?<>{}]/g, '').replace(/\s/g, '-')
         let slug = props.id + '-' + urlSafeTitle
         let condition = props.match.url.split('/')[1]

@@ -3,7 +3,7 @@ import './MovieDetailPage.styles.scss'
 
 import { connect } from 'react-redux'
 import { fetchMovie, fetchCast, fetchMovieKeywords, cleanUpMovie } from '../../../redux/movieRedux/movieActions'
-import { fetchTvData, fechTvKeyWords } from '../../../redux/tvRedux/tvActions'
+import { fetchTvData, fechTvKeyWords, fetchTVcredit } from '../../../redux/tvRedux/tvActions'
 
 
 import HorizontalDivider from '../../layouts/divider/HorizontalDivider.component'
@@ -11,11 +11,11 @@ import MovieDetailInfo from './movieDetailInfo/MovieDetailinfo.component'
 import VideoDetailHeader from '../../commonComponent/VideoDetailHeader/VideoDetailHeader.component'
 
 const MovieDetailPage = (props) => {
-
+    
     useEffect(() => {
         props.fetchVideoeData()
         props.fetchCastData()
-        return props.cleanUpMovie
+        return (() => {props.cleanUpMovie()})
         // eslint-disable-next-line 
     }, [])
 
@@ -26,7 +26,7 @@ const MovieDetailPage = (props) => {
     } else {
         videoData = props.movie
     }
-    console.log('MOVIEDETAIL PAGE ', videoData)
+
 
     return (
         <div className='Movie-detail-page'>
@@ -41,11 +41,11 @@ const MovieDetailPage = (props) => {
 }
 
 const mapStateToProps = (state) => {
+    console.log('MAP STATE TO PROPS MOVIE DETAIL PAGE', state)
     return {
         movie: state.movies.movie,
-        cast: state.cast,
+        cast: state.casts,
         tv: state.tvs.tv
-
     }
 }
 
@@ -57,9 +57,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
         return {
             fetchVideoeData: () => { return dispatch(fetchTvData(movieId)) },
-            cleanUpMovie: () => { return dispatch(cleanUpMovie()) },
-            fetchCastData: () => { return dispatch(fetchCast(movieId)) },
-            fetchVideoKeywords: () => { return dispatch(fechTvKeyWords(movieId)) }
+            fetchCastData: () => { return dispatch(fetchTVcredit(movieId)) },
+            fetchVideoKeywords: () => { return dispatch(fechTvKeyWords(movieId)) },
+            cleanUpMovie: () => { return dispatch(cleanUpMovie()) }
         }
     }
     return {
