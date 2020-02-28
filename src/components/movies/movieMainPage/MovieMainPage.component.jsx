@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { css } from "@emotion/core"
 
-import ClipLoader from "react-spinners/ClipLoader"
+import SyncLoader from "react-spinners/SyncLoader"
 import "./MovieMainPage.styles.scss"
 
 import { connect } from "react-redux"
@@ -15,23 +15,29 @@ import { Container } from "react-bootstrap"
 const override = css`
   display: block;
   margin: 0 auto;
-  border-color: red;
+  height: 85vh;
+  text-align: center;
+  padding-top: 40vh;
+  background-color: lightyellow;
 `
 
 const MovieMainPage = props => {
+
+  console.log('MAIN PAGE PROPS', props)
   useEffect(() => {
     props.fetchMovieList()
     props.fetchTvList()
     // eslint-disable-next-line
   }, [])
+
   if (props.loading) {
     return (
-      <ClipLoader
+      <SyncLoader
         css={override}
-        size={150}
-        //size={"150px"} this also works
-        color={"#123abc"}
+        size={20}
+        color={"#3cb"}
         loading={true}
+        margin={5}
       />
     )
   }
@@ -46,10 +52,14 @@ const MovieMainPage = props => {
 }
 
 const mapStateToProps = state => {
+  console.log('MainPage MapStateToProps', state)
+  console.log('Main Page MOVIE LOADING', state.movies.loading)
+  console.log('Main Page MOVIE LOADING', state.tvs.loading)
   return {
-    loading: !(state.movies.loading && state.tvs.loading)
+    loading: (state.movies.loading && state.tvs.loading)
   }
 }
+
 const mapDispatchToProps = dispatch => {
   return {
     fetchMovieList: () => {
