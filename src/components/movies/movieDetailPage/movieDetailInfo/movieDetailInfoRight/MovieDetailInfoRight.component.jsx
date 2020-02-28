@@ -54,6 +54,13 @@ const rightInfoItem = (title, information) => {
 const MovieDetailInfoRight = ({ videoInfo, videoKeywords }) => {
   console.log("Right INFO", videoInfo)
   console.log("Right INFO keyword", videoKeywords)
+  // API Provides keywords in diffrent way depending on TV or Movie
+  let keywordsOrResults = ""
+  if (videoInfo.name) {
+    keywordsOrResults = "results"
+  } else {
+    keywordsOrResults = "keywords"
+  }
 
   //for tv show needs to have   Network,  certification original  language,     type, Runtime    , genre, keywords,
   //for movie, needs to have    Releasing info,         Original Language,       Runtime,    budget,  Revenue,  Genres Keywords,
@@ -149,11 +156,12 @@ const MovieDetailInfoRight = ({ videoInfo, videoKeywords }) => {
             : "FETCHING"}
         </ul>
       </div>
+
       <div className="right-info-item">
         <h5>Keywords</h5>
         <ul className="button-holder">
-          {videoKeywords.keywords
-            ? videoKeywords.keywords.map(keyword => {
+          {videoKeywords[keywordsOrResults]
+            ? videoKeywords[keywordsOrResults].map(keyword => {
                 return (
                   <button key={keyword.id} className="custom-button">
                     {keyword.name}
@@ -163,6 +171,7 @@ const MovieDetailInfoRight = ({ videoInfo, videoKeywords }) => {
             : "FETCHING..."}
         </ul>
       </div>
+
       <div className="right-info-">
         <h5>Content Score</h5>
         100
@@ -176,7 +185,7 @@ const mapStateToProps = (state, ownProps) => {
     console.log("OWN PROPS state", state)
     return {
       videoInfo: state.tvs.tv,
-      videoKeywords: state.movies.keywords
+      videoKeywords: state.tvs.tvKeywords
     }
   }
   return {
