@@ -40,7 +40,7 @@ const tvReducer = (state = initialState, action) => {
     case FETCH_TV_LIST_SUCCESS:
       return {
         ...state,
-        laoding: false,
+        loading: false,
         tvList: action.payload
       }
 

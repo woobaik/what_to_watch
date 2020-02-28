@@ -13,12 +13,24 @@ import {
   fechTvKeyWords,
   fetchTVcredit
 } from "../../../redux/tvRedux/tvActions"
+import { css } from "@emotion/core"
 
+import SyncLoader from "react-spinners/SyncLoader"
 import HorizontalDivider from "../../layouts/divider/HorizontalDivider.component"
 import MovieDetailInfo from "./movieDetailInfo/MovieDetailinfo.component"
 import VideoDetailHeader from "../../commonComponent/VideoDetailHeader/VideoDetailHeader.component"
 
+const override = css`
+  display: block;
+  margin: 0 auto;
+  height: 85vh;
+  text-align: center;
+  padding-top: 40vh;
+  background-color: lightyellow;
+`
+
 const MovieDetailPage = props => {
+  console.log("hoho", props)
   useEffect(() => {
     props.fetchVideoeData()
     props.fetchCastData()
@@ -35,6 +47,21 @@ const MovieDetailPage = props => {
     videoData = props.tv
   } else {
     videoData = props.movie
+  }
+
+  // loading spinner
+
+  if (props.loading) {
+    return (
+      <SyncLoader
+        css={override}
+        size={20}
+        //size={"150px"} this also works
+        color={"#3cb"}
+        loading={true}
+        margin={5}
+      />
+    )
   }
 
   return (
@@ -67,11 +94,22 @@ const MovieDetailPage = props => {
   )
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
+  let loading = undefined
+
+  console.log("MAPSTATETOPROPS OWNPROPS", ownProps)
+  console.log("STATE STATUS FROM MAPSTATUE", state)
+  if (ownProps.match.url.slice(0, 3) === "/tv") {
+    loading = state.tvs.loading
+  } else {
+    loading = state.movies.loading
+  }
+
   return {
     movie: state.movies.movie,
     cast: state.casts,
-    tv: state.tvs.tv
+    tv: state.tvs.tv,
+    loading: loading
   }
 }
 

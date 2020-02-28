@@ -1,12 +1,23 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
+import { css } from "@emotion/core"
 import "./MovieCategoryDetailPage.style.scss"
 import { Container } from "react-bootstrap"
 import MovieCard from "../movieCategoryDetailCard/MovieCategoryDetailCard.component"
+import SyncLoader from "react-spinners/SyncLoader"
 
 import { fetchMovieList } from "../../../redux/movieRedux/movieActions"
 import { fetchTvList } from "../../../redux/tvRedux/tvActions"
 
+
+const override = css`
+  display: block;
+  margin: 0 auto;
+  height: 85vh;
+  text-align: center;
+  padding-top: 40vh;
+  background-color: lightyellow;
+`
 // title maker depending props.match.params.query
 const titleMaker = query => {
   // now_playing, popular, top_rated, upcoming
@@ -46,6 +57,19 @@ const MovieCategoryDetail = props => {
     // eslint-disable-next-line
   }, [props.match.params])
 
+  console.log('loader 1:38',props)
+  if (props.loading) {
+    return (
+      <SyncLoader
+        css={override}
+        size={20}
+        //size={"150px"} this also works
+        color={"#3cb"}
+        loading={true}
+        margin={5}
+      />
+    )
+  }
   return (
     <Container className="Movie-category-detail-page">
       <div className="movie-category-detail-title">
@@ -84,12 +108,15 @@ const MovieCategoryDetail = props => {
 
 const mapStateToProps = (state, ownProps) => {
   if (ownProps.match.url.slice(0, 4) === "/tvs") {
+    console.log('1:32', state.tvs.loading)
     return {
-      videoList: state.tvs.tvList
+      videoList: state.tvs.tvList,
+      loading: state.tvs.loading
     }
   }
   return {
-    videoList: state.movies ? state.movies.movies : state.tvs
+    videoList: state.movies.movies,
+    loading: state.movies.loading
   }
 }
 
