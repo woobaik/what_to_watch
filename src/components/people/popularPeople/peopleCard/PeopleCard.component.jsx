@@ -1,7 +1,11 @@
 import React from "react"
 import "./PeopleCard.style.scss"
+import { connect } from "react-redux"
 
-const PeopleCard = () => {
+import { fetchPersonDetail } from "../../../../redux/peopleRedux/peopleActions"
+
+const PeopleCard = props => {
+  console.log("PEOPLE CARD", props)
   return (
     <div className="People-card">
       <div className="people-card-image">
@@ -20,4 +24,10 @@ const PeopleCard = () => {
   )
 }
 
-export default PeopleCard
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchPersonData: dispatch(fetchPersonDetail)
+  }
+}
+
+export default connect(null, mapDispatchToProps)(PeopleCard)
