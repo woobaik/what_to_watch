@@ -1,33 +1,47 @@
-import React from "react"
+import React, { useEffect } from "react"
 import "./PeopleCard.style.scss"
 import { connect } from "react-redux"
 
-import { fetchPersonDetail } from "../../../../redux/peopleRedux/peopleActions"
+import { fetchPeopleList } from "../../../../redux/peopleRedux/peopleActions"
 
 const PeopleCard = props => {
-  console.log("PEOPLE CARD", props)
+  useEffect(() => {
+    props.fetchPersonList()
+  }, [])
+
   return (
-    <div className="People-card">
-      <div className="people-card-image">
-        <img
-          src="https://image.tmdb.org/t/p/w235_and_h235_face/5MgWM8pkUiYkj9MEaEpO0Ir1FD9.jpg"
-          alt="actor-face"
-        />
-      </div>
-      <div className="people-card">
-        <p className="people-card-name">Cho Yeo-jeong</p>
-        <p className="people-card-credits">
-          Parasite, The Target, The concubine
-        </p>
-      </div>
+    <div>
+      {props.peopleList ? (
+        props.peopleList.map(person => {
+          return (
+            <div className="People-card">
+              <div className="people-card-image">
+                <img
+                  src="http://profile.img.afreecatv.com/LOGO/s2/s2apple/s2apple.jpg"
+                  alt="actor-face"
+                />
+              </div>
+            </div>
+          )
+        })
+      ) : (
+        <div>loading</div>
+      )}
     </div>
   )
 }
 
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = state => {
+  console.log("People Card", state)
   return {
-    fetchPersonData: dispatch(fetchPersonDetail)
+    peopleList: state.person.peopleList
   }
 }
 
-export default connect(null, mapDispatchToProps)(PeopleCard)
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchPersonList: dispatch(fetchPeopleList)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PeopleCard)

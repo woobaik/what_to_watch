@@ -1,9 +1,14 @@
 .People-card {
   margin: 1rem;
   box-sizing: border-box;
+
   width: 236px;
   border: 1px solid rgb(139, 139, 139);
 
+  .people-card-image {
+    width: 100%;
+    overflow: hidden;
+  }
   .people-card {
     padding: 4px 8px;
     .people-card-name {
@@ -17,3 +22,22 @@
     }
   }
 }
+
+// {
+//   props.peopleList ? (
+//     props.peopleList.map(person => {
+//       return (
+//         <div className="People-card">
+//           <div className="people-card-image">
+//           <img
+//           src="http://profile.img.afreecatv.com/LOGO/s2/s2apple/s2apple.jpg"
+//           alt="actor-face"
+//         />
+//           </div>
+//         </div>
+//       )
+//     })
+//   ) : (
+//     <div>loading</div>
+//   )
+// }
