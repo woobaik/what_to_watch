@@ -10,6 +10,7 @@ import MovieMainPage from "./components/movies/movieMainPage/MovieMainPage.compo
 import CategoryDetailPage from "./components/movies/movieCategoryDetail/MovieCategoryDetailPage.component"
 import MovieDetailPage from "./components/movies/movieDetailPage/MovieDetailPage.component"
 import PeopleCategoryPage from "./components/people/popularPeople/PopularPeople.component"
+import PeopleDetailPage from "./components/people/PeopleDetailPage/PeopleDetailPage.component"
 import Footer from "./components/layouts/footer/Footer.component"
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route exact path="/tv/:query" component={MovieDetailPage} />
             <Route exact path="/movie/:query" component={MovieDetailPage} />
             <Route exact path="/people" component={PeopleCategoryPage} />
+            <Route exact path="/people/:query" component={PeopleDetailPage} />
             <Route path="/" component={MovieMainPage} />
           </Switch>
           <Footer />

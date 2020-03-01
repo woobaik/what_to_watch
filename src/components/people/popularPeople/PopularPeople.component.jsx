@@ -16,6 +16,7 @@ const PopularPeople = props => {
         {props.peopleList.map(person => {
           return (
             <PeopleCard
+              id={person.id}
               key={person.id}
               profile_path={person.profile_path}
               name={person.name}

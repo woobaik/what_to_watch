@@ -1,5 +1,6 @@
 import React from "react"
 import "./PeopleCard.style.scss"
+import { withRouter } from "react-router-dom"
 
 const PeopleCard = props => {
   const personKnownFor = () => {
@@ -22,20 +23,25 @@ const PeopleCard = props => {
     }
   }
 
+  console.log("people card", props)
+
+  const onClickUrl = () => {
+    const urlSafeName = props.name.replace(/\s/g, "-")
+    console.log(urlSafeName)
+    props.history.push(`/people/${props.id}-${urlSafeName}`)
+  }
   return (
-    <div>
-      <div className="People-card">
-        <div className="people-card-image">
-          <img
-            src={`https://image.tmdb.org/t/p/w235_and_h235_face${props.profile_path}`}
-            alt="actor-face"
-          />
-        </div>
-        <div className="people-card-name">{props.name}</div>
-        <div className="people-card-credits">{personKnownFor()}</div>
+    <div className="People-card" onClick={onClickUrl}>
+      <div className="people-card-image">
+        <img
+          src={`https://image.tmdb.org/t/p/w235_and_h235_face${props.profile_path}`}
+          alt={props.name}
+        />
       </div>
+      <div className="people-card-name">{props.name}</div>
+      <div className="people-card-credits">{personKnownFor()}</div>
     </div>
   )
 }
 
-export default PeopleCard
+export default withRouter(PeopleCard)
