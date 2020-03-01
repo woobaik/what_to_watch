@@ -16,29 +16,14 @@
   .people-card-name {
     font-weight: bold;
     margin-bottom: 0;
+    padding-left: 3px;
   }
 
   .people-card-credits {
     font-size: 0.8rem;
     margin-bottom: 0;
+    color: gray;
+    padding-bottom: 0.3rem;
+    padding-left: 3px;
   }
 }
-
-// {
-//   props.peopleList ? (
-//     props.peopleList.map(person => {
-//       return (
-//         <div className="People-card">
-//           <div className="people-card-image">
-//           <img
-//           src="http://profile.img.afreecatv.com/LOGO/s2/s2apple/s2apple.jpg"
-//           alt="actor-face"
-//         />
-//           </div>
-//         </div>
-//       )
-//     })
-//   ) : (
-//     <div>loading</div>
-//   )
-// }
