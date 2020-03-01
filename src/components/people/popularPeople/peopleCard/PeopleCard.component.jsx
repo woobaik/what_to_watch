@@ -2,7 +2,6 @@ import React from "react"
 import "./PeopleCard.style.scss"
 
 const PeopleCard = props => {
-  console.log(props)
   return (
     <div>
       <div className="People-card">
@@ -13,10 +12,17 @@ const PeopleCard = props => {
           />
         </div>
         <div className="people-card-name">{props.name}</div>
-        <div className=".people-card-credits">
+        <div className="people-card-credits">
           {props.knownFor.map(show => {
-            console.log(show)
-            return show.name
+            const knownForArray = []
+            if (show.name) {
+              knownForArray.push(show.name)
+            } else if (show.title) {
+              knownForArray.push(show.title)
+            }
+            return knownForArray.map(show => {
+              return `${show} |`
+            })
           })}
         </div>
       </div>
