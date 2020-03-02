@@ -35,7 +35,6 @@ const PeopleReducer = (state = initialState, action) => {
       }
 
     case FETCH_PEOPLE_LIST_SUCCESS:
-      console.log("FETCH PEOPLE LIST SUCCESS ON REDUCERS", action.payload)
       return {
         ...state,
         loading: false,

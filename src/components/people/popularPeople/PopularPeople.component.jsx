@@ -6,12 +6,18 @@ import "./PopularPeople.style.scss"
 import PeopleCard from "./peopleCard/PeopleCard.component"
 
 const PopularPeople = props => {
-  useEffect(() => {
-    props.fetchPeopleList()
-  }, [])
+  useEffect(
+    () => {
+      props.fetchPeopleList()
+      // eslint-disable-next-line
+    },
+    // eslint-disable-next-line
+    [props.peopleList]
+  )
 
   return (
     <div className="Popular-people">
+      <div className="popular-people-title">Popular People</div>
       <div className="people-container">
         {props.peopleList.map(person => {
           return (
@@ -30,7 +36,6 @@ const PopularPeople = props => {
 }
 
 const mapStateToProps = state => {
-  console.log("MapSTatE TO PROPS", state)
   return {
     peopleList: state.person.peopleList
   }

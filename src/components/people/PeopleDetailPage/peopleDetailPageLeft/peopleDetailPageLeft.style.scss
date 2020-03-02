@@ -1,0 +1,28 @@
+.People-detail-page-left {
+  background: #f1f1f1;
+  width: 450px;
+
+  .people-detail-left-image {
+    padding-left: 2rem;
+    padding-top: 3rem;
+  }
+
+  .people-detail-left-info {
+    .people-detail-left-info-title {
+      font-size: 1.5rem;
+      padding-bottom: 1rem;
+    }
+
+    .people-detail-left-info-item {
+      margin-bottom: 1rem;
+      .detail-info-item-title {
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+
+      .detail-info-item-content {
+        padding-top: 0.3rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.people-detail-right-header {
+  .people-detail-right-header-title {
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .people-detail-right-header-biography {
+    .people-detail-right-biography-text {
+      font-size: 1.5rem;
+      //fix later
+      font-weight: bold;
+    }
+  }
+
+  .people-detail-right-header-modal-button {
+    margin-top: 2rem;
+    padding: 0.5rem;
+    text-align: center;
+  }
+}

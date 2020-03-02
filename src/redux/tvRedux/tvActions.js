@@ -18,7 +18,6 @@ const fetchTvListSuccess = tvList => {
   return {
     type: FETCH_TV_LIST_SUCCESS,
     payload: tvList
-
   }
 }
 
@@ -26,7 +25,6 @@ const fetchTvSuccess = tv => {
   return {
     type: FETCH_TV_SUCCESS,
     payload: tv
- 
   }
 }
 
@@ -34,7 +32,6 @@ const fetchTvError = error => {
   return {
     type: FETCH_TV_ERROR,
     payload: error
-
   }
 }
 
@@ -95,7 +92,6 @@ export const fechTvKeyWords = tvId => {
         `https://api.themoviedb.org/3/tv/${tvId}/keywords?api_key=${process.env.REACT_APP_API_KEY}`
       )
       .then(response => {
-        console.log("FETCH TV KEYWORDS", response)
         dispatch(fetchTvKeywords(response.data))
       })
       .catch(error => {

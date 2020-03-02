@@ -6,7 +6,7 @@ const PeopleCard = props => {
   const personKnownFor = () => {
     const knownForArray = []
     let str = ""
-    props.knownFor.map(show => {
+    props.knownFor.forEach(show => {
       if (show.name) {
         knownForArray.push(show.name)
       } else if (show.title) {
@@ -23,11 +23,8 @@ const PeopleCard = props => {
     }
   }
 
-  console.log("people card", props)
-
   const onClickUrl = () => {
     const urlSafeName = props.name.replace(/\s/g, "-")
-    console.log(urlSafeName)
     props.history.push(`/people/${props.id}-${urlSafeName}`)
   }
   return (
