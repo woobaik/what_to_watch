@@ -2,7 +2,8 @@ import {
   FETCH_PERSON_DETAIL_SUCCESS,
   FETCH_PERSON_ERROR,
   FETCH_PERSON_REQUEST,
-  FETCH_PEOPLE_LIST_SUCCESS
+  FETCH_PEOPLE_LIST_SUCCESS,
+  FETCH_PERSON_CREDITS
 } from "./peopleActionTypes"
 import axios from "axios"
 
@@ -23,6 +24,13 @@ const fetchPersonError = error => {
   return {
     type: FETCH_PERSON_ERROR,
     payload: error
+  }
+}
+
+const fetchPersonCreditsSuccess = credits => {
+  return {
+    type: FETCH_PERSON_CREDITS,
+    payload: credits
   }
 }
 
@@ -59,6 +67,24 @@ export const fetchPeopleList = dispatch => {
       )
       .then(response => {
         dispatch(fectPeopleListSuccess(response.data.results))
+      })
+      .catch(error => {
+        dispatch(fetchPersonError(error))
+      })
+  }
+}
+
+export const fetchPersonCredit = personId => {
+  return dispatch => {
+    dispatch(fetchPersonRequest())
+    axios
+      .get(
+        `
+    https://api.themoviedb.org/3/person/${personId}/combined_credits?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
+      )
+      .then(response => {
+        console.log("CREDITS!!!", response.data)
+        dispatch(fetchPersonCreditsSuccess(response.data))
       })
       .catch(error => {
         dispatch(fetchPersonError(error))

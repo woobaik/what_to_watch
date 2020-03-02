@@ -2,7 +2,8 @@ import {
   FETCH_PEOPLE_LIST_SUCCESS,
   FETCH_PERSON_DETAIL_SUCCESS,
   FETCH_PERSON_ERROR,
-  FETCH_PERSON_REQUEST
+  FETCH_PERSON_REQUEST,
+  FETCH_PERSON_CREDITS
 } from "./peopleActionTypes"
 
 const initialState = {
@@ -41,6 +42,12 @@ const PeopleReducer = (state = initialState, action) => {
         peopleList: action.payload
       }
 
+    case FETCH_PERSON_CREDITS:
+      return {
+        ...state,
+        loading: false,
+        personCredit: action.payload
+      }
     default:
       return { ...state }
   }
