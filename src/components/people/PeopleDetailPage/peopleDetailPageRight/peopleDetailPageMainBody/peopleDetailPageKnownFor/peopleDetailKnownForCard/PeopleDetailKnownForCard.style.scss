@@ -1,4 +1,6 @@
-.known-for-credits {
+.known-for-credits-card {
+  padding-right: 3px;
+  width: 150px;
   .known-for-credits-image {
     font-size: 3rem;
     background-color: rgb(180, 178, 178);
@@ -6,5 +8,11 @@
     height: 225px;
     text-align: center;
     padding-top: 90px;
+  }
+
+  .known-for-credit-title {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
   }
 }

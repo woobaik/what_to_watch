@@ -8,26 +8,40 @@ const PeopleDetailKnownFor = props => {
   return (
     <div className="People-detail-known-for">
       <div className="known-for-title">Known For</div>
-      {props.credits.cast
-        ? props.credits.cast.map(cast => {
-            return (
-              <Card
-                key={cast.id}
-                title={cast.title}
-                name={cast.name}
-                poster_path={cast.poster_path}
-              />
-            )
-          })
-        : null}
-      <Card />
+      <div className="known-for-cards-deck">
+        {props.credits
+          ? props.credits.map(cast => {
+              return (
+                <Card
+                  key={cast.id}
+                  title={cast.title}
+                  name={cast.name}
+                  poster_path={cast.poster_path}
+                />
+              )
+            })
+          : null}
+      </div>
     </div>
   )
 }
 
 const mapStateToProps = state => {
+  if (
+    state.person.personCredit.cast &&
+    state.person.personCredit.cast.length > 0
+  ) {
+    const result = state.person.personCredit.cast.sort((a, b) => {
+      return b.popularity - a.popularity
+    })
+
+    return {
+      credits: result.slice(0, 8)
+    }
+  }
+
   return {
-    credits: state.person.personCredit
+    credits: state.person.personCredit.cast
   }
 }
 
