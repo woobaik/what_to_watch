@@ -4,7 +4,6 @@ import { connect } from "react-redux"
 import Card from "./peopleDetailKnownForCard/PeopleDetailKnownForCard.component"
 
 const PeopleDetailKnownFor = props => {
-  console.log("CARDS ARRAY", props.credits)
   return (
     <div className="People-detail-known-for">
       <div className="known-for-title">Known For</div>
