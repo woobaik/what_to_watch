@@ -5,7 +5,8 @@ import {
   FETCH_TV_SUCCESS,
   FETCH_TV_ERROR,
   FETCH_TV_LIST_SUCCESS,
-  FETCH_TV_VIDEOS_SUCCESS
+  FETCH_TV_VIDEOS_SUCCESS,
+  FETCH_TV_RECOMMENDATIONS_SUCCESS
 } from "./tvActionTypes"
 
 const initialState = {
@@ -15,7 +16,8 @@ const initialState = {
   error: null,
   tvKeywords: [],
   cast: [],
-  media: []
+  media: [],
+  recomm: []
 }
 
 const tvReducer = (state = initialState, action) => {
@@ -66,6 +68,14 @@ const tvReducer = (state = initialState, action) => {
       return {
         ...state,
         media: action.payload,
+        loading: false
+      }
+    }
+
+    case FETCH_TV_RECOMMENDATIONS_SUCCESS: {
+      return {
+        ...state,
+        recomm: action.payload,
         loading: false
       }
     }

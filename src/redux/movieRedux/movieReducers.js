@@ -6,7 +6,8 @@ import {
   FETCH_MOVIE_SUCCESS,
   FETCH_MOVIE_ERROR,
   FETCH_MOVIE_LIST_SUCCESS,
-  FETCH_TV_VIDEOS_SUCCESS
+  FETCH_TV_VIDEOS_SUCCESS,
+  FETCH_MOVIE_RECOMMENDATION_SUCCESS
 } from "./movieActionTypes"
 
 const initialState = {
@@ -16,7 +17,8 @@ const initialState = {
   error: null,
   cast: {},
   keywords: [],
-  media: []
+  media: [],
+  recomm: []
 }
 
 const movieReducer = (state = initialState, action) => {
@@ -71,6 +73,13 @@ const movieReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         media: action.payload
+      }
+
+    case FETCH_MOVIE_RECOMMENDATION_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        recomm: action.payload
       }
 
     default:

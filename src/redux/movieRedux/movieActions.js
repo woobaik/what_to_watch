@@ -6,7 +6,8 @@ import {
   FETCH_MOVIE_REQUEST,
   FETCH_MOVIE_SUCCESS,
   FETCH_MOVIE_ERROR,
-  FETCH_MOVIE_LIST_SUCCESS
+  FETCH_MOVIE_LIST_SUCCESS,
+  FETCH_MOVIE_RECOMMENDATION_SUCCESS
 } from "./movieActionTypes"
 import axios from "axios"
 
@@ -61,6 +62,13 @@ const fetchMovieVideos = videos => {
 export const cleanUpMovie = () => {
   return {
     type: CLEAN_UP_MOVIE
+  }
+}
+
+const fetchMovieRecommationSuccess = recomm => {
+  return {
+    type: FETCH_MOVIE_RECOMMENDATION_SUCCESS,
+    payload: recomm
   }
 }
 
@@ -140,6 +148,22 @@ export const fetchMovieVideo = movieId => {
       )
       .then(response => {
         dispatch(fetchMovieVideos(response.data))
+      })
+      .catch(error => {
+        dispatch(fetchMovieError(error))
+      })
+  }
+}
+
+export const fetchMovieRecommendation = movieId => {
+  return dispatch => {
+    dispatch(fetchMovieRequest())
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
+      )
+      .then(response => {
+        dispatch(fetchMovieRecommationSuccess(movieId))
       })
       .catch(error => {
         dispatch(fetchMovieError(error))

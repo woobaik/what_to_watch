@@ -5,7 +5,8 @@ import {
   FETCH_TV_LIST_SUCCESS,
   FETCH_TV_SUCCESS,
   FETCH_TV_ERROR,
-  FETCH_TV_VIDEOS_SUCCESS
+  FETCH_TV_VIDEOS_SUCCESS,
+  FETCH_TV_RECOMMENDATIONS_SUCCESS
 } from "./tvActionTypes"
 import axios from "axios"
 
@@ -54,6 +55,13 @@ const fetchTvVideosSuccess = tvList => {
   return {
     type: FETCH_TV_VIDEOS_SUCCESS,
     payload: tvList
+  }
+}
+
+const fetchTvRecommendationSuccess = recom => {
+  return {
+    type: FETCH_TV_RECOMMENDATIONS_SUCCESS,
+    payload: recom
   }
 }
 
@@ -137,6 +145,23 @@ export const fetchTvVideos = tvId => {
       .then(response => {
         console.log(response)
         dispatch(fetchTvVideosSuccess(response.data))
+      })
+      .catch(error => {
+        dispatch(fetchTvError(error))
+      })
+  }
+}
+
+export const fetchTvRecommendation = tvId => {
+  return dispatch => {
+    dispatch(fetchTvRequest())
+    axios
+      .get(
+        `https://api.themoviedb.org/3/tv/${tvId}/recommendations?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
+      )
+      .then(response => {
+        console.log("Getting recommendation")
+        dispatch(fetchTvRecommendationSuccess(response.data))
       })
       .catch(error => {
         dispatch(fetchTvError(error))

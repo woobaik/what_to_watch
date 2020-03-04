@@ -5,9 +5,9 @@ import { connect } from "react-redux"
 import ActorCard from "../../../../commonComponent/actorCard/ActorCard.component"
 import HorizontailDivider from "../../../../layouts/divider/HorizontalDivider.component"
 import MovieDetailVideo from "../../movieDetailVideo/MovieDetailVideo.component"
+import MovieRecommend from "./movieRecommend/MovieRecommend.component"
 
 const MovieDetailInfoLeft = props => {
-  console.log("Media Left", props)
   let site,
     key = undefined
 
@@ -19,7 +19,6 @@ const MovieDetailInfoLeft = props => {
     site = props.media[0].site
     key = props.media[0].key
   }
-  console.log("Happy Ending", key)
   return (
     <div className="movieDetailInfoLeft">
       <div className="top-billed-cast">
@@ -43,19 +42,21 @@ const MovieDetailInfoLeft = props => {
         </div>
         <p className="full-cast-link">Full Cast & Crew</p>
       </div>
-      <HorizontailDivider />
       {site && key ? (
         <div className="media-container">
+          <HorizontailDivider />
           <div className="section-title">Video</div>
           <MovieDetailVideo site={site} vId={key} />
         </div>
       ) : null}
+      <HorizontailDivider />
+      workding?
+      <MovieRecommend />
     </div>
   )
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log("VIDEO", state)
   if (ownProps.match.url.slice(0, 3) === "/tv") {
     return {
       topCast: state.tvs.cast,

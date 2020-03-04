@@ -13,7 +13,6 @@ const movieDetailHeaderImgMissing = () => {}
 
 const MovieDetailHeader = props => {
   //backdrop_path={backdrop_path} title={title} video={video} overview={overview}
-  console.log("PPPPRRROOOPPS", props)
   return (
     <div
       className="Movie-detail-header"

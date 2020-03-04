@@ -90,7 +90,6 @@ export const fetchPersonCredit = personId => {
     https://api.themoviedb.org/3/person/${personId}/combined_credits?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
       )
       .then(response => {
-        console.log("CREDITS!!!", response.data)
         dispatch(fetchPersonCreditsSuccess(response.data))
       })
       .catch(error => {

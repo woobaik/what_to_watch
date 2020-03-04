@@ -7,13 +7,15 @@ import {
   fetchCast,
   fetchMovieKeywords,
   cleanUpMovie,
-  fetchMovieVideo
+  fetchMovieVideo,
+  fetchMovieRecommendation
 } from "../../../redux/movieRedux/movieActions"
 import {
   fetchTvData,
   fechTvKeyWords,
   fetchTVcredit,
-  fetchTvVideos
+  fetchTvVideos,
+  fetchTvRecommendation
 } from "../../../redux/tvRedux/tvActions"
 import { css } from "@emotion/core"
 
@@ -32,12 +34,12 @@ const override = css`
 `
 
 const MovieDetailPage = props => {
-  console.log("Movie Detail", props)
   useEffect(() => {
     props.fetchVideoeData()
     props.fetchCastData()
     props.fetchVideoKeywords()
     props.fetchVideoMedia()
+    props.fetchRecommendation()
     return () => {
       props.cleanUpMovie()
     }
@@ -99,13 +101,15 @@ const MovieDetailPage = props => {
 const mapStateToProps = (state, ownProps) => {
   let loadingValue = undefined
   let mediaData = undefined
-  console.log("BABOBABO", state)
+  let recom = undefined
   if (ownProps.match.url.slice(0, 3) === "/tv") {
     loadingValue = state.tvs.loading
     mediaData = state.tvs.media.results
+    recom = state.tvs.recomm.results
   } else {
     loadingValue = state.movies.loading
     mediaData = state.movies.media.results
+    recom = state.movies.recomm.results
   }
 
   return {
@@ -113,7 +117,8 @@ const mapStateToProps = (state, ownProps) => {
     cast: state.casts,
     tv: state.tvs.tv,
     loading: loadingValue,
-    media: mediaData
+    media: mediaData,
+    recom: recom
   }
 }
 
@@ -136,6 +141,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       fetchVideoMedia: () => {
         return dispatch(fetchTvVideos(movieId))
+      },
+      fetchRecommendation: () => {
+        return dispatch(fetchTvRecommendation(movieId))
       }
     }
   }
@@ -155,6 +163,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
     fetchVideoMedia: () => {
       return dispatch(fetchMovieVideo(movieId))
+    },
+
+    fetchRecommendation: () => {
+      return dispatch(fetchMovieRecommendation(movieId))
     }
   }
 }
