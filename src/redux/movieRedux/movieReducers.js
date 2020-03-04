@@ -70,7 +70,7 @@ const movieReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        meida: action.payload
+        media: action.payload
       }
 
     default:

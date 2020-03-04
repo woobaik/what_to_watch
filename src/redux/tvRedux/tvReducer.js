@@ -15,7 +15,7 @@ const initialState = {
   error: null,
   tvKeywords: [],
   cast: [],
-  videos: []
+  media: []
 }
 
 const tvReducer = (state = initialState, action) => {
@@ -65,7 +65,7 @@ const tvReducer = (state = initialState, action) => {
     case FETCH_TV_VIDEOS_SUCCESS: {
       return {
         ...state,
-        videos: action.payload,
+        media: action.payload,
         loading: false
       }
     }

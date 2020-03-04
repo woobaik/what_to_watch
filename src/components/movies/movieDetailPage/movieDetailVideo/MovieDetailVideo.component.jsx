@@ -3,12 +3,14 @@ import "./MovieDetailVideo.style.scss"
 
 import ReactPlayer from "react-player"
 
-const MovieDetailVideo = ({ url }) => {
+const MovieDetailVideo = props => {
+  console.log("THIS IS VIDEO PROPS", props)
   return (
     <div className="Movie-detail-video">
       <ReactPlayer
-        url="https://www.youtube.com/watch?v=O_49H_N43jQ&list=RDO_49H_N43jQ&start_radio=1"
-        controls="true"
+        url={`https://www.youtube.com/watch?v=${props.vId}`}
+        controls={true}
+        SameSite="None"
       />
     </div>
   )

@@ -7,6 +7,19 @@ import HorizontailDivider from "../../../../layouts/divider/HorizontalDivider.co
 import MovieDetailVideo from "../../movieDetailVideo/MovieDetailVideo.component"
 
 const MovieDetailInfoLeft = props => {
+  console.log("Media Left", props)
+  let site,
+    key = undefined
+
+  if (
+    props.media &&
+    props.media.length > 0 &&
+    props.media[0].site === "YouTube"
+  ) {
+    site = props.media[0].site
+    key = props.media[0].key
+  }
+  console.log("Happy Ending", key)
   return (
     <div className="movieDetailInfoLeft">
       <div className="top-billed-cast">
@@ -31,23 +44,28 @@ const MovieDetailInfoLeft = props => {
         <p className="full-cast-link">Full Cast & Crew</p>
       </div>
       <HorizontailDivider />
-      <div className="media-container">
-        <div className="section-title">Video</div>
-        <MovieDetailVideo />
-      </div>
+      {site && key ? (
+        <div className="media-container">
+          <div className="section-title">Video</div>
+          <MovieDetailVideo site={site} vId={key} />
+        </div>
+      ) : null}
     </div>
   )
 }
 
 const mapStateToProps = (state, ownProps) => {
+  console.log("VIDEO", state)
   if (ownProps.match.url.slice(0, 3) === "/tv") {
     return {
-      topCast: state.tvs.cast
+      topCast: state.tvs.cast,
+      media: state.tvs.media.results
     }
   }
 
   return {
-    topCast: state.movies.cast.cast
+    topCast: state.movies.cast.cast,
+    media: state.movies.media.results
   }
 }
 export default withRouter(connect(mapStateToProps)(MovieDetailInfoLeft))

@@ -13,7 +13,6 @@ import {
   fetchTvData,
   fechTvKeyWords,
   fetchTVcredit,
-  fetchTvList,
   fetchTvVideos
 } from "../../../redux/tvRedux/tvActions"
 import { css } from "@emotion/core"
@@ -103,9 +102,10 @@ const mapStateToProps = (state, ownProps) => {
   console.log("BABOBABO", state)
   if (ownProps.match.url.slice(0, 3) === "/tv") {
     loadingValue = state.tvs.loading
-    mediaData = state.tvs.videos.results
+    mediaData = state.tvs.media.results
   } else {
     loadingValue = state.movies.loading
+    mediaData = state.movies.media.results
   }
 
   return {
