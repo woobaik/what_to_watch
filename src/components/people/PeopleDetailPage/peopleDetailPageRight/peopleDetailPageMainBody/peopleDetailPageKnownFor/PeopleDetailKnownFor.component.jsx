@@ -4,6 +4,7 @@ import { connect } from "react-redux"
 import Card from "./peopleDetailKnownForCard/PeopleDetailKnownForCard.component"
 
 const PeopleDetailKnownFor = props => {
+  console.log("MOTHER COMPONENT", props)
   return (
     <div className="People-detail-known-for">
       <div className="known-for-title">Known For</div>
@@ -12,6 +13,7 @@ const PeopleDetailKnownFor = props => {
           ? props.credits.map(cast => {
               return (
                 <Card
+                  id={cast.id}
                   key={cast.id}
                   title={cast.title}
                   name={cast.name}
