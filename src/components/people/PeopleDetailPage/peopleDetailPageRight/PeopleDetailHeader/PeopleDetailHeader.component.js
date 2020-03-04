@@ -10,7 +10,6 @@ const PeopleDetailHeader = ({ person }) => {
     return str
   }
 
-  console.log("RIGHT PROPS", person)
   return (
     <div className="people-detail-right-header">
       <div className="people-detail-right-header-title">{person.name}</div>

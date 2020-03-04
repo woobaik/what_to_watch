@@ -23,7 +23,6 @@ const override = css`
 `
 
 const PeopleDetailPage = props => {
-  console.log("우오오 tv", props)
   useEffect(() => {
     props.fetchPersonDetail()
     props.fetchPesonCredits()
@@ -55,7 +54,6 @@ const PeopleDetailPage = props => {
 }
 
 const mapStateToProps = state => {
-  console.log("우오오 Map State To Props- Detail Page", state)
   return {
     person: state.person.person,
     personCredit: state.person.personCredit,
@@ -64,7 +62,6 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  console.log("MAP DISPATCH TO PROPS", ownProps)
   let personId = ownProps.match.params.query.split("-")[0]
 
   return {

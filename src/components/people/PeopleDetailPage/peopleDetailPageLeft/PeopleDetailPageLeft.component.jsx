@@ -7,7 +7,6 @@ const PeopleDetailPageLeft = props => {
   // need to get dead date if person has passed away
 
   const detailLeftItemGenerator = (header, content) => {
-    console.log("greeting!", content)
     if (content && content.slice(0, 8) === "https://") {
       return (
         <div className="people-detail-left-info-item">

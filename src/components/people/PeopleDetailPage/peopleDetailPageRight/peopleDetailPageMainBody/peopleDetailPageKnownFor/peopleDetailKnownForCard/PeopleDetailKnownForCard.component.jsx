@@ -4,8 +4,6 @@ import { useHistory } from "react-router-dom"
 import { IoIosImages } from "react-icons/io"
 
 const PeopleDetailKnownForCard = props => {
-  console.log("YA HOOOO", props)
-
   const history = useHistory()
 
   const navigateToMovieDetail = () => {
@@ -33,7 +31,6 @@ const PeopleDetailKnownForCard = props => {
         />
       ) : (
         <div className="known-for-credits-image">
-          {console.log("THIS HAS NO IMAGE", props)}
           <IoIosImages />
         </div>
       )}

@@ -7,9 +7,8 @@ const ActorCard = props => {
   // Navigate to person detail
   let history = useHistory()
   const navigateToPersonDetail = () => {
-    console.log("AC", props)
     let personUrl = props.id + "-" + props.name.replace(/[\W]/g, "-")
-    console.log(personUrl)
+
     history.push(`/people/${personUrl}`)
   }
 

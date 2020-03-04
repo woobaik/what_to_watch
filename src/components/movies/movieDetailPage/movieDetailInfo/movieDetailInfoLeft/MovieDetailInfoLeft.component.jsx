@@ -6,8 +6,6 @@ import ActorCard from "../../../../commonComponent/actorCard/ActorCard.component
 import HorizontailDivider from "../../../../layouts/divider/HorizontalDivider.component"
 
 const MovieDetailInfoLeft = props => {
-  console.log("PROPS AT CAST ", props)
-
   return (
     <div className="movieDetailInfoLeft">
       <div className="top-billed-cast">
