@@ -4,7 +4,8 @@ import { connect } from "react-redux"
 
 import {
   fetchPersonDetail,
-  fetchPersonCredit
+  fetchPersonCredit,
+  cleanUpPersonDetail
 } from "../../../redux/peopleRedux/peopleActions"
 import { css } from "@emotion/core"
 
@@ -26,6 +27,10 @@ const PeopleDetailPage = props => {
   useEffect(() => {
     props.fetchPersonDetail()
     props.fetchPesonCredits()
+
+    return () => {
+      props.cleanUpPerson()
+    }
   }, [])
 
   if (props.loading) {
@@ -66,7 +71,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
     fetchPersonDetail: () => dispatch(fetchPersonDetail(personId)),
-    fetchPesonCredits: () => dispatch(fetchPersonCredit(personId))
+    fetchPesonCredits: () => dispatch(fetchPersonCredit(personId)),
+    cleanUpPerson: () => dispatch(cleanUpPersonDetail())
   }
 }
 

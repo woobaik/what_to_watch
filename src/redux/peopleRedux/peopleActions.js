@@ -3,7 +3,8 @@ import {
   FETCH_PERSON_ERROR,
   FETCH_PERSON_REQUEST,
   FETCH_PEOPLE_LIST_SUCCESS,
-  FETCH_PERSON_CREDITS
+  FETCH_PERSON_CREDITS,
+  CLEAN_UP_PERSON_DETAIL
 } from "./peopleActionTypes"
 import axios from "axios"
 
@@ -38,6 +39,12 @@ const fectPeopleListSuccess = list => {
   return {
     type: FETCH_PEOPLE_LIST_SUCCESS,
     payload: list
+  }
+}
+
+export const cleanUpPersonDetail = () => {
+  return {
+    type: CLEAN_UP_PERSON_DETAIL
   }
 }
 

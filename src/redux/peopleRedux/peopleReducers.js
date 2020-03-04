@@ -3,7 +3,8 @@ import {
   FETCH_PERSON_DETAIL_SUCCESS,
   FETCH_PERSON_ERROR,
   FETCH_PERSON_REQUEST,
-  FETCH_PERSON_CREDITS
+  FETCH_PERSON_CREDITS,
+  CLEAN_UP_PERSON_DETAIL
 } from "./peopleActionTypes"
 
 const initialState = {
@@ -47,6 +48,13 @@ const PeopleReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         personCredit: action.payload
+      }
+
+    case CLEAN_UP_PERSON_DETAIL:
+      return {
+        ...state,
+        loading: false,
+        person: []
       }
     default:
       return { ...state }
