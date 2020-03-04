@@ -30,6 +30,7 @@ const override = css`
 `
 
 const MovieDetailPage = props => {
+  console.log("Movie Detail", props)
   useEffect(() => {
     props.fetchVideoeData()
     props.fetchCastData()

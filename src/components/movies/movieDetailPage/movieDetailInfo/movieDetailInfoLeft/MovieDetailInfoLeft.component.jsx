@@ -4,6 +4,7 @@ import "./MovieDetailInfoLeft.styles.scss"
 import { connect } from "react-redux"
 import ActorCard from "../../../../commonComponent/actorCard/ActorCard.component"
 import HorizontailDivider from "../../../../layouts/divider/HorizontalDivider.component"
+import MovieDetailVideo from "../../movieDetailVideo/MovieDetailVideo.component"
 
 const MovieDetailInfoLeft = props => {
   return (
@@ -28,9 +29,11 @@ const MovieDetailInfoLeft = props => {
             : "Loading..."}
         </div>
         <p className="full-cast-link">Full Cast & Crew</p>
-        <HorizontailDivider />
       </div>
-      <div className="media-container"></div>
+      <HorizontailDivider />
+      <div className="media-container">
+        <MovieDetailVideo />
+      </div>
     </div>
   )
 }
