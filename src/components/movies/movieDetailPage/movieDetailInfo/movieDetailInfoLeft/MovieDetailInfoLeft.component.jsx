@@ -32,6 +32,7 @@ const MovieDetailInfoLeft = props => {
       </div>
       <HorizontailDivider />
       <div className="media-container">
+        <div className="section-title">Video</div>
         <MovieDetailVideo />
       </div>
     </div>

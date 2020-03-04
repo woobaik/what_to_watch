@@ -1,21 +1,24 @@
 .movieDetailInfoLeft {
-    
-    .section-title {
-        font-weight: bold;
-        font-size: 2rem;
-    }
-    .top-billed-cast {
-        margin: 1rem 2rem;
-    }
+  .section-title {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+  .top-billed-cast {
+    margin: 1rem 2rem;
+  }
 
-    .actor-card-container {
-        display: flex;
-        margin-bottom: 2rem;
-    }
+  .actor-card-container {
+    display: flex;
+    margin-bottom: 2rem;
+  }
 
-    .full-cast-link {
-        font-size: 1.5rem;
-        color: #1b8a6b;
-        margin: 0 2rem;
-    }
+  .full-cast-link {
+    font-size: 1.5rem;
+    color: #1b8a6b;
+    margin: 0 2rem;
+  }
+
+  .media-container {
+    margin: 1rem 2rem 0 2rem;
+  }
 }

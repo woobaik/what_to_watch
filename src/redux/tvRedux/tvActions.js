@@ -4,7 +4,8 @@ import {
   FETCH_TV_REQUEST,
   FETCH_TV_LIST_SUCCESS,
   FETCH_TV_SUCCESS,
-  FETCH_TV_ERROR
+  FETCH_TV_ERROR,
+  FETCH_TV_VIDEOS_SUCCESS
 } from "./tvActionTypes"
 import axios from "axios"
 
@@ -46,6 +47,13 @@ const fetchTvCreditSuccess = credits => {
   return {
     type: FETCH_TV_CREDIT,
     payload: credits
+  }
+}
+
+const fetchTvVideosSuccess = tvList => {
+  return {
+    type: FETCH_TV_VIDEOS_SUCCESS,
+    payload: tvList
   }
 }
 
@@ -113,7 +121,25 @@ export const fetchTVcredit = tvId => {
       })
       .catch(error => {
         console.log(error)
-        dispatch(fetchTvError("FETCHTVCREDIT ERROR", error))
+        dispatch(fetchTvError(error))
+      })
+  }
+}
+
+export const fetchTvVideos = tvId => {
+  return dispatch => {
+    dispatch(fetchTvRequest())
+    axios
+      .get(
+        `https://api.themoviedb.org/3/tv/${tvId}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US
+    `
+      )
+      .then(response => {
+        console.log(response)
+        dispatch(fetchTvVideosSuccess(response.data))
+      })
+      .catch(error => {
+        dispatch(fetchTvError(error))
       })
   }
 }

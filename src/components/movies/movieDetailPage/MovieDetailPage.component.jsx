@@ -6,12 +6,15 @@ import {
   fetchMovie,
   fetchCast,
   fetchMovieKeywords,
-  cleanUpMovie
+  cleanUpMovie,
+  fetchMovieVideo
 } from "../../../redux/movieRedux/movieActions"
 import {
   fetchTvData,
   fechTvKeyWords,
-  fetchTVcredit
+  fetchTVcredit,
+  fetchTvList,
+  fetchTvVideos
 } from "../../../redux/tvRedux/tvActions"
 import { css } from "@emotion/core"
 
@@ -35,6 +38,7 @@ const MovieDetailPage = props => {
     props.fetchVideoeData()
     props.fetchCastData()
     props.fetchVideoKeywords()
+    props.fetchVideoMedia()
     return () => {
       props.cleanUpMovie()
     }
@@ -95,9 +99,11 @@ const MovieDetailPage = props => {
 
 const mapStateToProps = (state, ownProps) => {
   let loadingValue = undefined
-
+  let mediaData = undefined
+  console.log("BABOBABO", state)
   if (ownProps.match.url.slice(0, 3) === "/tv") {
     loadingValue = state.tvs.loading
+    mediaData = state.tvs.videos.results
   } else {
     loadingValue = state.movies.loading
   }
@@ -106,7 +112,8 @@ const mapStateToProps = (state, ownProps) => {
     movie: state.movies.movie,
     cast: state.casts,
     tv: state.tvs.tv,
-    loading: loadingValue
+    loading: loadingValue,
+    media: mediaData
   }
 }
 
@@ -126,6 +133,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       cleanUpMovie: () => {
         return dispatch(cleanUpMovie())
+      },
+      fetchVideoMedia: () => {
+        return dispatch(fetchTvVideos(movieId))
       }
     }
   }
@@ -141,6 +151,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     cleanUpMovie: () => {
       return dispatch(cleanUpMovie())
+    },
+
+    fetchVideoMedia: () => {
+      return dispatch(fetchMovieVideo(movieId))
     }
   }
 }
