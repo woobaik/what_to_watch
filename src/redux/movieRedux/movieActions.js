@@ -163,7 +163,7 @@ export const fetchMovieRecommendation = movieId => {
         `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
       )
       .then(response => {
-        dispatch(fetchMovieRecommationSuccess(movieId))
+        dispatch(fetchMovieRecommationSuccess(response.data))
       })
       .catch(error => {
         dispatch(fetchMovieError(error))

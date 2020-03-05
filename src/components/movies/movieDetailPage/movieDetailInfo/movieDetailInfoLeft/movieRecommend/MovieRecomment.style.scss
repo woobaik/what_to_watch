@@ -1,0 +1,24 @@
+.Movie-recommend {
+  .Movie-recommend-title {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .carousel-container {
+    background-color: wheat;
+    text-align: center;
+    padding-bottom: 4rem;
+
+    .react-multi-carousel-dot-list {
+      bottom: 27px;
+    }
+  }
+
+  .carousel-items {
+    margin-top: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+}
