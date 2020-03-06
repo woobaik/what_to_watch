@@ -12,6 +12,7 @@ import {
 
 import ISO6391 from "iso-639-1"
 
+// month date year format
 const stringifyReleaseDate = release_date => {
   if (!release_date) {
     return "FETCHING..."
@@ -30,6 +31,7 @@ const stringifyReleaseDate = release_date => {
   return `${month} ${date}, ${year}`
 }
 
+// API gives number that is based on number
 const runtimeCalculator = runtime => {
   if (!runtime) {
     return "FETCHING..."
@@ -38,10 +40,13 @@ const runtimeCalculator = runtime => {
   let mins = runtime % 60
   if (runtime % 60 === 0) {
     return `${hours}h`
+  } else if (runtime < 60) {
+    return `${mins}m`
   }
   return `${hours}h ${mins}m`
 }
 
+//I had to repeat my code so much, so I created a helper function
 const rightInfoItem = (title, information) => {
   return (
     <div className="right-info-item">
@@ -96,11 +101,13 @@ const MovieDetailInfoRight = ({ videoInfo, videoKeywords }) => {
             videoInfo.networks.length > 0 ? (
               videoInfo.networks.map(network => {
                 return (
-                  <img
-                    key={network.id}
-                    src={`https://image.tmdb.org/t/p/h30${network.logo_path}`}
-                    alt={network.name}
-                  />
+                  <div className="network-title">
+                    <img
+                      key={network.id}
+                      src={`https://image.tmdb.org/t/p/h30${network.logo_path}`}
+                      alt={network.name}
+                    />
+                  </div>
                 )
               })
             ) : (
@@ -179,6 +186,7 @@ const MovieDetailInfoRight = ({ videoInfo, videoKeywords }) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  console.log("LETS SEE STATE", state)
   if (ownProps.match.url.slice(0, 3) === "/tv") {
     return {
       videoInfo: state.tvs.tv,

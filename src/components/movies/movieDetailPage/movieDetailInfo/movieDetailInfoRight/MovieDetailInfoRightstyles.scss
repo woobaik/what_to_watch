@@ -1,50 +1,43 @@
 .MovieDetailInfoRight {
-    text-align: left;
-    margin-left: 2rem;
-    padding-bottom: 5rem;
+  text-align: left;
+  margin-left: 2rem;
+  padding-bottom: 5rem;
 
+  .social-icons {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
 
+  .social-icons > * {
+    margin: 0 0.2rem;
+  }
 
-    .social-icons {
-        font-size: 2rem;
-        margin: 1rem 0;
-           
-        
-        
+  .right-info-item {
+    margin-top: 1.5rem;
+    h5 {
+      font-weight: bold;
+      color: rgb(29, 15, 15);
     }
 
-    .social-icons > *  {
-        margin: 0 0.2rem;
+    h6 {
+      color: rgb(5, 3, 3);
     }
 
-    
-    .right-info-item {
-        margin-top: 1.5rem;;
-        h5 {
-            font-weight: bold;
-            color: rgb(29, 15, 15);
-        }
-    
-        h6 {
-            color: rgb(5, 3, 3);
-        }
-    }    
-
-    .button-holder {
-        padding-left: 0;
-
-        .custom-button {
-            padding: 4px 10px;
-            font-size: 0.9rem;
-            margin-right: 0.5rem;
-            margin-top: 0.5rem;
-            border: 1px solid rgb(158, 158, 0);
-            border-radius: 4px;
+    .network-title {
+      padding-bottom: 10px;
     }
+  }
+
+  .button-holder {
+    padding-left: 0;
+
+    .custom-button {
+      padding: 4px 10px;
+      font-size: 0.9rem;
+      margin-right: 0.5rem;
+      margin-top: 0.5rem;
+      border: 1px solid rgb(158, 158, 0);
+      border-radius: 4px;
     }
-    
+  }
 }
-
-    
-
-
