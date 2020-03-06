@@ -6,7 +6,8 @@ import {
   FETCH_TV_ERROR,
   FETCH_TV_LIST_SUCCESS,
   FETCH_TV_VIDEOS_SUCCESS,
-  FETCH_TV_RECOMMENDATIONS_SUCCESS
+  FETCH_TV_RECOMMENDATIONS_SUCCESS,
+  FETCH_TV_EXTERNAL_ID_SUCCESS
 } from "./tvActionTypes"
 
 const initialState = {
@@ -17,7 +18,8 @@ const initialState = {
   tvKeywords: [],
   cast: [],
   media: [],
-  recomm: []
+  recomm: [],
+  externalId: {}
 }
 
 const tvReducer = (state = initialState, action) => {
@@ -77,6 +79,14 @@ const tvReducer = (state = initialState, action) => {
         ...state,
         recomm: action.payload,
         loading: false
+      }
+    }
+
+    case FETCH_TV_EXTERNAL_ID_SUCCESS: {
+      return {
+        ...state,
+        loading: false,
+        externalId: action.payload
       }
     }
     default:

@@ -1,6 +1,7 @@
 import React from "react"
 import "./PeopleCard.style.scss"
 import { withRouter } from "react-router-dom"
+import { MdPerson } from "react-icons/md"
 
 const PeopleCard = props => {
   const personKnownFor = () => {
@@ -30,10 +31,14 @@ const PeopleCard = props => {
   return (
     <div className="People-card" onClick={onClickUrl}>
       <div className="people-card-image">
-        <img
-          src={`https://image.tmdb.org/t/p/w235_and_h235_face${props.profile_path}`}
-          alt={props.name}
-        />
+        {props.profile_path ? (
+          <img
+            src={`https://image.tmdb.org/t/p/w235_and_h235_face${props.profile_path}`}
+            alt={props.name}
+          />
+        ) : (
+          <MdPerson />
+        )}
       </div>
       <div className="people-card-name">{props.name}</div>
       <div className="people-card-credits">{personKnownFor()}</div>

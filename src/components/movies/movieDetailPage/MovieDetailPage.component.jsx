@@ -8,14 +8,16 @@ import {
   fetchMovieKeywords,
   cleanUpMovie,
   fetchMovieVideo,
-  fetchMovieRecommendation
+  fetchMovieRecommendation,
+  fetchMovieExternalId
 } from "../../../redux/movieRedux/movieActions"
 import {
   fetchTvData,
   fechTvKeyWords,
   fetchTVcredit,
   fetchTvVideos,
-  fetchTvRecommendation
+  fetchTvRecommendation,
+  fetchTvExterNalId
 } from "../../../redux/tvRedux/tvActions"
 import { css } from "@emotion/core"
 
@@ -41,6 +43,7 @@ const MovieDetailPage = props => {
     props.fetchVideoKeywords()
     props.fetchVideoMedia()
     props.fetchRecommendation()
+    props.fetchExternalId()
     return () => {
       props.cleanUpMovie()
     }
@@ -103,15 +106,18 @@ const mapStateToProps = (state, ownProps) => {
   let loadingValue = undefined
   let mediaData = undefined
   let recom = undefined
+  let externalId = undefined
   console.log("MAP STATE TO PROPS", state)
   if (ownProps.match.url.slice(0, 3) === "/tv") {
     loadingValue = state.tvs.loading
     mediaData = state.tvs.media.results
     recom = state.tvs.recomm.results
+    externalId = state.tvs.externalId
   } else {
     loadingValue = state.movies.loading
     mediaData = state.movies.media.results
     recom = state.movies.recomm.results
+    externalId = state.movies.externalId
   }
 
   return {
@@ -120,7 +126,8 @@ const mapStateToProps = (state, ownProps) => {
     tv: state.tvs.tv,
     loading: loadingValue,
     media: mediaData,
-    recom: recom
+    recom: recom,
+    externalId: externalId
   }
 }
 
@@ -146,6 +153,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       fetchRecommendation: () => {
         return dispatch(fetchTvRecommendation(movieId))
+      },
+
+      fetchExternalId: () => {
+        return dispatch(fetchTvExterNalId(movieId))
       }
     }
   }
@@ -169,6 +180,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
     fetchRecommendation: () => {
       return dispatch(fetchMovieRecommendation(movieId))
+    },
+
+    fetchExternalId: () => {
+      return dispatch(fetchMovieExternalId(movieId))
     }
   }
 }

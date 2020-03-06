@@ -6,7 +6,8 @@ import {
   FETCH_TV_SUCCESS,
   FETCH_TV_ERROR,
   FETCH_TV_VIDEOS_SUCCESS,
-  FETCH_TV_RECOMMENDATIONS_SUCCESS
+  FETCH_TV_RECOMMENDATIONS_SUCCESS,
+  FETCH_TV_EXTERNAL_ID_SUCCESS
 } from "./tvActionTypes"
 import axios from "axios"
 
@@ -62,6 +63,13 @@ const fetchTvRecommendationSuccess = recom => {
   return {
     type: FETCH_TV_RECOMMENDATIONS_SUCCESS,
     payload: recom
+  }
+}
+
+const fetchTvExternalIdSuccess = ids => {
+  return {
+    type: FETCH_TV_EXTERNAL_ID_SUCCESS,
+    payload: ids
   }
 }
 
@@ -165,6 +173,23 @@ export const fetchTvRecommendation = tvId => {
       })
       .catch(error => {
         dispatch(fetchTvError(error))
+      })
+  }
+}
+
+export const fetchTvExterNalId = tvId => {
+  return dispatch => {
+    dispatch(fetchTvRequest())
+    axios
+      .get(
+        `
+    https://api.themoviedb.org/3/tv/${tvId}/external_ids?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
+      )
+      .then(response => {
+        dispatch(fetchTvExternalIdSuccess(response.data))
+      })
+      .catch(error => {
+        dispatch(FETCH_TV_ERROR(error))
       })
   }
 }

@@ -7,7 +7,8 @@ import {
   FETCH_MOVIE_SUCCESS,
   FETCH_MOVIE_ERROR,
   FETCH_MOVIE_LIST_SUCCESS,
-  FETCH_MOVIE_RECOMMENDATION_SUCCESS
+  FETCH_MOVIE_RECOMMENDATION_SUCCESS,
+  FETCH_MOVIE_EXTERNAL_ID_SUCCESS
 } from "./movieActionTypes"
 import axios from "axios"
 
@@ -72,6 +73,12 @@ const fetchMovieRecommationSuccess = recomm => {
   }
 }
 
+const fetchMovieExternalSuccess = ids => {
+  return {
+    type: FETCH_MOVIE_EXTERNAL_ID_SUCCESS,
+    payload: ids
+  }
+}
 export const fetchMovieList = (query = "popular") => {
   return function(dispatch) {
     dispatch(fetchMovieRequest())
@@ -164,6 +171,22 @@ export const fetchMovieRecommendation = movieId => {
       )
       .then(response => {
         dispatch(fetchMovieRecommationSuccess(response.data))
+      })
+      .catch(error => {
+        dispatch(fetchMovieError(error))
+      })
+  }
+}
+
+export const fetchMovieExternalId = movieId => {
+  return dispatch => {
+    dispatch(fetchMovieRequest())
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/${movieId}/external_ids?api_key=${process.env.REACT_APP_API_KEY}`
+      )
+      .then(response => {
+        dispatch(fetchMovieExternalSuccess(response.data))
       })
       .catch(error => {
         dispatch(fetchMovieError(error))
