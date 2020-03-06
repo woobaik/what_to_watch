@@ -32,20 +32,26 @@ const MovieRecommend = props => {
     <div className="Movie-recommend">
       <div className="Movie-recommend-title">Movie Recommend</div>
       <Carousel
-        swipeable={false}
-        draggable={false}
-        showDots={true}
-        responsive={responsive}
-        infinite={true}
-        autoPlay={props.deviceType !== "mobile" ? true : false}
-        autoPlaySpeed={100000}
-        keyBoardControl={true}
-        customTransition="all .5"
-        transitionDuration={500}
+        additionalTransfrom={0}
+        arrows
+        autoPlaySpeed={3000}
+        centerMode={false}
+        className=""
         containerClass="carousel-container"
-        removeArrowOnDeviceType={["tablet", "mobile"]}
-        dotListClass="custom-dot-list-style"
-        itemClass="carousel-items">
+        dotListClass="react-multi-carousel-dot-list"
+        draggable
+        focusOnSelect={false}
+        infinite
+        itemClass=""
+        keyBoardControl
+        minimumTouchDrag={80}
+        renderButtonGroupOutside={false}
+        renderDotsOutside={false}
+        responsive={responsive}
+        showDots={true}
+        sliderClass=""
+        slidesToSlide={1}
+        swipeable>
         {props.recommendedVideos.results &&
         props.recommendedVideos.results.length > 0 ? (
           props.recommendedVideos.results.map(result => {
@@ -59,7 +65,7 @@ const MovieRecommend = props => {
             )
           })
         ) : (
-          <div>hello</div>
+          <div></div>
         )}
       </Carousel>
     </div>

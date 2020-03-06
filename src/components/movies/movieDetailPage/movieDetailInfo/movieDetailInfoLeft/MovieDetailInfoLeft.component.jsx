@@ -43,17 +43,15 @@ const MovieDetailInfoLeft = props => {
         </div>
         <p className="full-cast-link">Full Cast & Crew</p>
       </div>
+      <HorizontailDivider />
       {site && key ? (
         <div className="media-container">
-          <HorizontailDivider />
           <div className="section-title">Video</div>
           <MovieDetailVideo site={site} vId={key} />
         </div>
       ) : null}
-      <HorizontailDivider />
 
       <MovieRecommend />
-      <HorizontalDivider />
     </div>
   )
 }

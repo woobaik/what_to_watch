@@ -1,18 +1,30 @@
 .Movie-recommend {
+  background-color: #d6f7f5;
+
   .Movie-recommend-title {
     font-weight: bold;
     font-size: 2rem;
     margin-top: 2rem;
     padding-bottom: 2rem;
+    padding-left: 3rem;
+    padding-top: 2rem;
   }
 
   .carousel-container {
-    background-color: wheat;
+    background-color: #d6f7f5;
     text-align: center;
     padding-bottom: 4rem;
 
     .react-multi-carousel-dot-list {
       bottom: 27px;
+    }
+
+    .react-multiple-carousel__arrow {
+      background: red;
+    }
+
+    .react-multiple-carousel__arrow:hover {
+      background: pink;
     }
   }
 
