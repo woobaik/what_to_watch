@@ -78,7 +78,8 @@ const MovieDetailInfoRight = ({ videoInfo, videoKeywords, externalId }) => {
           <a
             href={`https://www.facebook.com/${facebook_id}`}
             id="facebook"
-            target="_blank">
+            target="_blank"
+            rel="noopener noreferrer">
             <FaFacebookSquare />
           </a>
         ) : null}
@@ -87,7 +88,8 @@ const MovieDetailInfoRight = ({ videoInfo, videoKeywords, externalId }) => {
           <a
             href={`https://twitter.com/${twitter_id}`}
             id="twitter"
-            target="_blank">
+            target="_blank"
+            rel="noopener noreferrer">
             <FaTwitterSquare />
           </a>
         ) : null}
@@ -96,13 +98,17 @@ const MovieDetailInfoRight = ({ videoInfo, videoKeywords, externalId }) => {
           <a
             href={`https://instagram.com/${instagram_id}`}
             id="instagram"
-            target="_blank">
+            target="_blank"
+            rel="noopener noreferrer">
             <FaInstagram />
           </a>
         ) : null}
 
         {videoInfo.homepage ? (
-          <a href={videoInfo.homepage} target="_blank">
+          <a
+            href={videoInfo.homepage}
+            target="_blank"
+            rel="noopener noreferrer">
             <FaLink />
           </a>
         ) : null}
@@ -161,7 +167,7 @@ const MovieDetailInfoRight = ({ videoInfo, videoKeywords, externalId }) => {
         <h6>
           {videoInfo.episode_run_time
             ? runtimeCalculator(videoInfo.episode_run_time[0])
-            : runtimeCalculator(videoInfo.runtime)}{" "}
+            : runtimeCalculator(videoInfo.runtime)}
         </h6>
       </div>
 

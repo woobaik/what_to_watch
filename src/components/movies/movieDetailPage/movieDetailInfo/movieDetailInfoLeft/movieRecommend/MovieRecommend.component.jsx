@@ -28,6 +28,18 @@ const responsive = {
 const MovieRecommend = props => {
   console.log("MovieRECOMMEND", props.recommendedVideos.results)
 
+  const carouselNavigation = (type, id, name) => {
+    let urlSafeTitle = name
+      .toLowerCase()
+      .replace(/[&#,+()/$~%.'":*?<>{}]/g, "")
+      .replace(/\s/g, "-")
+    if (type === "tv") {
+      props.history.push(`/tv/${id}-${urlSafeTitle}`)
+    } else {
+      props.history.push(`/movie/${id}-${urlSafeTitle}`)
+    }
+  }
+
   return (
     <div className="Movie-recommend">
       <div className="Movie-recommend-title">Movie Recommend</div>
@@ -56,7 +68,16 @@ const MovieRecommend = props => {
         props.recommendedVideos.results.length > 0 ? (
           props.recommendedVideos.results.map(result => {
             return (
-              <div>
+              <div
+                className="movie-detail-carousel-card"
+                key={result.id}
+                onClick={() =>
+                  carouselNavigation(
+                    result.name ? "tv" : "movie",
+                    result.id,
+                    result.name ? result.name : result.title
+                  )
+                }>
                 <img
                   src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${result.poster_path}`}
                 />

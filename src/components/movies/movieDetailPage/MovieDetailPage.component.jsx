@@ -48,7 +48,7 @@ const MovieDetailPage = props => {
       props.cleanUpMovie()
     }
     // eslint-disable-next-line
-  }, [])
+  }, [props.match.url])
 
   // decide whether video data is movie or tv show
   let videoData = {}

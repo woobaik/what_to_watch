@@ -1,5 +1,6 @@
 .Movie-recommend {
   background-color: #d6f7f5;
+  width: 100%;
 
   .Movie-recommend-title {
     font-weight: bold;
@@ -35,5 +36,10 @@
     margin-top: 2rem;
     border-radius: 10px;
     overflow: hidden;
+  }
+
+  .movie-detail-carousel-card {
+    cursor: pointer;
+    width: 186px;
   }
 }
