@@ -56,7 +56,7 @@ const rightInfoItem = (title, information) => {
   )
 }
 
-const MovieDetailInfoRight = ({ videoInfo, videoKeywords }) => {
+const MovieDetailInfoRight = ({ videoInfo, videoKeywords, externalId }) => {
   // API Provides keywords in diffrent way depending on TV or Movie
   let keywordsOrResults = ""
   if (videoInfo.name) {
@@ -65,15 +65,47 @@ const MovieDetailInfoRight = ({ videoInfo, videoKeywords }) => {
     keywordsOrResults = "keywords"
   }
 
+  let { facebook_id, instagram_id, twitter_id } = externalId
+  console.log("EXTERNAL ID", externalId)
+  console.log("videoInfo", videoInfo)
   //for tv show needs to have   Network,  certification original  language,     type, Runtime    , genre, keywords,
   //for movie, needs to have    Releasing info,         Original Language,       Runtime,    budget,  Revenue,  Genres Keywords,
   return (
     <div className="MovieDetailInfoRight">
       <div className="social-icons">
-        <FaFacebookSquare />
-        <FaTwitterSquare />
-        <FaInstagram />
-        <FaLink />
+        {/* facebook 1777f2 */}
+        {facebook_id ? (
+          <a
+            href={`https://www.facebook.com/${facebook_id}`}
+            id="facebook"
+            target="_blank">
+            <FaFacebookSquare />
+          </a>
+        ) : null}
+
+        {twitter_id ? (
+          <a
+            href={`https://twitter.com/${twitter_id}`}
+            id="twitter"
+            target="_blank">
+            <FaTwitterSquare />
+          </a>
+        ) : null}
+
+        {instagram_id ? (
+          <a
+            href={`https://instagram.com/${instagram_id}`}
+            id="instagram"
+            target="_blank">
+            <FaInstagram />
+          </a>
+        ) : null}
+
+        {videoInfo.homepage ? (
+          <a href={videoInfo.homepage} target="_blank">
+            <FaLink />
+          </a>
+        ) : null}
       </div>
 
       <div className="right-info-items">
@@ -190,12 +222,14 @@ const mapStateToProps = (state, ownProps) => {
   if (ownProps.match.url.slice(0, 3) === "/tv") {
     return {
       videoInfo: state.tvs.tv,
-      videoKeywords: state.tvs.tvKeywords
+      videoKeywords: state.tvs.tvKeywords,
+      externalId: state.tvs.externalId
     }
   }
   return {
     videoInfo: state.movies.movie,
-    videoKeywords: state.movies.keywords
+    videoKeywords: state.movies.keywords,
+    externalId: state.movies.externalId
   }
 }
 export default withRouter(connect(mapStateToProps)(MovieDetailInfoRight))

@@ -6,6 +6,28 @@
   .social-icons {
     font-size: 2rem;
     margin: 1rem 0;
+
+    a {
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      color: black;
+    }
+
+    #facebook {
+      color: #1777f2;
+    }
+
+    #twitter {
+      color: #38a1f3;
+    }
+
+    #instagram {
+      color: #dd2a7b;
+    }
+
+    svg:hover {
+      color: gray;
+    }
   }
 
   .social-icons > * {
