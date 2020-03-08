@@ -40,6 +40,18 @@
 
   .movie-detail-carousel-card {
     cursor: pointer;
-    width: 186px;
+    width: 185px;
+
+    .no-image {
+      background-color: rgb(174, 226, 174);
+      width: 185px;
+      height: 278px;
+      font-size: 8rem;
+      padding-top: 2rem;
+    }
   }
+}
+
+.react-multi-carousel-item {
+  padding: 10px;
 }

@@ -13,7 +13,7 @@ const peopleDetailPageFilmography = props => {
       ) : null}
 
       {crew && crew.length > 0 ? (
-        <PhilmographyTable title="DIRECTOR" roles={crew} />
+        <PhilmographyTable title="CREW" roles={crew} />
       ) : null}
     </div>
   )
@@ -22,8 +22,10 @@ const peopleDetailPageFilmography = props => {
 const mapStateToProps = state => {
   console.log("MJ", state)
   if (
-    state.person.personCredit.cast &&
-    state.person.personCredit.cast.length > 0
+    (state.person.personCredit.cast &&
+      state.person.personCredit.cast.length > 0) ||
+    (state.person.personCredit.crew &&
+      state.person.personCredit.crew.length > 0)
   ) {
     return {
       cast: state.person.personCredit.cast.sort((a, b) => {
@@ -33,7 +35,13 @@ const mapStateToProps = state => {
         bCastDate = bCastDate || "2125-1-1"
         return Date.parse(bCastDate) - Date.parse(aCastDate)
       }),
-      crew: state.person.personCredit.crew
+      crew: state.person.personCredit.crew.sort((a, b) => {
+        let aCastDate = a.release_date ? a.release_date : a.first_air_date
+        let bCastDate = b.release_date ? b.release_date : b.first_air_date
+        aCastDate = aCastDate || "2125-1-1"
+        bCastDate = bCastDate || "2125-1-1"
+        return Date.parse(bCastDate) - Date.parse(aCastDate)
+      })
     }
   }
 }

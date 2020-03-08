@@ -1,5 +1,5 @@
 .People-Detail-Filmography-Table {
-  width: 80%;
+  width: 500px;
   border: 1px solid lightgray;
   border-collapse: collapse;
   -webkit-box-shadow: 11px 12px 21px -5px rgba(106, 224, 38, 0.49);
@@ -24,6 +24,12 @@
     .title {
       font-size: 1.1rem;
       font-weight: bold;
+      cursor: pointer;
+      transition: color 0.1s ease-in-out;
+    }
+
+    .title:hover {
+      color: lightslategrey;
     }
     .as {
       color: lightslategrey;

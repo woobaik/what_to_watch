@@ -4,6 +4,8 @@ import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
 import "./MovieRecomment.style.scss"
 
+import { FaRegFileImage } from "react-icons/fa"
+
 import { connect } from "react-redux"
 
 const responsive = {
@@ -84,10 +86,17 @@ const MovieRecommend = props => {
                     result.name ? result.name : result.title
                   )
                 }>
-                <img
-                  src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${result.poster_path}`}
-                  alt={result.name ? result.name : result.title}
-                />
+                {result.poster_path ? (
+                  <img
+                    src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${result.poster_path}`}
+                    alt={result.name ? result.name : result.title}
+                  />
+                ) : (
+                  <div className="no-image">
+                    <FaRegFileImage />
+                  </div>
+                )}
+
                 <div>{result.name ? result.name : result.title}</div>
               </div>
             )
