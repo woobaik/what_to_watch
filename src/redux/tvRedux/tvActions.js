@@ -151,7 +151,6 @@ export const fetchTvVideos = tvId => {
     `
       )
       .then(response => {
-        console.log(response)
         dispatch(fetchTvVideosSuccess(response.data))
       })
       .catch(error => {
@@ -168,7 +167,6 @@ export const fetchTvRecommendation = tvId => {
         `https://api.themoviedb.org/3/tv/${tvId}/recommendations?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
       )
       .then(response => {
-        console.log("Getting recommendation")
         dispatch(fetchTvRecommendationSuccess(response.data))
       })
       .catch(error => {

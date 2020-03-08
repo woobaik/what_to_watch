@@ -26,8 +26,6 @@ const responsive = {
   }
 }
 const MovieRecommend = props => {
-  console.log("MovieRECOMMEND", props.recommendedVideos.results)
-
   const carouselNavigation = (type, id, name) => {
     let urlSafeTitle = name
       .toLowerCase()
@@ -80,6 +78,7 @@ const MovieRecommend = props => {
                 }>
                 <img
                   src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${result.poster_path}`}
+                  alt={result.name ? result.name : result.title}
                 />
                 <div>{result.name ? result.name : result.title}</div>
               </div>
@@ -94,9 +93,6 @@ const MovieRecommend = props => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log("VIDEO PROOPS", state)
-  console.log("VIDEO PROOPS", ownProps)
-
   if (ownProps.match.url.slice(0, 4) === "/tv/") {
     return {
       recommendedVideos: state.tvs.recomm

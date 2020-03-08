@@ -1,15 +1,13 @@
 import React from "react"
 import "./VideoDetailHeader.styles.scss"
 
-import { FaPlay } from "react-icons/fa"
+import { FaPlay, FaRegFileImage } from "react-icons/fa"
 
 const movieDetailHeaderStyle = poster_path => {
   return {
     backgroundImage: `url(https://image.tmdb.org/t/p/w1400_and_h450_face${poster_path})`
   }
 }
-//// NEED TO GET IMG WHEN THERE IS NO IMAGE FIXX!!
-const movieDetailHeaderImgMissing = () => {}
 
 const MovieDetailHeader = props => {
   //backdrop_path={backdrop_path} title={title} video={video} overview={overview}
@@ -19,10 +17,16 @@ const MovieDetailHeader = props => {
       style={movieDetailHeaderStyle(props.backdrop_path)}>
       <div className="movie-detail-header-summary">
         <div className="movie-detail-header-movie-poster">
-          <img
-            src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${props.poster_path}`}
-            alt="poster"
-          />
+          {props.poster_path ? (
+            <img
+              src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${props.poster_path}`}
+              alt="poster"
+            />
+          ) : (
+            <div className="no-image">
+              <FaRegFileImage />
+            </div>
+          )}
         </div>
         <div className="movie-detail-header-info">
           <div className="movie-detail-header-info-title">

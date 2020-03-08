@@ -36,7 +36,6 @@ const override = css`
 `
 
 const MovieDetailPage = props => {
-  console.log("MovieDetailPage!", props)
   useEffect(() => {
     props.fetchVideoeData()
     props.fetchCastData()
@@ -107,7 +106,7 @@ const mapStateToProps = (state, ownProps) => {
   let mediaData = undefined
   let recom = undefined
   let externalId = undefined
-  console.log("MAP STATE TO PROPS", state)
+
   if (ownProps.match.url.slice(0, 3) === "/tv") {
     loadingValue = state.tvs.loading
     mediaData = state.tvs.media.results

@@ -1,5 +1,82 @@
 .Footer {
-    background-image: linear-gradient(#072025, #65D576);
-    //  
-    height: 450px;
+  background-image: linear-gradient(#053831, #072025);
+  color: white;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+}
+
+.footerTitle {
+  font-size: 1.8rem;
+  color: beige;
+  padding-bottom: 1rem;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 300px;
+  margin: 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding-bottom: 2rem;
+  margin-bottom: 3rem;
+  border-radius: 5px;
+}
+.cardTitle {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: rgb(94, 93, 93);
+  border-bottom: 1px solid gray;
+}
+
+.cardChips {
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardBody {
+  color: darkgray;
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.skills {
+  display: flex;
+}
+
+.copyright {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+}
+
+.link {
+  cursor: pointer;
+  margin: 0.1rem;
+  transition: all 0.5s ease;
+}
+
+.link:hover {
+  color: rgb(108, 65, 160);
+  font-size: 1.1rem;
 }

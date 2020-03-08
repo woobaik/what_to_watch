@@ -31,7 +31,8 @@ const PeopleDetailPage = props => {
     return () => {
       props.cleanUpPerson()
     }
-  }, [])
+    // eslint-disable-next-line
+  }, [props.match.url])
 
   if (props.loading) {
     return (

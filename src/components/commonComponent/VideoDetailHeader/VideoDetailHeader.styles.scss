@@ -30,6 +30,14 @@
   padding: 40px;
 
   .movie-detail-header-movie-poster {
+    .no-image {
+      width: 300px;
+      height: 450px;
+      background-color: gray;
+      font-size: 12rem;
+      text-align: center;
+      padding-top: 80px;
+    }
   }
 
   .movie-detail-header-info {

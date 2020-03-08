@@ -6,7 +6,6 @@ import ActorCard from "../../../../commonComponent/actorCard/ActorCard.component
 import HorizontailDivider from "../../../../layouts/divider/HorizontalDivider.component"
 import MovieDetailVideo from "../../movieDetailVideo/MovieDetailVideo.component"
 import MovieRecommend from "./movieRecommend/MovieRecommend.component"
-import HorizontalDivider from "../../../../layouts/divider/HorizontalDivider.component"
 
 const MovieDetailInfoLeft = props => {
   let site,

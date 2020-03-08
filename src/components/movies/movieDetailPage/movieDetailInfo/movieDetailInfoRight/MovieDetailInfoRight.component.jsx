@@ -66,8 +66,7 @@ const MovieDetailInfoRight = ({ videoInfo, videoKeywords, externalId }) => {
   }
 
   let { facebook_id, instagram_id, twitter_id } = externalId
-  console.log("EXTERNAL ID", externalId)
-  console.log("videoInfo", videoInfo)
+
   //for tv show needs to have   Network,  certification original  language,     type, Runtime    , genre, keywords,
   //for movie, needs to have    Releasing info,         Original Language,       Runtime,    budget,  Revenue,  Genres Keywords,
   return (
@@ -224,7 +223,6 @@ const MovieDetailInfoRight = ({ videoInfo, videoKeywords, externalId }) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log("LETS SEE STATE", state)
   if (ownProps.match.url.slice(0, 3) === "/tv") {
     return {
       videoInfo: state.tvs.tv,
