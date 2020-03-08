@@ -138,7 +138,7 @@ const MovieDetailInfoRight = ({ videoInfo, videoKeywords, externalId }) => {
             videoInfo.networks.length > 0 ? (
               videoInfo.networks.map(network => {
                 return (
-                  <div className="network-title">
+                  <div className="network-title" key={network.id}>
                     <img
                       key={network.id}
                       src={`https://image.tmdb.org/t/p/h30${network.logo_path}`}

@@ -80,7 +80,8 @@ const footer = () => {
         </div>
       </div>
       <div className="copyright">
-        <MdCopyright /> <div>{"  "} Joungwoo Baik. All Rights Reserved.</div>
+        {/* fix this later */}
+        <MdCopyright /> <div>{"  "} J. All Rights Reserved.</div>
       </div>
     </div>
   )

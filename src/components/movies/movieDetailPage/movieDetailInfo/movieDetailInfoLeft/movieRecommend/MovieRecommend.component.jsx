@@ -38,6 +38,14 @@ const MovieRecommend = props => {
     }
   }
 
+  console.log("Eminem", props)
+
+  if (
+    props.recommendedVideos.results &&
+    props.recommendedVideos.results.length === 0
+  ) {
+    return null
+  }
   return (
     <div className="Movie-recommend">
       <div className="Movie-recommend-title">Movie Recommend</div>
