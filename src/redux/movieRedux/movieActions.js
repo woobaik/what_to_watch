@@ -79,14 +79,14 @@ const fetchMovieExternalSuccess = ids => {
     payload: ids
   }
 }
-export const fetchMovieList = (query = "popular") => {
+export const fetchMovieList = (query = "popular", page) => {
   return function(dispatch) {
     dispatch(fetchMovieRequest())
 
     // now_playing, popular, top_rated, upcoming
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${query}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
+        `https://api.themoviedb.org/3/movie/${query}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${page}`
       )
       .then(response => {
         const movieList = response.data.results

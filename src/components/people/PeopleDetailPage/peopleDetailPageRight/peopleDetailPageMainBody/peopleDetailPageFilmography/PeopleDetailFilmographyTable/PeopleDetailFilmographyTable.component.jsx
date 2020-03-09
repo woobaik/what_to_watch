@@ -22,6 +22,7 @@ const PeopleDetailFilmographyTable = props => {
   if (title === "MOVIE AND TV SHOW") {
     return (
       <Fragment>
+        <div className="Video-Title">{title}</div>
         <table className="People-Detail-Filmography-Table">
           <thead>
             <tr>
@@ -68,6 +69,7 @@ const PeopleDetailFilmographyTable = props => {
   } else if (title === "CREW") {
     return (
       <Fragment>
+        <div className="Video-Title">{title}</div>
         <table className="People-Detail-Filmography-Table">
           <thead>
             <tr>

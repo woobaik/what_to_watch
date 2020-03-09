@@ -9,7 +9,6 @@ import SyncLoader from "react-spinners/SyncLoader"
 import { fetchMovieList } from "../../../redux/movieRedux/movieActions"
 import { fetchTvList } from "../../../redux/tvRedux/tvActions"
 
-
 const override = css`
   display: block;
   margin: 0 auto;
@@ -52,7 +51,6 @@ const titleMaker = query => {
 }
 
 const MovieCategoryDetail = props => {
-
   useEffect(() => {
     props.fetchVideoList()
     // eslint-disable-next-line
@@ -108,7 +106,6 @@ const MovieCategoryDetail = props => {
 
 const mapStateToProps = (state, ownProps) => {
   if (ownProps.match.url.slice(0, 4) === "/tvs") {
-
     return {
       videoList: state.tvs.tvList,
       loading: state.tvs.loading
@@ -130,11 +127,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       fetchVideoList: () => dispatch(fetchTvList(query))
     }
   }
-  // if (ownProps.match.url.slice(0,3)) {
 
-  // }
   return {
-    fetchVideoList: () => dispatch(fetchMovieList(query))
+    fetchVideoList: () => dispatch(fetchMovieList(query, 2))
   }
 }
 
