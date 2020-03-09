@@ -1,16 +1,17 @@
 .App {
-      font-family: 'Source Sans Pro', sans-serif;
-      box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
+  box-sizing: border-box;
+  background-color: rgb(247, 255, 249);
 }
 
 li {
-      list-style: none;
+  list-style: none;
 }
 
 a {
-      text-decoration: none;
+  text-decoration: none;
 }
 
 a:hover {
-      text-decoration: none !important;
+  text-decoration: none !important;
 }

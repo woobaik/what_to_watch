@@ -19,7 +19,7 @@ const MovieCard = props => {
     }
   }
   return (
-    <Card className="Card" onClick={navigateToMovieDetail}>
+    <div className="Card" onClick={navigateToMovieDetail}>
       <div className="movieCard">
         <Card.Img
           varient="top"
@@ -30,7 +30,7 @@ const MovieCard = props => {
           {props.video.title ? props.video.title : props.video.name}
         </div>
       </div>
-    </Card>
+    </div>
   )
 }
 
