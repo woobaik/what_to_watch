@@ -79,7 +79,7 @@ const fetchMovieExternalSuccess = ids => {
     payload: ids
   }
 }
-export const fetchMovieList = (query = "popular", page) => {
+export const fetchMovieList = (query = "popular", page = 0) => {
   return function(dispatch) {
     dispatch(fetchMovieRequest())
 
@@ -92,9 +92,11 @@ export const fetchMovieList = (query = "popular", page) => {
       )
       .then(response => {
         const movieList = response.data.results
+        console.log("MOVIE LIST", movieList)
         dispatch(fetchMovieListSuccess(movieList))
       })
       .catch(error => {
+        console.log("WTF ERROR", error)
         dispatch(fetchMovieError(error))
       })
   }
