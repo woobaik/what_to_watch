@@ -139,12 +139,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   if (ownProps.match.url.slice(0, 4) === "/tvs") {
     return {
-      fetchVideoList: () => dispatch(fetchTvList(query))
+      fetchVideoList: pageNumber => dispatch(fetchTvList(query, pageNumber))
     }
   }
 
   return {
-    fetchVideoList: Pagenumber => dispatch(fetchMovieList(query, Pagenumber))
+    fetchVideoList: pagenumber => dispatch(fetchMovieList(query, pagenumber))
   }
 }
 
