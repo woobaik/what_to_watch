@@ -1,0 +1,57 @@
+.Paginate {
+  color: #222;
+  font-size: 1.3rem;
+  margin: 1rem 0;
+  margin-top: 3rem;
+
+  .pagination {
+    li {
+      box-sizing: border-box;
+      cursor: pointer;
+      text-align: center;
+      color: white;
+      margin: 0 0.5rem;
+      color: #2ecc71;
+      height: 30px;
+      width: 30px;
+    }
+
+    .break-me {
+      color: black;
+    }
+
+    .active {
+      color: white;
+      text-align: center;
+      background-color: #2ecc71;
+      border-radius: 50%;
+    }
+
+    .active:focus {
+      outline-color: #a75000;
+    }
+
+    .previous,
+    .next {
+      width: auto;
+      background-color: #2ecc71;
+      border-radius: 5px;
+      color: white;
+      padding: 0 15px;
+      font-size: 1.1rem;
+      text-align: center;
+      height: 30px;
+      padding-top: 2px;
+    }
+    .previous {
+    }
+
+    .next {
+    }
+
+    .disabled {
+      background-color: darkgray;
+      color: black;
+    }
+  }
+}

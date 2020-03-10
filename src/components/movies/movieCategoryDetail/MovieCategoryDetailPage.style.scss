@@ -3,6 +3,12 @@
   flex-direction: column;
   padding-bottom: 5rem;
   background-color: rgb(247, 255, 249);
+
+  .category-detail-paginate-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .movie-category-detail-title {

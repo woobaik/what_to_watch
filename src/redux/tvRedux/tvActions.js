@@ -73,16 +73,19 @@ const fetchTvExternalIdSuccess = ids => {
   }
 }
 
-export const fetchTvList = (query = "popular") => {
+export const fetchTvList = (query = "popular", page = 1) => {
   return dispatch => {
     dispatch(fetchTvRequest())
     axios
       .get(
-        `https://api.themoviedb.org/3/tv/${query}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1
+        `https://api.themoviedb.org/3/tv/${query}?api_key=${
+          process.env.REACT_APP_API_KEY
+        }&language=en-US&page=${page + 1}
         `
       )
       .then(response => {
         const tvList = response.data.results
+        console.log("ILBE", response.data)
         dispatch(fetchTvListSuccess(tvList))
       })
       .catch(error => {
@@ -100,6 +103,7 @@ export const fetchTvData = query => {
       )
       .then(response => {
         const tv = response.data
+
         dispatch(fetchTvSuccess(tv))
       })
       .catch(error => {

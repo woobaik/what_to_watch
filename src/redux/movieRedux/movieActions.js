@@ -86,7 +86,9 @@ export const fetchMovieList = (query = "popular", page) => {
     // now_playing, popular, top_rated, upcoming
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${query}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${page}`
+        `https://api.themoviedb.org/3/movie/${query}?api_key=${
+          process.env.REACT_APP_API_KEY
+        }&language=en-US&page=${page + 1}`
       )
       .then(response => {
         const movieList = response.data.results

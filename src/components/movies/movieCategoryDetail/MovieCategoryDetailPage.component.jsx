@@ -1,10 +1,11 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { connect } from "react-redux"
 import { css } from "@emotion/core"
 import "./MovieCategoryDetailPage.style.scss"
 import { Container } from "react-bootstrap"
 import MovieCard from "../movieCategoryDetailCard/MovieCategoryDetailCard.component"
 import SyncLoader from "react-spinners/SyncLoader"
+import ReactPaginate from "../../layouts/paginate/Paginate.component"
 
 import { fetchMovieList } from "../../../redux/movieRedux/movieActions"
 import { fetchTvList } from "../../../redux/tvRedux/tvActions"
@@ -51,10 +52,12 @@ const titleMaker = query => {
 }
 
 const MovieCategoryDetail = props => {
+  const [pageNumber, setPageNumber] = useState(0)
+  console.log("PAGE NUMBER FROM MAIN PAGE", pageNumber)
   useEffect(() => {
-    props.fetchVideoList()
+    props.fetchVideoList(pageNumber)
     // eslint-disable-next-line
-  }, [props.match.params])
+  }, [props.match.params, pageNumber])
 
   if (props.loading) {
     return (
@@ -72,6 +75,12 @@ const MovieCategoryDetail = props => {
     <Container className="Movie-category-detail-page">
       <div className="movie-category-detail-title">
         {titleMaker(props.match.url)}
+      </div>
+      <div className="category-detail-paginate-container">
+        <ReactPaginate
+          currentPage={pageNumber}
+          pageChange={number => setPageNumber(number)}
+        />
       </div>
       <div className="Movie-category-detail-page-content">
         {props.match.url.slice(0, 4) === "/tvs"
@@ -99,6 +108,12 @@ const MovieCategoryDetail = props => {
                 />
               )
             })}
+      </div>
+      <div className="category-detail-paginate-container">
+        <ReactPaginate
+          currentPage={pageNumber}
+          pageChange={number => setPageNumber(number)}
+        />
       </div>
     </Container>
   )
@@ -129,7 +144,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 
   return {
-    fetchVideoList: () => dispatch(fetchMovieList(query, 2))
+    fetchVideoList: Pagenumber => dispatch(fetchMovieList(query, Pagenumber))
   }
 }
 
