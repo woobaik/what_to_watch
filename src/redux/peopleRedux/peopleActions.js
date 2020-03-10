@@ -65,12 +65,14 @@ export const fetchPersonDetail = personId => {
   }
 }
 
-export const fetchPeopleList = dispatch => {
-  return () => {
+export const fetchPeopleList = (page = 0) => {
+  return dispatch => {
     dispatch(fetchPersonRequest())
     axios
       .get(
-        `https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
+        `https://api.themoviedb.org/3/person/popular?api_key=${
+          process.env.REACT_APP_API_KEY
+        }&language=en-US&page=${page + 1}`
       )
       .then(response => {
         dispatch(fectPeopleListSuccess(response.data.results))
