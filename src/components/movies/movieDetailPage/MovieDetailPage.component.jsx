@@ -80,7 +80,7 @@ const MovieDetailPage = props => {
       <VideoModal
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
-        videoId={props.media ? props.media[0].key : undefined}
+        videoId={props.media && props.media[0] ? props.media[0].key : undefined}
       />
       <VideoDetailHeader
         poster_path={videoData.poster_path}
@@ -93,7 +93,7 @@ const MovieDetailPage = props => {
             : videoData.first_air_date
         }
         videoModal={() => setIsOpen(true)}
-        video={props.media ? props.media[0].key : undefined}
+        video={props.media && props.media[0] ? props.media[0].key : undefined}
       />
 
       <HorizontalDivider />
