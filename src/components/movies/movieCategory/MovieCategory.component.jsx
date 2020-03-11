@@ -3,7 +3,6 @@ import "./MovieCategory.styles.scss"
 import { connect } from "react-redux"
 
 import MovieCard from "../movieCard/MovieCard.components"
-import { CardDeck } from "react-bootstrap"
 
 const videoCoverList = videoList => {
   const limitVideo4 = videoList.slice(0, 4)

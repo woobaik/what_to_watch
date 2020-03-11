@@ -57,6 +57,14 @@
 
     .movie-detail-header-info-icons {
       margin-bottom: 2rem;
+      color: greenyellow;
+      font-size: 1.2rem;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+    }
+
+    .movie-detail-header-info-icons:hover {
+      color: indianred;
     }
 
     .movie-detail-header-info-overview {

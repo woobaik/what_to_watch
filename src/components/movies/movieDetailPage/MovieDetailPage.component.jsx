@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import "./MovieDetailPage.styles.scss"
 
 import { connect } from "react-redux"
@@ -25,6 +25,7 @@ import SyncLoader from "react-spinners/SyncLoader"
 import HorizontalDivider from "../../layouts/divider/HorizontalDivider.component"
 import MovieDetailInfo from "./movieDetailInfo/MovieDetailinfo.component"
 import VideoDetailHeader from "../../commonComponent/VideoDetailHeader/VideoDetailHeader.component"
+import VideoModal from "../../layouts/videoModal/VideoModal.component"
 
 const override = css`
   display: block;
@@ -36,6 +37,8 @@ const override = css`
 `
 
 const MovieDetailPage = props => {
+  const [isOpen, setIsOpen] = useState(false)
+
   useEffect(() => {
     props.fetchVideoeData()
     props.fetchCastData()
@@ -74,17 +77,23 @@ const MovieDetailPage = props => {
   return (
     <div className="Movie-detail-page">
       {/* backdrop_path={props.movie.backdrop_path} title={title} video={video} overview={overview} poster_path={poster_path} */}
+      <VideoModal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        videoId={props.media ? props.media[0].key : undefined}
+      />
       <VideoDetailHeader
         poster_path={videoData.poster_path}
         backdrop_path={videoData.backdrop_path}
         title={videoData.title ? videoData.title : videoData.name}
-        video={videoData.video}
         overview={videoData.overview}
         release_date={
           videoData.release_date
             ? videoData.release_date
             : videoData.first_air_date
         }
+        videoModal={() => setIsOpen(true)}
+        video={props.media ? props.media[0].key : undefined}
       />
 
       <HorizontalDivider />
