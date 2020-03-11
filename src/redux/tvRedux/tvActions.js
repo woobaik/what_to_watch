@@ -137,7 +137,7 @@ export const fetchTVcredit = tvId => {
         `https://api.themoviedb.org/3/tv/${tvId}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
       )
       .then(response => {
-        dispatch(fetchTvCreditSuccess(response.data.cast))
+        dispatch(fetchTvCreditSuccess(response.data))
       })
       .catch(error => {
         console.log(error)

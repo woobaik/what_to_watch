@@ -5,6 +5,7 @@ import { MdPerson } from "react-icons/md"
 
 const ActorCard = props => {
   // Navigate to person detail
+
   let history = useHistory()
   const navigateToPersonDetail = () => {
     let personUrl = props.id + "-" + props.name.replace(/[\W]/g, "-")

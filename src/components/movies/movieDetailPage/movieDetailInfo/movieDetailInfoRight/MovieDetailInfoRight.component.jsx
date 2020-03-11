@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa"
 
 import ISO6391 from "iso-639-1"
+import Tooltip from "@material-ui/core/Tooltip"
 
 // month date year format
 const stringifyReleaseDate = release_date => {
@@ -74,42 +75,49 @@ const MovieDetailInfoRight = ({ videoInfo, videoKeywords, externalId }) => {
       <div className="social-icons">
         {/* facebook 1777f2 */}
         {facebook_id ? (
-          <a
-            href={`https://www.facebook.com/${facebook_id}`}
-            id="facebook"
-            target="_blank"
-            rel="noopener noreferrer">
-            <FaFacebookSquare />
-          </a>
-        ) : null}
-
-        {twitter_id ? (
-          <a
-            href={`https://twitter.com/${twitter_id}`}
-            id="twitter"
-            target="_blank"
-            rel="noopener noreferrer">
-            <FaTwitterSquare />
-          </a>
+          <Tooltip title="Visit Facebook" placement="top" arrow>
+            <a
+              href={`https://www.facebook.com/${facebook_id}`}
+              id="facebook"
+              target="_blank"
+              rel="noopener noreferrer">
+              <FaFacebookSquare />
+            </a>
+          </Tooltip>
         ) : null}
 
         {instagram_id ? (
-          <a
-            href={`https://instagram.com/${instagram_id}`}
-            id="instagram"
-            target="_blank"
-            rel="noopener noreferrer">
-            <FaInstagram />
-          </a>
+          <Tooltip title="Visit Instagram" placement="top" arrow>
+            <a
+              href={`https://instagram.com/${instagram_id}`}
+              id="instagram"
+              target="_blank"
+              rel="noopener noreferrer">
+              <FaInstagram />
+            </a>
+          </Tooltip>
         ) : null}
 
+        {twitter_id ? (
+          <Tooltip title="Visit Twitter" placement="top" arrow>
+            <a
+              href={`https://twitter.com/${twitter_id}`}
+              id="twitter"
+              target="_blank"
+              rel="noopener noreferrer">
+              <FaTwitterSquare />
+            </a>
+          </Tooltip>
+        ) : null}
         {videoInfo.homepage ? (
-          <a
-            href={videoInfo.homepage}
-            target="_blank"
-            rel="noopener noreferrer">
-            <FaLink />
-          </a>
+          <Tooltip title="Visit Homepage" placement="top" arrow>
+            <a
+              href={videoInfo.homepage}
+              target="_blank"
+              rel="noopener noreferrer">
+              <FaLink />
+            </a>
+          </Tooltip>
         ) : null}
       </div>
 

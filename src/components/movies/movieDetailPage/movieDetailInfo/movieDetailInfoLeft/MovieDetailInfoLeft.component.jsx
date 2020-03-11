@@ -1,5 +1,5 @@
 import React from "react"
-import { withRouter } from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
 import "./MovieDetailInfoLeft.styles.scss"
 import { connect } from "react-redux"
 import ActorCard from "../../../../commonComponent/actorCard/ActorCard.component"
@@ -8,6 +8,7 @@ import MovieDetailVideo from "../../movieDetailVideo/MovieDetailVideo.component"
 import MovieRecommend from "./movieRecommend/MovieRecommend.component"
 
 const MovieDetailInfoLeft = props => {
+  console.log("LEFT", props)
   let site,
     key = undefined
 
@@ -40,7 +41,12 @@ const MovieDetailInfoLeft = props => {
                 })
             : "Loading..."}
         </div>
-        <p className="full-cast-link">Full Cast & Crew</p>
+
+        <p
+          className="full-cast-link"
+          onClick={() => props.history.push(`${props.match.url}/full-cast`)}>
+          Full Cast & Crew
+        </p>
       </div>
       <HorizontailDivider />
       {site && key ? (
@@ -58,7 +64,7 @@ const MovieDetailInfoLeft = props => {
 const mapStateToProps = (state, ownProps) => {
   if (ownProps.match.url.slice(0, 3) === "/tv") {
     return {
-      topCast: state.tvs.cast,
+      topCast: state.tvs.cast.cast,
       media: state.tvs.media.results
     }
   }

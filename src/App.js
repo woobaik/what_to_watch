@@ -11,6 +11,7 @@ import CategoryDetailPage from "./components/movies/movieCategoryDetail/MovieCat
 import MovieDetailPage from "./components/movies/movieDetailPage/MovieDetailPage.component"
 import PeopleCategoryPage from "./components/people/popularPeople/PopularPeople.component"
 import PeopleDetailPage from "./components/people/PeopleDetailPage/PeopleDetailPage.component"
+import PeopleCastForShow from "./components/people/peopleCastForShow/PeopleCastForShow.component"
 import Footer from "./components/layouts/footer/Footer.component"
 
 function App() {
@@ -24,8 +25,19 @@ function App() {
             <Route exact path="/movies" component={CategoryDetailPage} />
             <Route exact path="/movies/:query" component={CategoryDetailPage} />
             <Route exact path="/tvs" component={CategoryDetailPage} />
+            <Route
+              exact
+              path="/tv/:query/full-cast"
+              component={PeopleCastForShow}
+            />
             <Route exact path="/tvs/:query" component={CategoryDetailPage} />
+
             <Route exact path="/tv/:query" component={MovieDetailPage} />
+            <Route
+              exact
+              path="/movie/:query/full-cast"
+              component={PeopleCastForShow}
+            />
             <Route exact path="/movie/:query" component={MovieDetailPage} />
             <Route exact path="/people" component={PeopleCategoryPage} />
             <Route exact path="/people/:query" component={PeopleDetailPage} />
