@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useState } from "react"
 import "./VideoDetailHeader.styles.scss"
 
 import { FaPlay, FaRegFileImage } from "react-icons/fa"
+import { Overlay } from "react-bootstrap"
 
 const movieDetailHeaderStyle = poster_path => {
   return {
@@ -11,6 +12,13 @@ const movieDetailHeaderStyle = poster_path => {
 
 const MovieDetailHeader = props => {
   //backdrop_path={backdrop_path} title={title} video={video} overview={overview}
+  const [modalOpen, setModalOpen] = useState(true)
+
+  const openModal = () => {
+    setModalOpen(true)
+  }
+
+  const closeModal = () => {}
 
   return (
     <div
@@ -37,7 +45,9 @@ const MovieDetailHeader = props => {
               ({props.release_date ? props.release_date.split("-")[0] : ""})
             </span>
           </div>
-          <div className="movie-detail-header-info-icons">
+          <div
+            className="movie-detail-header-info-icons"
+            onClick={() => openModal()}>
             <FaPlay /> Play Trailer
           </div>
           <div className="movie-detail-header-info-overview">

@@ -7,6 +7,13 @@
   border: 1px solid rgb(182, 236, 182);
 
   .category-detail-card-image {
+    .category-detail-card-no-image {
+      width: 185px;
+      height: 278px;
+      font-size: 10rem;
+      text-align: center;
+      color: rgb(94, 94, 94);
+    }
   }
 
   .category-detail-card-content {

@@ -4,7 +4,7 @@
   .movieCard {
     height: 100%;
     cursor: pointer;
-    background-color: rgb(17, 83, 17);
+    background-color: rgb(53, 53, 53);
     display: flex;
     flex-direction: column;
     color: rgb(6, 61, 4);
@@ -13,9 +13,11 @@
   }
 
   .card-title {
-    color: rgb(205, 252, 217);
+    color: rgb(196, 247, 138);
     text-align: center;
     padding-top: 0.5rem;
+
+    font-size: 1.2rem;
   }
 }
 
