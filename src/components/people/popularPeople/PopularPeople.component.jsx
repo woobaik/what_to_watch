@@ -72,7 +72,6 @@ const PopularPeople = props => {
 }
 
 const mapStateToProps = state => {
-  console.log("STATTE FOR POPULAR PEOPLE", state)
   return {
     peopleList: state.person.peopleList,
     loading: state.person.loading

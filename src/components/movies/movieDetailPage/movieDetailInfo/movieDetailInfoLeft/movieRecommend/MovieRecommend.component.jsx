@@ -40,8 +40,6 @@ const MovieRecommend = props => {
     }
   }
 
-  console.log("Eminem", props)
-
   if (
     props.recommendedVideos.results &&
     props.recommendedVideos.results.length === 0

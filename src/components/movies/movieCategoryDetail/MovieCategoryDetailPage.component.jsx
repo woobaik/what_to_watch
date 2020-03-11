@@ -53,7 +53,7 @@ const titleMaker = query => {
 
 const MovieCategoryDetail = props => {
   const [pageNumber, setPageNumber] = useState(0)
-  console.log("PAGE NUMBER FROM MAIN PAGE", pageNumber)
+
   useEffect(() => {
     props.fetchVideoList(pageNumber)
     // eslint-disable-next-line

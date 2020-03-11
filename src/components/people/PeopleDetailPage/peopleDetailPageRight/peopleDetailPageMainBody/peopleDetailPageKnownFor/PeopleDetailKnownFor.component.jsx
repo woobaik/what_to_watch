@@ -27,7 +27,6 @@ const PeopleDetailKnownFor = props => {
 }
 
 const mapStateToProps = state => {
-  console.log("MinJae", state)
   if (
     state.person.personCredit.cast &&
     state.person.personCredit.cast.length > 0

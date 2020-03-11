@@ -92,11 +92,10 @@ export const fetchMovieList = (query = "popular", page = 0) => {
       )
       .then(response => {
         const movieList = response.data.results
-        console.log("MOVIE LIST", movieList)
+
         dispatch(fetchMovieListSuccess(movieList))
       })
       .catch(error => {
-        console.log("WTF ERROR", error)
         dispatch(fetchMovieError(error))
       })
   }

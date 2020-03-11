@@ -85,7 +85,7 @@ export const fetchTvList = (query = "popular", page = 1) => {
       )
       .then(response => {
         const tvList = response.data.results
-        console.log("ILBE", response.data)
+
         dispatch(fetchTvListSuccess(tvList))
       })
       .catch(error => {

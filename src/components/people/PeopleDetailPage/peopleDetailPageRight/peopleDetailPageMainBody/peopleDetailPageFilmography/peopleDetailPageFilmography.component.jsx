@@ -4,7 +4,6 @@ import PhilmographyTable from "./PeopleDetailFilmographyTable/PeopleDetailFilmog
 import { connect } from "react-redux"
 
 const peopleDetailPageFilmography = props => {
-  console.log("TABLE", props)
   const { cast, crew } = props
   return (
     <div className="People-detail-page-filmography">
@@ -20,7 +19,6 @@ const peopleDetailPageFilmography = props => {
 }
 
 const mapStateToProps = state => {
-  console.log("MJ", state)
   if (
     (state.person.personCredit.cast &&
       state.person.personCredit.cast.length > 0) ||

@@ -2,7 +2,6 @@ import React from "react"
 import "./Paginate.style.scss"
 import ReactPaginate from "react-paginate"
 const Paginate = props => {
-  console.log("PAGINATE", props)
   return (
     <div className="Paginate">
       <ReactPaginate

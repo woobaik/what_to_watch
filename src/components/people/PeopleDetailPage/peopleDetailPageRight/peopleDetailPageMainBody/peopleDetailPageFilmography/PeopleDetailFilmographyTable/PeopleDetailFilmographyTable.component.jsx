@@ -4,10 +4,8 @@ import { withRouter } from "react-router-dom"
 
 const PeopleDetailFilmographyTable = props => {
   const { title, roles } = props
-  console.log("ROLE", props)
 
   const navigateToMovie = (id, title, name) => {
-    console.log("HELLO NAVIAGATION", id, title)
     let urlSafeTitle = title
       .toLowerCase()
       .replace(/[&#,+()/$~%.'":*?<>{}]/g, "")
