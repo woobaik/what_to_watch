@@ -6,7 +6,8 @@ const PeopleDetailFilmographyTable = props => {
   const { title, roles } = props
 
   const navigateToMovie = (id, title, name) => {
-    let urlSafeTitle = title
+    let titleDashed = title ? title : name
+    let urlSafeTitle = titleDashed
       .toLowerCase()
       .replace(/[&#,+()/$~%.'":*?<>{}]/g, "")
       .replace(/\s/g, "-")
