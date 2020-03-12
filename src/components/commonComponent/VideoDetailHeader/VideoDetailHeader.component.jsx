@@ -34,7 +34,9 @@ const MovieDetailHeader = props => {
             {props.title}
             <span className="movie-detail-header-info-title-year">
               {" "}
-              ({props.release_date ? props.release_date.split("-")[0] : ""})
+              {props.release_date
+                ? `(${props.release_date.split("-")[0]})`
+                : ""}
             </span>
           </div>
           {props.video ? (
