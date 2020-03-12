@@ -1,0 +1,39 @@
+.Floating {
+  position: fixed;
+  top: 90vh;
+  right: 5vw;
+  z-index: 9999;
+}
+
+.Floating li,
+.Floating a {
+  background: linear-gradient(
+    45deg,
+    rgb(107, 254, 127) 40%,
+    rgb(231, 117, 117) 90%
+  );
+  z-index: 1;
+  position: relative;
+}
+
+.Floating a::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 28px;
+  background: linear-gradient(
+    45deg,
+    rgb(231, 117, 117) 40%,
+    rgb(107, 254, 127) 90%
+  );
+  z-index: -1;
+  transition: opacity 0.5s linear;
+  opacity: 0;
+}
+
+.Floating a:hover::before {
+  opacity: 1;
+}

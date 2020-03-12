@@ -6,7 +6,8 @@ import { fetchTVcredit } from "../../../redux/tvRedux/tvActions"
 import { fetchCast } from "../../../redux/movieRedux/movieActions"
 import "./PeopleCastforShow.style.scss"
 import Card from "./castSmallCard/CastCard.component"
-import Grid from "@material-ui/core/Grid"
+
+import Container from "@material-ui/core/Container"
 
 import Paper from "@material-ui/core/Paper"
 import { GoPerson } from "react-icons/go"
@@ -19,58 +20,78 @@ const PeopleCastForShow = props => {
   }, [])
   return (
     <div className="People-Cast-For-Show">
-      <Grid container spacing={3}>
-        <Grid item xs={props.crew && props.crew.length > 0 ? 6 : 12}>
-          {props.cast
-            ? props.cast.map(cast => {
-                return (
-                  <Paper className="grid-item" key={cast.id}>
-                    <div className="image-container">
-                      {cast.profile_path ? (
-                        <img
-                          src={`https://image.tmdb.org/t/p/w138_and_h175_face/${cast.profile_path}`}
-                        />
-                      ) : (
-                        <div className="no-image">
-                          <MdPerson />
-                        </div>
-                      )}
+      <div className="People-cast-container">
+        <div className="full-cast-role-title">
+          Cast{" "}
+          <span className="full-cast-number">
+            {props.cast ? `(${props.cast.length})` : null}
+          </span>
+        </div>
+        <div className="credit-container">
+          <div className="grid-item">
+            {props.cast
+              ? props.cast.map(cast => {
+                  return (
+                    <div className="individual-item">
+                      <div className="image-container">
+                        {cast.profile_path ? (
+                          <img
+                            src={`https://image.tmdb.org/t/p/w66_and_h66_face/${cast.profile_path}`}
+                          />
+                        ) : (
+                          <div className="no-image">
+                            <MdPerson />
+                          </div>
+                        )}
+                      </div>
+                      <div className="item-content">
+                        <p className="item-content-name">{cast.name}</p>
+                        <p className="item-content-character">
+                          {cast.character}
+                        </p>
+                      </div>
                     </div>
-                    <div className="item-content">
-                      <p>{cast.name}</p>
-                      <p>{cast.character}</p>
+                  )
+                })
+              : null}
+          </div>
+        </div>
+      </div>
+      <div className="People-cast-container">
+        <div className="full-cast-role-title">
+          Crew{" "}
+          <span className="full-cast-number">
+            {props.crew ? `(${props.crew.length})` : null}
+          </span>
+        </div>
+        <div className="credit-container">
+          <div className="grid-item">
+            {props.crew
+              ? props.crew.map(crew => {
+                  return (
+                    <div className="individual-item">
+                      <div className="image-container">
+                        {crew.profile_path ? (
+                          <img
+                            src={`https://image.tmdb.org/t/p/w66_and_h66_face/${crew.profile_path}`}
+                          />
+                        ) : (
+                          <div className="no-image">
+                            <MdPerson />
+                          </div>
+                        )}
+                      </div>
+                      <div className="item-content">
+                        <p className="item-content-name">{crew.name}</p>
+                        <p className="item-content-character">{crew.job}</p>
+                      </div>
                     </div>
-                  </Paper>
-                )
-              })
-            : null}
-        </Grid>
-        <Grid item xs={props.cast && props.cast.length > 0 ? 6 : 12}>
-          {props.cast
-            ? props.crew.map(crew => {
-                return (
-                  <Paper className="grid-item" key={crew.id}>
-                    <div className="image-container">
-                      {crew.profile_path ? (
-                        <img
-                          src={`https://image.tmdb.org/t/p/w138_and_h175_face/${crew.profile_path}`}
-                        />
-                      ) : (
-                        <div className="no-image">
-                          <MdPerson />
-                        </div>
-                      )}
-                    </div>
-                    <div className="item-content">
-                      <p>{crew.name}</p>
-                      <p>{crew.job}</p>
-                    </div>
-                  </Paper>
-                )
-              })
-            : null}
-        </Grid>
-      </Grid>
+                  )
+                })
+              : null}
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

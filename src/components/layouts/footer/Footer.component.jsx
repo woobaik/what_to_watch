@@ -29,7 +29,6 @@ const footer = () => {
 
   return (
     <div className="Footer" id="footer">
-      <div className="footerTitle">ABOUT ME</div>
       <div className="cards">
         <div className="card">
           <div className="cardTitle">B Paup</div>

@@ -1,15 +1,47 @@
 .People-Cast-For-Show {
-  .grid-item {
-    .image-container {
+  display: flex;
+  justify-content: center;
+  .People-cast-container {
+    background-color: rgb(185, 224, 201);
+    margin: 1rem;
+    width: 500px;
+    .full-cast-role-title {
+      font-size: 2rem;
+      .full-cast-number {
+      }
     }
 
-    .no-image {
-      background-color: rgb(173, 173, 173);
-      width: 138px;
-      height: 175px;
-      font-size: 7rem;
-      text-align: center;
-      color: rgb(92, 91, 94);
+    .credit-container {
+      .grid-item {
+      }
+    }
+    .individual-item {
+      width: 80%;
+      display: flex;
+      margin-bottom: 1rem;
+      padding-top: 1rem;
+      border: 1px solid rgb(192, 192, 192);
+      border-radius: 5px;
+
+      .image-container {
+        .no-image {
+          background-color: rgb(173, 173, 173);
+          width: 138px;
+          height: 175px;
+          font-size: 7rem;
+          text-align: center;
+          color: rgb(92, 91, 94);
+        }
+      }
+
+      .item-content {
+        .item-content-name {
+          font-weight: bold;
+        }
+
+        .item-content-character {
+        }
+      }
     }
   }
 }

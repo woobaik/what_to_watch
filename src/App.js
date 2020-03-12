@@ -12,6 +12,7 @@ import MovieDetailPage from "./components/movies/movieDetailPage/MovieDetailPage
 import PeopleCategoryPage from "./components/people/popularPeople/PopularPeople.component"
 import PeopleDetailPage from "./components/people/PeopleDetailPage/PeopleDetailPage.component"
 import PeopleCastForShow from "./components/people/peopleCastForShow/PeopleCastForShow.component"
+import FloatingBtn from "./components/layouts/floatingButton/FloatingBtn.component"
 import Footer from "./components/layouts/footer/Footer.component"
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
             <Route exact path="/people/:query" component={PeopleDetailPage} />
             <Route path="/" component={MovieMainPage} />
           </Switch>
+          <FloatingBtn />
           <Footer />
         </div>
       </Router>
