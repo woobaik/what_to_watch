@@ -1,2 +1,15 @@
 .People-Cast-For-Show {
+  .grid-item {
+    .image-container {
+    }
+
+    .no-image {
+      background-color: rgb(173, 173, 173);
+      width: 138px;
+      height: 175px;
+      font-size: 7rem;
+      text-align: center;
+      color: rgb(92, 91, 94);
+    }
+  }
 }

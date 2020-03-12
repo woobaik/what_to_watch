@@ -10,6 +10,7 @@ import Grid from "@material-ui/core/Grid"
 
 import Paper from "@material-ui/core/Paper"
 import { GoPerson } from "react-icons/go"
+import { MdPerson } from "react-icons/md"
 const PeopleCastForShow = props => {
   console.log("Cast Show", props)
 
@@ -30,8 +31,14 @@ const PeopleCastForShow = props => {
                           src={`https://image.tmdb.org/t/p/w138_and_h175_face/${cast.profile_path}`}
                         />
                       ) : (
-                        <div>empty</div>
+                        <div className="no-image">
+                          <MdPerson />
+                        </div>
                       )}
+                    </div>
+                    <div className="item-content">
+                      <p>{cast.name}</p>
+                      <p>{cast.character}</p>
                     </div>
                   </Paper>
                 )
@@ -49,10 +56,14 @@ const PeopleCastForShow = props => {
                           src={`https://image.tmdb.org/t/p/w138_and_h175_face/${crew.profile_path}`}
                         />
                       ) : (
-                        <div>
-                          <GoPerson />
+                        <div className="no-image">
+                          <MdPerson />
                         </div>
                       )}
+                    </div>
+                    <div className="item-content">
+                      <p>{crew.name}</p>
+                      <p>{crew.job}</p>
                     </div>
                   </Paper>
                 )
