@@ -16,6 +16,8 @@ const MovieCategories = props => {
   } else {
     videoList = videoCoverList(props.movieList.movies)
   }
+
+  console.log("말할 거에요", videoList)
   return (
     <div className="card-deck">
       <div className="category-title">{props.categoryName}</div>

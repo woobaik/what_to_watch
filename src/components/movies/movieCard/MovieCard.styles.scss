@@ -1,26 +1,55 @@
 .Card {
+  width: 271px;
   margin: 0 0.3rem;
+  position: relative;
 
   .movieCard {
     height: 100%;
     cursor: pointer;
-    background-color: rgb(53, 53, 53);
+    background-color: rgb(7, 7, 7);
     display: flex;
     flex-direction: column;
     color: rgb(6, 61, 4);
     line-height: 1rem;
     padding: 2px;
+
+    .movie-image-container {
+      position: relative;
+
+      .movieCard-overlay {
+        position: absolute;
+        height: 0;
+        top: 0;
+        width: 100%;
+        overflow: hidden;
+        background-color: rgb(11, 80, 17);
+        transition: 0.5s ease;
+        opacity: 0.8;
+        cursor: pointer;
+
+        .movieCard-overlay-text {
+          width: 100%;
+          color: white;
+          font-size: 1em;
+          line-height: 2rem;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          text-align: center;
+        }
+      }
+    }
+    .card-title {
+      color: rgb(114, 255, 95);
+      text-align: center;
+      padding: 1rem 0 0.7rem 0.5rem;
+      font-size: 1.2rem;
+    }
   }
-
-  .card-title {
-    color: rgb(196, 247, 138);
-    text-align: center;
-    padding-top: 0.5rem;
-
-    font-size: 1.2rem;
+  .movieCard:hover .movieCard-overlay {
+    height: 100%;
   }
-}
-
-.card {
-  border: 0 !important;
 }

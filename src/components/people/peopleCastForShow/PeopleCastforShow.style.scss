@@ -1,46 +1,70 @@
 .People-Cast-For-Show {
   display: flex;
   justify-content: center;
+
   .People-cast-container {
-    background-color: rgb(185, 224, 201);
     margin: 1rem;
     width: 500px;
     .full-cast-role-title {
-      font-size: 2rem;
+      font-size: 1.5rem;
       .full-cast-number {
+        color: gray;
       }
     }
 
     .credit-container {
-      .grid-item {
-      }
-    }
-    .individual-item {
-      width: 80%;
-      display: flex;
-      margin-bottom: 1rem;
-      padding-top: 1rem;
-      border: 1px solid rgb(192, 192, 192);
-      border-radius: 5px;
+      color: green;
+      margin: 1rem;
+      padding: 1rem;
+      .grid-items {
+        background-color: rgb(148, 223, 198);
+        padding: 0.4rem 0rem 1.3rem 0;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .individual-item {
+          background-color: rgb(255, 255, 255);
+          width: 80%;
+          margin-top: 1rem;
+          padding: 1rem 0;
+          border: 1px solid #b6ecb6;
+          border-radius: 5px;
+          display: flex;
 
-      .image-container {
-        .no-image {
-          background-color: rgb(173, 173, 173);
-          width: 138px;
-          height: 175px;
-          font-size: 7rem;
-          text-align: center;
-          color: rgb(92, 91, 94);
+          .image-container {
+            padding-left: 1rem;
+            .no-image {
+              background-color: rgb(173, 173, 173);
+              width: 66px;
+              height: 66px;
+              font-size: 3rem;
+              text-align: center;
+              color: rgb(92, 91, 94);
+            }
+          }
+
+          .item-content {
+            padding-left: 1rem;
+
+            .item-content-name {
+              font-weight: bold;
+              color: rgb(107, 107, 107);
+              margin-bottom: 0;
+            }
+
+            .item-content-character {
+              color: rgb(43, 42, 42);
+            }
+          }
         }
       }
-
-      .item-content {
-        .item-content-name {
-          font-weight: bold;
-        }
-
-        .item-content-character {
-        }
+      .no-content {
+        color: rgb(100, 100, 100);
+        padding-left: 2rem;
+        font-weight: bold;
+        padding: 1rem 2rem !important;
       }
     }
   }

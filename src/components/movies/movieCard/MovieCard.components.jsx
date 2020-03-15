@@ -22,11 +22,17 @@ const MovieCard = props => {
   return (
     <div className="Card" onClick={navigateToMovieDetail}>
       <div className="movieCard">
-        <Card.Img
-          varient="top"
-          src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${props.video.poster_path}`}
-          alt="Movie Thumbnail"
-        />
+        <div className="movie-image-container">
+          <Card.Img
+            varient="top"
+            src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${props.video.poster_path}`}
+            alt="Movie Thumbnail"
+          />
+          <div className="movieCard-overlay">
+            <div className="movieCard-overlay-text">{props.video.overview}</div>
+          </div>
+        </div>
+
         <div className="card-title">
           {props.video.title ? props.video.title : props.video.name}
         </div>

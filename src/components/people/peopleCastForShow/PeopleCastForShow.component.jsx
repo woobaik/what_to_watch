@@ -7,10 +7,6 @@ import { fetchCast } from "../../../redux/movieRedux/movieActions"
 import "./PeopleCastforShow.style.scss"
 import Card from "./castSmallCard/CastCard.component"
 
-import Container from "@material-ui/core/Container"
-
-import Paper from "@material-ui/core/Paper"
-import { GoPerson } from "react-icons/go"
 import { MdPerson } from "react-icons/md"
 const PeopleCastForShow = props => {
   console.log("Cast Show", props)
@@ -28,32 +24,32 @@ const PeopleCastForShow = props => {
           </span>
         </div>
         <div className="credit-container">
-          <div className="grid-item">
-            {props.cast
-              ? props.cast.map(cast => {
-                  return (
-                    <div className="individual-item">
-                      <div className="image-container">
-                        {cast.profile_path ? (
-                          <img
-                            src={`https://image.tmdb.org/t/p/w66_and_h66_face/${cast.profile_path}`}
-                          />
-                        ) : (
-                          <div className="no-image">
-                            <MdPerson />
-                          </div>
-                        )}
-                      </div>
-                      <div className="item-content">
-                        <p className="item-content-name">{cast.name}</p>
-                        <p className="item-content-character">
-                          {cast.character}
-                        </p>
-                      </div>
+          <div className="grid-items">
+            {props.cast ? (
+              props.cast.map(cast => {
+                return (
+                  <div className="individual-item">
+                    <div className="image-container">
+                      {cast.profile_path ? (
+                        <img
+                          src={`https://image.tmdb.org/t/p/w66_and_h66_face/${cast.profile_path}`}
+                        />
+                      ) : (
+                        <div className="no-image">
+                          <MdPerson />
+                        </div>
+                      )}
                     </div>
-                  )
-                })
-              : null}
+                    <div className="item-content">
+                      <p className="item-content-name">{cast.name}</p>
+                      <p className="item-content-character">{cast.character}</p>
+                    </div>
+                  </div>
+                )
+              })
+            ) : (
+              <div className="individual-item no-content"></div>
+            )}
           </div>
         </div>
       </div>
@@ -65,30 +61,34 @@ const PeopleCastForShow = props => {
           </span>
         </div>
         <div className="credit-container">
-          <div className="grid-item">
-            {props.crew
-              ? props.crew.map(crew => {
-                  return (
-                    <div className="individual-item">
-                      <div className="image-container">
-                        {crew.profile_path ? (
-                          <img
-                            src={`https://image.tmdb.org/t/p/w66_and_h66_face/${crew.profile_path}`}
-                          />
-                        ) : (
-                          <div className="no-image">
-                            <MdPerson />
-                          </div>
-                        )}
-                      </div>
-                      <div className="item-content">
-                        <p className="item-content-name">{crew.name}</p>
-                        <p className="item-content-character">{crew.job}</p>
-                      </div>
+          <div className="grid-items">
+            {props.crew && props.crew.length > 0 ? (
+              props.crew.map(crew => {
+                return (
+                  <div className="individual-item">
+                    <div className="image-container">
+                      {crew.profile_path ? (
+                        <img
+                          src={`https://image.tmdb.org/t/p/w66_and_h66_face/${crew.profile_path}`}
+                        />
+                      ) : (
+                        <div className="no-image">
+                          <MdPerson />
+                        </div>
+                      )}
                     </div>
-                  )
-                })
-              : null}
+                    <div className="item-content">
+                      <p className="item-content-name">{crew.name}</p>
+                      <p className="item-content-character">{crew.job}</p>
+                    </div>
+                  </div>
+                )
+              })
+            ) : (
+              <div className="individual-item no-content">
+                We'll add crew list soon!
+              </div>
+            )}
           </div>
         </div>
       </div>
