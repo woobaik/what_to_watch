@@ -7,13 +7,19 @@
   .pagination {
     li {
       box-sizing: border-box;
-      cursor: pointer;
       text-align: center;
       color: white;
-      margin: 0 0.5rem;
+      margin: 0 0.3rem;
       color: #2ecc71;
       height: 30px;
       width: 30px;
+      padding: 0;
+      cursor: pointer;
+      display: inline-block;
+
+      a {
+        display: block;
+      }
     }
 
     .break-me {
@@ -37,11 +43,18 @@
       background-color: #2ecc71;
       border-radius: 5px;
       color: white;
-      padding: 0 15px;
+
       font-size: 1.1rem;
       text-align: center;
       height: 30px;
       padding-top: 2px;
+      display: inline-block;
+
+      a {
+        display: block;
+        cursor: pointer;
+        padding: 0 15px;
+      }
     }
     .previous {
     }
