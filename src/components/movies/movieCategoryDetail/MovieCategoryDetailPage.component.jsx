@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { connect } from "react-redux"
 import { css } from "@emotion/core"
 import "./MovieCategoryDetailPage.style.scss"
-import { Container } from "react-bootstrap"
+
 import MovieCard from "../movieCategoryDetailCard/MovieCategoryDetailCard.component"
 import SyncLoader from "react-spinners/SyncLoader"
 import ReactPaginate from "../../layouts/paginate/Paginate.component"
@@ -72,7 +72,7 @@ const MovieCategoryDetail = props => {
     )
   }
   return (
-    <Container className="Movie-category-detail-page">
+    <main className="Movie-category-detail-page">
       <div className="movie-category-detail-title">
         {titleMaker(props.match.url)}
       </div>
@@ -115,7 +115,7 @@ const MovieCategoryDetail = props => {
           pageChange={number => setPageNumber(number)}
         />
       </div>
-    </Container>
+    </main>
   )
 }
 
