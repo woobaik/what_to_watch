@@ -11,6 +11,9 @@
     color: rgb(6, 61, 4);
     line-height: 1rem;
     padding: 2px;
+    -webkit-box-shadow: 10px 10px 5px -6px rgba(170, 227, 177, 1);
+    -moz-box-shadow: 10px 10px 5px -6px rgba(170, 227, 177, 1);
+    box-shadow: 10px 10px 5px -6px rgba(170, 227, 177, 1);
 
     .movie-image-container {
       width: 100%;
