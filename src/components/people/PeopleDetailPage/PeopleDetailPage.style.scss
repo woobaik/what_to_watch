@@ -1,6 +1,28 @@
 .people-detail-page {
   background: linear-gradient(to bottom right, #eee, #fff);
-  display: flex;
-  flex-basis: 1 2;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   padding-bottom: 5rem;
+  grid-template-areas: "left-info right-info";
+
+  .people-detail-left {
+    grid-area: left-info;
+  }
+
+  .people-detail-right {
+    grid-area: right-info;
+  }
+}
+
+@media (max-width: 970px) {
+  .people-detail-page {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "left-info"
+      "right-info";
+  }
+
+  .people-detail-left {
+    width: 100%vw;
+  }
 }

@@ -1,19 +1,19 @@
 .People-detail-page-left {
   background: #f1f1f1;
-  width: 450px;
   height: 100%;
 
   .people-detail-left-image {
-    padding-left: 2rem;
     padding-top: 3rem;
+    text-align: center;
   }
 
   .people-detail-left-info {
+    text-align: center;
     .people-detail-left-info-title {
       font-size: 1.5rem;
       margin: 1.4rem 0rem;
       border-bottom: 1px solid rgb(155, 152, 152);
-      padding-right: 50px;
+
       font-weight: bold;
     }
 
@@ -28,5 +28,11 @@
         padding-top: 0.3rem;
       }
     }
+  }
+}
+
+@media (max-width: 970px) {
+  .People-detail-page-left {
+    text-align: center;
   }
 }

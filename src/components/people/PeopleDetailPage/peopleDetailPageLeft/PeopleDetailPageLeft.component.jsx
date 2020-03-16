@@ -49,7 +49,7 @@ const PeopleDetailPageLeft = props => {
         />
         <div className="people-detail-left-info">
           <div className="people-detail-left-info-title">Personal Info</div>
-
+          {detailLeftItemGenerator("Name", props.person.name)}
           {detailLeftItemGenerator(
             "Known For",
             props.person.known_for_department

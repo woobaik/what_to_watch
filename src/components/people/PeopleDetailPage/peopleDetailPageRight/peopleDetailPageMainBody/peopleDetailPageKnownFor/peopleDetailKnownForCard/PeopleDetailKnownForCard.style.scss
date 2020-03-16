@@ -2,6 +2,9 @@
   margin-right: 10px;
   width: 150px;
   cursor: pointer;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(235, 232, 235, 1);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(235, 232, 235, 1);
+  box-shadow: 10px 10px 5px 0px rgba(235, 232, 235, 1);
 
   img {
     border-radius: 5px;

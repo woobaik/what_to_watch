@@ -5,7 +5,7 @@ import { connect } from "react-redux"
 import MovieCard from "../movieCard/MovieCard.components"
 
 const videoCoverList = videoList => {
-  const limitVideo4 = videoList.slice(0, 5)
+  const limitVideo4 = videoList.slice(0, 6)
   return limitVideo4
 }
 
