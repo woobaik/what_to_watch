@@ -5,7 +5,7 @@ import { connect } from "react-redux"
 import MovieCard from "../movieCard/MovieCard.components"
 
 const videoCoverList = videoList => {
-  const limitVideo4 = videoList.slice(0, 4)
+  const limitVideo4 = videoList.slice(0, 5)
   return limitVideo4
 }
 
@@ -17,12 +17,11 @@ const MovieCategories = props => {
     videoList = videoCoverList(props.movieList.movies)
   }
 
-  console.log("말할 거에요", videoList)
   return (
-    <div className="card-deck">
+    <div className="category-card-deck">
       <div className="category-title">{props.categoryName}</div>
 
-      <div className="Moive-category">
+      <div className="moive-category">
         {videoList.map(video => {
           return <MovieCard key={video.id} video={video} />
         })}

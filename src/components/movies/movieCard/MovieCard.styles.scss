@@ -1,5 +1,4 @@
 .Card {
-  width: 271px;
   margin: 0 0.3rem;
   position: relative;
 
@@ -14,6 +13,7 @@
     padding: 2px;
 
     .movie-image-container {
+      width: 100%;
       position: relative;
 
       .movieCard-overlay {

@@ -41,10 +41,8 @@ const MovieMainPage = props => {
   }
   return (
     <div className="Movie-main-page">
-      <Container>
-        <MovieCategory categoryName="On TV" />
-        <MovieCategory categoryName="In Theaters" />
-      </Container>
+      <MovieCategory categoryName="On TV" />
+      <MovieCategory categoryName="In Theaters" />
     </div>
   )
 }

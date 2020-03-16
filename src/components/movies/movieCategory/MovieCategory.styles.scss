@@ -1,9 +1,3 @@
-.Moive-category {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-}
-
 .category-title {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
@@ -12,9 +6,11 @@
   color: rgb(10, 80, 10);
 }
 
-.card-deck {
-  padding-bottom: 5rem;
-  border-bottom: 4px solid #e3e3e3;
-  display: flex;
-  flex-direction: row !important;
+.category-card-deck {
+  .moive-category {
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 0.5rem;
+  }
 }
