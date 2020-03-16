@@ -46,6 +46,7 @@ const PeopleDetailPageLeft = props => {
         <img
           src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${props.person.profile_path}`}
           alt={props.person.name}
+          className="people-detail-left-image-image"
         />
         <div className="people-detail-left-info">
           <div className="people-detail-left-info-title">Personal Info</div>

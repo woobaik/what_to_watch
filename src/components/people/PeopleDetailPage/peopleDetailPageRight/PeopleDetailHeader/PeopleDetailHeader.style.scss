@@ -6,10 +6,10 @@
   }
 
   .people-detail-right-header-biography {
-    padding-right: 10rem;
+    width: 80%;
     .people-detail-right-biography-text {
       font-size: 1.5rem;
-      //fix later
+
       font-weight: bold;
     }
   }
@@ -19,5 +19,15 @@
     padding: 0.5rem;
     text-align: center;
     padding-right: 10rem;
+  }
+}
+
+@media (max-width: 970px) {
+  .people-detail-right-header {
+    text-align: center;
+
+    .people-detail-right-header-biography {
+      margin: 0 auto;
+    }
   }
 }

@@ -5,6 +5,12 @@
   .people-detail-left-image {
     padding-top: 3rem;
     text-align: center;
+
+    .people-detail-left-image-image {
+      -webkit-box-shadow: 10px 10px 5px -6px rgba(170, 227, 177, 1);
+      -moz-box-shadow: 10px 10px 5px -6px rgba(170, 227, 177, 1);
+      box-shadow: 10px 10px 5px -6px rgba(170, 227, 177, 1);
+    }
   }
 
   .people-detail-left-info {
