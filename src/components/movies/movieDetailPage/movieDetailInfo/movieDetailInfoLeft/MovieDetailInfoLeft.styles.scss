@@ -4,16 +4,21 @@
     font-size: 2rem;
     margin-top: 2rem;
     padding-bottom: 2rem;
+    padding-left: 2rem;
   }
   .top-billed-cast {
-    margin: 1rem 2rem 0 2rem;
+    margin: 0 auto;
   }
 
   .actor-card-container {
-    display: flex;
-    text-align: center;
-    justify-content: center;
+    padding-left: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 138px);
+    grid-gap: 5px;
     margin-bottom: 2rem;
+    justify-items: center;
+    margin: 0 auto;
+    grid-gap: 10px;
   }
 
   .full-cast-link {
@@ -30,6 +35,5 @@
   }
 
   .media-container {
-    margin: 0rem 2rem 0 2rem;
   }
 }

@@ -11,3 +11,9 @@
   background-color: #f1f1f1;
   width: 25%;
 }
+
+@media (max-width: 950px) {
+  .Movie-detail-info {
+    display: grid;
+  }
+}

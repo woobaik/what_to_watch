@@ -1,5 +1,6 @@
 .Popular-people {
   margin: 0 auto;
+  padding: 0 2rem;
 
   .popular-people-title {
     padding: 1rem 0 1rem 1rem;
@@ -20,5 +21,11 @@
     grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
     justify-items: center;
     grid-gap: 10px;
+  }
+}
+
+@media (max-width: 508px) {
+  .Popular-people {
+    padding: 0;
   }
 }
