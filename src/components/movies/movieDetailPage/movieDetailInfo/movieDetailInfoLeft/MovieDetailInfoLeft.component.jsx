@@ -22,32 +22,35 @@ const MovieDetailInfoLeft = props => {
   }
   return (
     <div className="movieDetailInfoLeft">
-      <div className="top-billed-cast">
-        <p className="section-title">Top Billed Cast</p>
-        <div className="actor-card-container">
-          {props.topCast
-            ? props.topCast
-                .filter((cast, index) => index < 5)
-                .map(cast => {
-                  return (
-                    <ActorCard
-                      key={cast.cast_id ? cast.cast_id : cast.credit_id}
-                      id={cast.id}
-                      name={cast.name}
-                      profile_path={cast.profile_path}
-                      character={cast.character}
-                    />
-                  )
-                })
-            : "Loading..."}
-        </div>
+      {props.topCast && props.topCast.length > 0 ? (
+        <div className="top-billed-cast">
+          <p className="section-title">Top Billed Cast</p>
+          <div className="actor-card-container">
+            {props.topCast
+              ? props.topCast
+                  .filter((cast, index) => index < 5)
+                  .map(cast => {
+                    return (
+                      <ActorCard
+                        key={cast.cast_id ? cast.cast_id : cast.credit_id}
+                        id={cast.id}
+                        name={cast.name}
+                        profile_path={cast.profile_path}
+                        character={cast.character}
+                      />
+                    )
+                  })
+              : "Loading..."}
+          </div>
 
-        <p
-          className="full-cast-link"
-          onClick={() => props.history.push(`${props.match.url}/full-cast`)}>
-          Full Cast & Crew
-        </p>
-      </div>
+          <p
+            className="full-cast-link"
+            onClick={() => props.history.push(`${props.match.url}/full-cast`)}>
+            Full Cast & Crew
+          </p>
+        </div>
+      ) : null}
+
       <HorizontailDivider />
       {site && key ? (
         <div className="media-container">

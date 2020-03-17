@@ -25,7 +25,7 @@ const PeopleCastForShow = props => {
         </div>
         <div className="credit-container">
           <div className="grid-items">
-            {props.cast ? (
+            {props.cast && props.cast.lenghth > 0 ? (
               props.cast.map(cast => {
                 return (
                   <div className="individual-item">
@@ -48,7 +48,9 @@ const PeopleCastForShow = props => {
                 )
               })
             ) : (
-              <div className="individual-item no-content"></div>
+              <div className="individual-item no-content">
+                "We will add cast list soon!"
+              </div>
             )}
           </div>
         </div>
@@ -86,7 +88,7 @@ const PeopleCastForShow = props => {
               })
             ) : (
               <div className="individual-item no-content">
-                We'll add crew list soon!
+                "We'll add crew list soon!"
               </div>
             )}
           </div>
