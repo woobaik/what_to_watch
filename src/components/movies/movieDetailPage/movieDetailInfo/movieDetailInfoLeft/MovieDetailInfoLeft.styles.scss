@@ -5,6 +5,7 @@
     margin-top: 2rem;
     padding-bottom: 2rem;
     padding-left: 2rem;
+    text-align: center;
   }
   .top-billed-cast {
     margin: 0 auto;
@@ -13,11 +14,10 @@
   .actor-card-container {
     padding-left: 2rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 138px);
+    grid-template-columns: repeat(auto-fit, 138px);
     grid-gap: 5px;
     margin-bottom: 2rem;
-    justify-items: center;
-
+    justify-content: center;
     grid-gap: 10px;
     width: 100%;
   }
@@ -36,5 +36,6 @@
   }
 
   .media-container {
+    padding: 0 2rem;
   }
 }

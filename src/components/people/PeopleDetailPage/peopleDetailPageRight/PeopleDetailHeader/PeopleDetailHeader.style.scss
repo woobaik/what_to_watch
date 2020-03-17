@@ -18,7 +18,14 @@
     margin-top: 2rem;
     padding: 0.5rem;
     text-align: center;
-    padding-right: 10rem;
+    width: 80%;
+
+    button {
+      color: green;
+      -webkit-box-shadow: 10px 10px 15px -11px rgba(102, 217, 102, 0.78);
+      -moz-box-shadow: 10px 10px 15px -11px rgba(102, 217, 102, 0.78);
+      box-shadow: 10px 10px 15px -11px rgba(102, 217, 102, 0.78);
+    }
   }
 }
 

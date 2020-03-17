@@ -13,6 +13,7 @@
   }
 
   img {
+    width: 100%;
   }
 
   .no-image-person {
@@ -21,6 +22,7 @@
     text-align: center;
     line-height: 12rem;
     color: #b5b5b5;
+    width: 100%;
   }
 
   .no-image-person::before {
