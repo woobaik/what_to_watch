@@ -78,3 +78,19 @@
     }
   }
 }
+
+@media (max-width: 825px) {
+  .movie-detail-header-summary {
+    display: block;
+    text-align: center;
+
+    .movie-detail-header-info {
+      width: 100%;
+      padding-left: 0;
+
+      .movie-detail-header-info-featured-crew {
+        display: none;
+      }
+    }
+  }
+}

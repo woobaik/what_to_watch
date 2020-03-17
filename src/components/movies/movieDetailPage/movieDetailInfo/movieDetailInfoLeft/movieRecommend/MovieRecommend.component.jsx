@@ -60,6 +60,7 @@ const MovieRecommend = props => {
         draggable
         focusOnSelect={false}
         infinite
+        autoPlay={true}
         itemClass=""
         keyBoardControl
         minimumTouchDrag={80}
