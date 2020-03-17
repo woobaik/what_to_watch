@@ -1,6 +1,5 @@
 .Movie-recommend {
   background-color: #d6f8df;
-  width: 100%;
 
   .Movie-recommend-title {
     font-weight: bold;
@@ -40,7 +39,7 @@
 
   .movie-detail-carousel-card {
     cursor: pointer;
-    width: 185px;
+    width: 100%;
 
     .no-image {
       background-color: rgb(174, 226, 174);
