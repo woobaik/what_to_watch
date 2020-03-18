@@ -11,8 +11,8 @@ import {
 } from "../../../redux/searchRedux/searchActions"
 
 const getSuggestionValue = suggestion => {
-  console.log("wtf", suggestion)
-  return suggestion.name
+  console.log("wtffffffffffffffffffffff", suggestion)
+  return suggestion
 }
 
 const renderSuggestion = suggestion => {
@@ -25,9 +25,9 @@ const handleSubmit = e => {
 }
 
 const MovieSearch = props => {
-  console.log("박광우", props)
   const status = props.isLoading ? "Loading..." : "Type to load suggestions"
-
+  console.log("인풋밸류", props.value)
+  console.log("인풋밸류로딩", props.isLoading)
   const inputProps = {
     placeholder: "Search for a movie, tv show, person...",
     autoComplete: "abcd",
@@ -37,11 +37,13 @@ const MovieSearch = props => {
     onChange: props.onChange
   }
 
+  console.log("서제스천 되나?", props.suggestions)
+
   return (
     <Fragment>
       <form className="search-form" onSubmit={handleSubmit}>
         <Autosuggest
-          suggestions={props.suggestions}
+          suggestions={[]}
           onSuggestionsFetchRequested={props.onSuggestionsFetchRequested}
           onSuggestionsClearRequested={props.onSuggestionsClearRequested}
           getSuggestionValue={getSuggestionValue}
@@ -58,7 +60,7 @@ const MovieSearch = props => {
 }
 
 const mapStateToProps = state => {
-  console.log("did it go through/? map state to props", state.search)
+  console.log("did it go through/? map state to props", state.search.value)
   return {
     suggestions: state.search.searchResults,
     value: state.search.inputValue,
@@ -68,7 +70,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onChange: (event, { newValue }) => dispatch(updateInputValue(newValue)),
+    onChange: (_event, { newValue }) => {
+      console.log("NEWVALUE", newValue)
+      return dispatch(updateInputValue(newValue))
+    },
     onSuggestionsFetchRequested: ({ value }) =>
       dispatch(loadSuggestions(value)),
     onSuggestionsClearRequested: () => dispatch(clearSuggestions())

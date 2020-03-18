@@ -5,7 +5,6 @@ import "./MovieCard.styles.scss"
 import { Card } from "react-bootstrap"
 
 const MovieCard = props => {
-  console.log("MOVIE CARD", props)
   const navigateToMovieDetail = () => {
     let videoTitle = props.video.title || props.video.name
     let urlSafeTitle = videoTitle

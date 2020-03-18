@@ -20,7 +20,7 @@ const SearchReducer = (state = initialState, action) => {
     case UPDATE_INPUT_VALUE:
       return {
         ...state,
-        value: action.payload
+        inputValue: action.payload
       }
 
     case CLEAR_SUGGESTIONS: {
@@ -45,16 +45,17 @@ const SearchReducer = (state = initialState, action) => {
     }
 
     case MAYBE_UPDATE_SUGGESTIONS: {
-      //   if (action.payload !== state.InputValue)
+      //   if (action.payload !== state.InputValue) {
       //     return {
       //       ...state,
       //       loading: false
       //     }
+      //   }
 
       return {
         ...state,
         searchResults: action.payload,
-        Loading: false
+        loading: false
       }
     }
 
