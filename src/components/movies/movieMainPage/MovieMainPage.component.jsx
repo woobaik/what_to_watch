@@ -9,7 +9,6 @@ import { fetchMovieList } from "../../../redux/movieRedux/movieActions"
 import { fetchTvList } from "../../../redux/tvRedux/tvActions"
 
 import MovieCategory from "../movieCategory/MovieCategory.component"
-import { Container } from "react-bootstrap"
 
 //LOADING SPINNER
 const override = css`

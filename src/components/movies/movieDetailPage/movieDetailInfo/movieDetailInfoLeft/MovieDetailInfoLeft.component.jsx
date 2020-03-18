@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, withRouter } from "react-router-dom"
+import { withRouter } from "react-router-dom"
 import "./MovieDetailInfoLeft.styles.scss"
 import { connect } from "react-redux"
 import ActorCard from "../../../../commonComponent/actorCard/ActorCard.component"
@@ -8,7 +8,6 @@ import MovieDetailVideo from "../../movieDetailVideo/MovieDetailVideo.component"
 import MovieRecommend from "./movieRecommend/MovieRecommend.component"
 
 const MovieDetailInfoLeft = props => {
-  console.log("LEFT", props)
   let site,
     key = undefined
 
