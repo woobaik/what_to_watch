@@ -6,6 +6,7 @@ import { Button } from "react-bootstrap"
 import SearchBar from "../../movies/movieSearchBar/MovieSearchBar.component"
 import MovieNavigation from "../../movies/movieNavBar/MovieNavigationBar.component"
 import HorizontalDivider from "../divider/HorizontalDivider.component.jsx"
+import MovieSearchBar from "../../movies/movieSearchBar/MovieSearchBar.component"
 
 const Header = () => {
   return (
@@ -19,9 +20,7 @@ const Header = () => {
           />
           <div className="logo-name">WHAT TO WATCH?</div>
         </Link>
-        <div className="header-search">
-          <SearchBar />
-        </div>
+        <div className="header-search"></div>
 
         <div className="user-authenticate">
           <div className="user-button">
@@ -38,6 +37,7 @@ const Header = () => {
         </div>
       </header>
       <MovieNavigation />
+      <MovieSearchBar />
       <HorizontalDivider />
     </Fragment>
   )

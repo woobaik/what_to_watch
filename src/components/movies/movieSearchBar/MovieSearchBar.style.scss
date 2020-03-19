@@ -1,19 +1,68 @@
-.search-form {
-    display: flex;
+.search-form-container {
+  position: relative;
+  // form
+  .search-form {
+    position: absolute;
+    width: 100%;
+    //whole container for suggestions
+    .react-autosuggest__container {
+      //input
+      .react-autosuggest__input {
+        background-color: white;
+      }
+
+      //accordian
+      .react-autosuggest__suggestions-container {
+        background-color: pink;
+        //ul
+        .react-autosuggest__suggestions-list {
+          //li
+          .react-autosuggest__suggestion {
+            .suggestion-row {
+              font-size: 1.1rem;
+
+              .suggestion-title-text {
+                padding-left: 1rem;
+              }
+              .suggestion-title-year-or-department {
+                padding-left: 0.5rem;
+                color: gray;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 #search {
-    width: 100%;
-    box-shadow: none;
-    font-size: 16px;
-    padding-left: 0.3rem;
-    outline: none;
+  width: 100%;
+  height: 50px;
+  box-shadow: none;
+  font-size: 16px;
+  padding-left: 0.3rem;
+  outline: none;
 }
 
 #search-icon {
-    width: 65px;
-    border: 1px solid #d3d3d3;
-    background-color: #f8f8f8;
-    margin: 0;
-    border-left: none;
+  width: 65px;
+  border: 1px solid #d3d3d3;
+  background-color: #f8f8f8;
+  margin: 0;
+  border-left: none;
+}
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+
+  .react-autosuggest__suggestions-list {
+    padding: 0;
+  }
+  .suggestion-row {
+    border-bottom: 1px solid rgb(216, 214, 214);
+  }
+}
+.react-autosuggest__suggestion--highlighted {
+  background-color: rgb(126, 168, 126);
 }

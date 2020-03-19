@@ -59,11 +59,9 @@ export const loadSuggestions = value => {
         `
       )
       .then(response => {
-        console.log("c8 axios", response)
         dispatch(maybeUpdateSuggestions(response.data.results))
       })
       .catch(error => {
-        console.log("c8 axios fail", error)
         dispatch(fetchSearchError(error))
       })
   }
