@@ -1,9 +1,7 @@
 import React, { Fragment } from "react"
 import { Link } from "react-router-dom"
 import "./Header.styles.scss"
-import { Button } from "react-bootstrap"
 
-import SearchBar from "../../movies/movieSearchBar/MovieSearchBar.component"
 import MovieNavigation from "../../movies/movieNavBar/MovieNavigationBar.component"
 import HorizontalDivider from "../divider/HorizontalDivider.component.jsx"
 import MovieSearchBar from "../../movies/movieSearchBar/MovieSearchBar.component"

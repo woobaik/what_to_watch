@@ -5,7 +5,7 @@ import "./MovieSearchBar.style.scss"
 import { IoIosSearch } from "react-icons/io"
 import { MdLocalMovies, MdTv, MdPerson, MdSearch } from "react-icons/md"
 
-import { withRouter, Redirect } from "react-router-dom"
+import { withRouter } from "react-router-dom"
 
 import {
   updateInputValue,
@@ -63,23 +63,17 @@ const handleSubmit = e => {
 }
 
 const MovieSearch = props => {
-  console.log("김건모", props)
   const status = props.isLoading ? "Loading..." : "Type to load suggestions"
 
   const getSuggestionValue = suggestion => {
-    console.log("굴삭긔 개색기", suggestion)
-
     return suggestion.name || suggestion.title
   }
 
   const onSuggestionSelected = (_event, { suggestion }) => {
-    console.log("SUGGESTION HAS SELECTED", suggestion)
     let mediaType = suggestion.media_type
     if (mediaType === "person") {
       mediaType = "people"
     }
-
-    console.log("a미디어 타입", mediaType)
 
     let title = suggestion.title || suggestion.name
     let urlSafeTitle = title
@@ -87,9 +81,7 @@ const MovieSearch = props => {
       .replace(/[&#,+()/$~%.'":*?<>{}]/g, "")
       .replace(/\s/g, "-")
     let slug = suggestion.id + "-" + urlSafeTitle
-    console.log("ibc ibc", typeof slug)
     props.history.push(`/${mediaType}/${slug}`)
-    return {}
   }
 
   const inputProps = {

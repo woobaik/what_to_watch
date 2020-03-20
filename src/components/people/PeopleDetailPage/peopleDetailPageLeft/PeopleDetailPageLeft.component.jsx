@@ -2,6 +2,7 @@ import React from "react"
 import "./peopleDetailPageLeft.style.scss"
 
 import { connect } from "react-redux"
+import { GoPerson } from "react-icons/go"
 
 const PeopleDetailPageLeft = props => {
   // need to get dead date if person has passed away
@@ -43,11 +44,21 @@ const PeopleDetailPageLeft = props => {
   return (
     <div className="People-detail-page-left">
       <div className="people-detail-left-image">
-        <img
-          src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${props.person.profile_path}`}
-          alt={props.person.name}
-          className="people-detail-left-image-image"
-        />
+        {props.person.profile_path ? (
+          <img
+            src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${props.person.profile_path}`}
+            alt={props.person.name}
+            className="people-detail-left-image-image"
+          />
+        ) : (
+          <div className="people-detail-left-no-image">
+            <GoPerson />
+            <div className="people-detail-left-no-image-text">
+              We don't have a picture for {props.person.name}
+            </div>
+          </div>
+        )}
+
         <div className="people-detail-left-info">
           <div className="people-detail-left-info-title">Personal Info</div>
           {detailLeftItemGenerator("Name", props.person.name)}
