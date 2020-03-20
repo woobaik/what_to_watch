@@ -21,20 +21,6 @@ const Header = () => {
           <div className="logo-name">WHAT TO WATCH?</div>
         </Link>
         <div className="header-search"></div>
-
-        <div className="user-authenticate">
-          <div className="user-button">
-            <Button variant="outline-primary" size="sm">
-              SIGN IN
-            </Button>
-          </div>
-
-          <div className="user-button">
-            <Button variant="outline-success" size="sm">
-              SIGN UP
-            </Button>
-          </div>
-        </div>
       </header>
       <MovieNavigation />
       <MovieSearchBar />

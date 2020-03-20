@@ -4,22 +4,30 @@
   .search-form {
     position: absolute;
     width: 100%;
+    z-index: 99999;
     //whole container for suggestions
     .react-autosuggest__container {
       //input
+
+      #search {
+        padding-left: 2.3rem;
+        font-size: 1.2rem;
+      }
       .react-autosuggest__input {
         background-color: white;
       }
 
       //accordian
       .react-autosuggest__suggestions-container {
-        background-color: pink;
         //ul
         .react-autosuggest__suggestions-list {
           //li
+          padding-left: 0 !important;
+
           .react-autosuggest__suggestion {
             .suggestion-row {
               font-size: 1.1rem;
+              padding-left: 1.5rem;
 
               .suggestion-title-text {
                 padding-left: 1rem;
@@ -31,6 +39,14 @@
             }
           }
         }
+      }
+
+      .react-autosuggest__suggestion:nth-child(odd) {
+        background-color: rgb(255, 251, 251);
+      }
+
+      .react-autosuggest__suggestion:nth-child(even) {
+        background-color: rgb(255, 255, 255);
       }
     }
   }
@@ -64,5 +80,5 @@
   }
 }
 .react-autosuggest__suggestion--highlighted {
-  background-color: rgb(126, 168, 126);
+  background-color: rgb(124, 192, 124) !important;
 }

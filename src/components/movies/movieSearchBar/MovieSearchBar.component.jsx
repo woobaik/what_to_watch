@@ -4,23 +4,14 @@ import Autosuggest from "react-autosuggest"
 import "./MovieSearchBar.style.scss"
 import { IoIosSearch } from "react-icons/io"
 import { MdLocalMovies, MdTv, MdPerson, MdSearch } from "react-icons/md"
+import { GoSearch } from "react-icons/go"
+import { withRouter, Redirect } from "react-router-dom"
 
 import {
   updateInputValue,
   loadSuggestions,
   clearSuggestions
 } from "../../../redux/searchRedux/searchActions"
-
-const getSuggestionValue = suggestion => {
-  let suggestionName = ""
-  if (suggestion.name) {
-    suggestionName = suggestion.name
-  } else if (suggestion.title) {
-    suggestionName = suggestion.title
-  }
-  console.log(suggestion.media_type)
-  return suggestionName
-}
 
 const renderSuggestion = suggestion => {
   let icon = undefined
@@ -38,7 +29,7 @@ const renderSuggestion = suggestion => {
       icon = <MdSearch />
       break
   }
-  console.log("qkrrrhkddn", suggestion)
+
   return (
     <div className="suggestion-row">
       {icon}
@@ -72,10 +63,36 @@ const handleSubmit = e => {
 }
 
 const MovieSearch = props => {
+  console.log("김건모", props)
   const status = props.isLoading ? "Loading..." : "Type to load suggestions"
 
+  const getSuggestionValue = suggestion => {
+    console.log("굴삭긔 개색기", suggestion)
+
+    return suggestion
+  }
+
+  const onSuggestionSelected = suggestion => {
+    console.log("SUGGESTION HAS SELECTED", suggestion)
+    let mediaType = suggestion.media_type
+    if (mediaType === "person") {
+      mediaType = "people"
+    }
+
+    console.log("a미디어 타입", mediaType)
+
+    let title = suggestion.title || suggestion.name
+    let urlSafeTitle = title
+      .toLowerCase()
+      .replace(/[&#,+()/$~%.'":*?<>{}]/g, "")
+      .replace(/\s/g, "-")
+    let slug = suggestion.id + "-" + urlSafeTitle
+
+    props.history.push(`/${mediaType}/${slug}`)
+  }
+
   const inputProps = {
-    placeholder: "Search for a movie, tv show, person...",
+    placeholder: `Search For a Movie, TV show, Person...    Ex ::: Game of Thrones, Forest Gump, Chuck Norris`,
     autoComplete: "off",
     name: "search",
     id: "search",
@@ -93,11 +110,8 @@ const MovieSearch = props => {
           getSuggestionValue={getSuggestionValue}
           renderSuggestion={renderSuggestion}
           inputProps={inputProps}
+          onSuggestionSelected={onSuggestionSelected}
         />
-
-        <button id="search-icon">
-          <IoIosSearch />
-        </button>
       </form>
     </div>
   )
@@ -122,11 +136,6 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MovieSearch)
-
-// <input
-// type="text"
-// id="search"
-// placeholder="Search for a movie, tv show, person..."
-// autoComplete="off"
-// />
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(MovieSearch)
+)
