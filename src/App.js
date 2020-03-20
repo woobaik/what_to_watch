@@ -45,6 +45,7 @@ function App() {
             <Route path="/" component={MovieMainPage} />
           </Switch>
           <FloatingBtn />
+
           <Footer />
         </div>
       </Router>

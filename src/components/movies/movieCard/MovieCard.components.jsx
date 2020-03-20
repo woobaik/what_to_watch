@@ -4,6 +4,16 @@ import "./MovieCard.styles.scss"
 
 import { Card } from "react-bootstrap"
 
+// movie overview truncate
+
+const truncateOverview = overview => {
+  if (overview.length > 550) {
+    return overview.slice(0, 550) + "..."
+  }
+
+  return overview
+}
+
 const MovieCard = props => {
   const navigateToMovieDetail = () => {
     let videoTitle = props.video.title || props.video.name
@@ -28,7 +38,9 @@ const MovieCard = props => {
             alt="Movie Thumbnail"
           />
           <div className="movieCard-overlay">
-            <div className="movieCard-overlay-text">{props.video.overview}</div>
+            <div className="movieCard-overlay-text">
+              {truncateOverview(props.video.overview)}
+            </div>
           </div>
         </div>
 
