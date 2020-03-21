@@ -26,6 +26,9 @@ const MovieDetailHeader = props => {
           ) : (
             <div className="no-image">
               <FaRegFileImage />
+              <div className="no-image-text">
+                We don't have image for {props.title} yet.
+              </div>
             </div>
           )}
         </div>
