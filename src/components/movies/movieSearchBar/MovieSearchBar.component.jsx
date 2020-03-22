@@ -85,7 +85,7 @@ const MovieSearch = props => {
   }
 
   const inputProps = {
-    placeholder: `Search For a Movie, TV show, Person...    Ex ::: Game of Thrones, Forest Gump, Chuck Norris`,
+    placeholder: `TYPE HERE for Searching For a Movie, TV show, Person...
     autoComplete: "off",
     name: "search",
     id: "search",
