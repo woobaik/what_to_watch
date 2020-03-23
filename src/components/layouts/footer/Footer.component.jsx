@@ -31,12 +31,12 @@ const footer = () => {
     <div className="Footer" id="footer">
       <div className="cards">
         <div className="card">
-          <div className="cardTitle">B Paup</div>
+          <div className="cardTitle">Joungwoo Baik</div>
           <div className="cardBody">
             <div>Full Stack Developer</div>
             <div>Based in San Francisco</div>
-            <div>worldstarppa@gmail.com</div>
-            <div>444 - 555 - 6666</div>
+            <div>joungwoo.baik@gmail.com</div>
+            <div>415-766-1431</div>
           </div>
         </div>
         <div className="card skills">

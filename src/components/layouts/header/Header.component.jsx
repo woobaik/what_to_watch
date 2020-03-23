@@ -10,9 +10,9 @@ const Header = () => {
   return (
     <Fragment>
       <header className="Header">
-        <Link to="" className="logo-and-text">
+        <Link to="/" className="logo-and-text">
           <img
-            src="../../../assets/image/562x385.png"
+            src={`${process.env.PUBLIC_URL}/images/563x385.png`}
             alt="logo"
             className="logo"
           />
