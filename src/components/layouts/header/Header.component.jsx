@@ -12,7 +12,7 @@ const Header = () => {
       <header className="Header">
         <Link to="/" className="logo-and-text">
           <img
-            src={`${process.env.PUBLIC_URL}/images/563x385.png`}
+            src={`${process.env.PUBLIC_URL}/assets/images/logo.png`}
             alt="logo"
             className="logo"
           />
