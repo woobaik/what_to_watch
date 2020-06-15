@@ -1,61 +1,60 @@
 .Movie-navigation {
-  background-color: rgb(47, 163, 119);
-  color: white;
-  height: 5rem;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-around;
-  padding: 0 5rem;
-  font-family: "Source Sans Pro", sans-serif;
-  letter-spacing: 0.2rem;
-  flex-wrap: none;
-  font-size: 1.2rem;
-  padding-top: 1rem;
-  margin-top: 3.5rem;
+	background-color: rgb(47, 163, 119);
+	color: white;
+	height: 5rem;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-around;
+	padding: 0 5rem;
+	font-family: "Source Sans Pro", sans-serif;
+	letter-spacing: 0.2rem;
+	flex-wrap: none;
+	font-size: 1.2rem;
+	padding-top: 1rem;
 }
 
 .dropdown-container {
-  cursor: pointer;
-  position: relative;
-  transition: color 0.3s ease-in-out;
+	cursor: pointer;
+	position: relative;
+	transition: color 0.3s ease-in-out;
 }
 
 .dropdown-hidden-container {
-  display: none;
-  position: absolute;
-  font-size: 0.8rem;
-  font-weight: normal;
-  color: lightgray;
+	display: none;
+	position: absolute;
+	font-size: 0.8rem;
+	font-weight: normal;
+	color: lightgray;
 }
 
 .dropdown-hidden-item {
-  width: max-content;
-  margin-left: 1rem;
-  color: lightgray;
+	width: max-content;
+	margin-left: 1rem;
+	color: lightgray;
 }
 
 .dropdown-container:hover {
-  color: #d1d1d1;
+	color: #d1d1d1;
 }
 
 .dropdown-container:hover .dropdown-hidden-container {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-basis: 1fr;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-basis: 1fr;
 }
 
 .dropdown-hidden-item:first-child {
-  margin-left: 0;
+	margin-left: 0;
 }
 
 .dropdown-hidden-item:hover {
-  color: white;
+	color: white;
 }
 
 .nav-button {
-  color: rgb(255, 255, 255);
+	color: rgb(255, 255, 255);
 }
 
 .nav-button:hover {
-  color: #d3cece;
+	color: #d3cece;
 }
