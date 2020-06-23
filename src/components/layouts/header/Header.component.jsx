@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import "./Header.styles.scss"
 
@@ -7,8 +7,21 @@ import HorizontalDivider from "../divider/HorizontalDivider.component.jsx"
 import MovieSearchBar from "../../movies/movieSearchBar/MovieSearchBar.component"
 
 const Header = () => {
+	const [scrollY, setScrollY] = useState(window.pageYOffset)
+	const [visible, setVisible] = useState(true)
+
+	const handleScroll = () => {
+		const currentScrollPosition = window.pageYOffset
+		setVisible(scrollY > currentScrollPosition)
+		setScrollY(currentScrollPosition)
+	}
+
+	useEffect(() => {
+		document.addEventListener("scroll", handleScroll)
+	})
+
 	return (
-		<Fragment>
+		<div className={visible ? "visible" : "visible-hidden"}>
 			<header className="Header">
 				<Link to="/" className="logo-and-text">
 					<div className="logo-name">WHAT TO WATCH?</div>
@@ -19,7 +32,7 @@ const Header = () => {
 			<MovieNavigation />
 			<MovieSearchBar />
 			<HorizontalDivider />
-		</Fragment>
+		</div>
 	)
 }
 

@@ -1,3 +1,17 @@
+.visible {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	transition: top 0.6s;
+}
+
+.visible .hidden {
+	top: -63px;
+	position: fixed;
+	width: 100%;
+	transition: top 0.6s;
+}
+
 .Header {
 	background-color: #032541;
 	font-family: "Work Sans", sans-serif;
