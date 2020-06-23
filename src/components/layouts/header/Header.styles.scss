@@ -1,74 +1,83 @@
 .Header {
-  background-color: white;
-  font-family: "Work Sans", sans-serif;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #26b9a7;
-  align-items: center;
-
-  top: 0;
-
-  z-index: 9999;
+	background-color: #032541;
+	font-family: "Work Sans", sans-serif;
+	font-weight: bold;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #26b9a7;
+	align-items: center;
+	top: 0;
+	z-index: 9999;
 }
 
 .logo-and-text {
-  display: flex;
-  padding: 1rem 0;
-}
-
-.logo {
-  background: transparent;
-  width: 28px;
-  height: 19px;
-  display: block;
-  margin-left: 3rem;
+	display: flex;
+	padding: 1rem 0;
+	margin-left: 50px;
 }
 
 .logo-name {
-  color: #26b9a7;
-  font-size: 1rem;
-  margin-left: 0.5rem;
-  width: 300px;
+	background: linear-gradient(to right, #8fcea1, #45bfc4);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	height: 30px;
+	margin: 0 10px;
+	transition: background 1s linear;
+	font-size: 1.2rem;
+}
+
+.logo-name:hover {
+	background: linear-gradient(to right, #45bfc4, #8fcea1);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.logo-pill {
+	background: linear-gradient(to right, rgb(45, 187, 207), rgb(8, 181, 226));
+	border-radius: 10px;
+
+	width: 70px;
+	height: 25px;
 }
 
 .header-search {
-  width: 45vw;
+	width: 45vw;
 }
 
 .user-authenticate {
-  display: flex;
-  align-items: center;
-  margin-right: 3rem;
+	display: flex;
+	align-items: center;
+	margin-right: 3rem;
 }
 
 .user-button {
-  margin-left: 1rem;
-  border: none;
-  color: white;
+	margin-left: 1rem;
+	border: none;
+	color: white;
 }
 
 @media (max-width: 700px) {
-  .logo-name {
-    display: none;
-  }
+	.logo-name {
+		display: none;
+	}
 
-  .header-search {
-    display: none;
-  }
+	.header-search {
+		display: none;
+	}
 }
 
 // custom bootstrap button
 
 .btn-outline-primary {
-  color: #26b9a7;
+	color: #26b9a7;
 }
 
 .btn-outline-primary:hover {
-  background-color: #26b9a7 !important;
-  border: 1px solid #26b9a7 !important;
+	background-color: #26b9a7 !important;
+	border: 1px solid #26b9a7 !important;
 }
 
 .logo-and-text:hover {
-  text-decoration: none;
+	text-decoration: none;
 }
