@@ -2,8 +2,21 @@
 	font-family: "Source Sans Pro", sans-serif;
 	font-weight: 600;
 	font-size: 1.5rem;
-	margin: 1rem 0 1.5rem 0;
-	color: rgb(10, 80, 10);
+	margin: 2rem 0 3rem 0;
+	background-color: rgb(3, 37, 65);
+	width: fit-content;
+	padding: 5px 20px;
+	border-radius: 20px;
+
+	span {
+		background: linear-gradient(
+			to right,
+			rgba(192, 254, 207, 1) 0%,
+			rgba(30, 213, 169, 1) 100%
+		);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
 }
 
 .category-card-deck {
