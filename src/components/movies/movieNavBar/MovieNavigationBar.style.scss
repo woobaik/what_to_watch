@@ -3,7 +3,6 @@
 	height: 5rem;
 	display: flex;
 
-	padding: 0 5rem;
 	font-family: "Source Sans Pro", sans-serif;
 	flex-wrap: none;
 	font-size: 1.2rem;
@@ -14,6 +13,7 @@
 	cursor: pointer;
 	position: relative;
 	transition: color 0.3s ease-in-out;
+	margin-top: 1rem;
 }
 
 .dropdown-hidden-container {
@@ -55,4 +55,15 @@
 
 .nav-button:hover {
 	color: #d3cece;
+}
+
+@media (max-width: 1200px) {
+	.Movie-navigation {
+		display: flex;
+
+		.nav-button {
+			text-align: center;
+			margin-left: 2rem;
+		}
+	}
 }

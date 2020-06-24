@@ -20,8 +20,6 @@
 	font-family: "Work Sans", sans-serif;
 	font-weight: bold;
 	display: flex;
-	justify-content: center;
-	align-items: center;
 
 	align-items: center;
 	top: 0;
@@ -29,11 +27,11 @@
 }
 
 .header-left {
+	width: fit-content;
 }
 .logo-and-text {
 	display: flex;
-	padding: 1rem 0;
-	margin-left: 50px;
+	padding: 1rem;
 }
 
 .logo-name {

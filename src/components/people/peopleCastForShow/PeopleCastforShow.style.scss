@@ -1,79 +1,80 @@
 .People-Cast-For-Show {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(468px, 1fr));
-  padding: 2rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(468px, 1fr));
+	padding: 2rem;
+	width: 85vw;
 
-  .People-cast-container {
-    margin: 1rem;
+	.People-cast-container {
+		margin: 1rem;
 
-    .full-cast-role-title {
-      font-size: 1.5rem;
-      padding-left: 2rem;
-      font-weight: bold;
-      .full-cast-number {
-        color: rgb(114, 113, 113);
-      }
-    }
+		.full-cast-role-title {
+			font-size: 1.5rem;
+			padding-left: 2rem;
+			font-weight: bold;
+			.full-cast-number {
+				color: rgb(114, 113, 113);
+			}
+		}
 
-    .credit-container {
-      color: green;
-      margin: 1rem;
-      padding: 0.5rem;
-      .grid-items {
-        background-color: rgb(213, 243, 233);
-        padding: 0.4rem 0rem 1.3rem 0;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        .individual-item {
-          background-color: rgb(255, 255, 255);
-          width: 95%;
-          margin-top: 1rem;
-          padding: 1rem 0;
-          border: 1px solid #b6ecb6;
-          border-radius: 5px;
-          display: flex;
+		.credit-container {
+			color: green;
+			margin: 1rem;
+			padding: 0.5rem;
+			.grid-items {
+				background-color: rgb(213, 243, 233);
+				padding: 0.4rem 0rem 1.3rem 0;
+				border-radius: 10px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				.individual-item {
+					background-color: rgb(255, 255, 255);
+					width: 95%;
+					margin-top: 1rem;
+					padding: 1rem 0;
+					border: 1px solid #b6ecb6;
+					border-radius: 5px;
+					display: flex;
 
-          .image-container {
-            padding-left: 1rem;
-            .no-image {
-              background-color: rgb(173, 173, 173);
-              width: 66px;
-              height: 66px;
-              font-size: 3rem;
-              text-align: center;
-              color: rgb(92, 91, 94);
-            }
-          }
+					.image-container {
+						padding-left: 1rem;
+						.no-image {
+							background-color: rgb(173, 173, 173);
+							width: 66px;
+							height: 66px;
+							font-size: 3rem;
+							text-align: center;
+							color: rgb(92, 91, 94);
+						}
+					}
 
-          .item-content {
-            padding-left: 1rem;
+					.item-content {
+						padding-left: 1rem;
 
-            .item-content-name {
-              font-weight: bold;
-              color: rgb(107, 107, 107);
-              margin-bottom: 0;
-            }
+						.item-content-name {
+							font-weight: bold;
+							color: rgb(107, 107, 107);
+							margin-bottom: 0;
+						}
 
-            .item-content-character {
-              color: rgb(43, 42, 42);
-            }
-          }
-        }
-      }
-      .no-content {
-        color: rgb(100, 100, 100);
-        padding-left: 2rem;
-        font-weight: bold;
-        padding: 1rem 2rem !important;
-      }
-    }
-  }
+						.item-content-character {
+							color: rgb(43, 42, 42);
+						}
+					}
+				}
+			}
+			.no-content {
+				color: rgb(100, 100, 100);
+				padding-left: 2rem;
+				font-weight: bold;
+				padding: 1rem 2rem !important;
+			}
+		}
+	}
 }
 
 @media (max-width: 970px) {
-  .People-Cast-For-Show {
-  }
+	.People-Cast-For-Show {
+	}
 }
