@@ -20,18 +20,19 @@
 	font-family: "Work Sans", sans-serif;
 	font-weight: bold;
 	display: flex;
-
 	align-items: center;
+	justify-content: space-around;
 	top: 0;
 	width: 100%;
 }
 
 .header-left {
-	width: fit-content;
+	display: flex;
 }
+
 .logo-and-text {
 	display: flex;
-	padding: 1rem;
+	padding: 1rem 0rem 1rem 4rem;
 }
 
 .logo-name {
@@ -50,18 +51,6 @@
 	-webkit-text-fill-color: transparent;
 }
 
-.logo-pill {
-	background: linear-gradient(to right, rgb(45, 187, 207), rgb(8, 181, 226));
-	border-radius: 10px;
-
-	width: 70px;
-	height: 25px;
-}
-
-.header-search {
-	width: 45vw;
-}
-
 .user-authenticate {
 	display: flex;
 	align-items: center;
@@ -72,16 +61,6 @@
 	margin-left: 1rem;
 	border: none;
 	color: white;
-}
-
-@media (max-width: 700px) {
-	.logo-name {
-		display: none;
-	}
-
-	.header-search {
-		display: none;
-	}
 }
 
 // custom bootstrap button
@@ -97,4 +76,14 @@
 
 .logo-and-text:hover {
 	text-decoration: none;
+}
+
+@media (max-width: 700px) {
+	.header-burger {
+		color: white;
+		font-size: 2rem;
+		position: absolute;
+		top: 4px;
+		left: 20px;
+	}
 }
