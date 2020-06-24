@@ -1,32 +1,33 @@
 .Popular-people {
-  margin: 4.5rem auto;
-  padding: 0 2rem;
+	margin: 4.5rem auto;
+	padding: 0 2rem;
+	width: 85vw;
 
-  .popular-people-title {
-    padding: 1rem 0 1rem 1rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    font-family: Arial;
-    padding-left: 1rem;
-    color: green;
-  }
+	.popular-people-title {
+		padding: 1rem 0 1rem 1rem;
+		font-size: 1.5rem;
+		font-weight: 600;
+		font-family: Arial;
+		padding-left: 1rem;
+		color: green;
+	}
 
-  .popular-people-paginate-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+	.popular-people-paginate-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
-  .people-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
-    justify-items: center;
-    grid-gap: 10px;
-  }
+	.people-container {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+		justify-items: center;
+		grid-gap: 10px;
+	}
 }
 
 @media (max-width: 508px) {
-  .Popular-people {
-    padding: 0;
-  }
+	.Popular-people {
+		padding: 0;
+	}
 }

@@ -11,9 +11,9 @@
 		color: rgb(6, 61, 4);
 		line-height: 1rem;
 		padding: 2px;
-		-webkit-box-shadow: 10px 10px 5px -6px rgba(170, 227, 177, 1);
-		-moz-box-shadow: 10px 10px 5px -6px rgba(170, 227, 177, 1);
-		box-shadow: 10px 10px 5px -6px rgba(170, 227, 177, 1);
+		-webkit-box-shadow: 10px 10px 5px -6px rgb(3, 31, 55);
+		-moz-box-shadow: 10px 10px 5px -6px rgb(3, 31, 55);
+		box-shadow: 10px 10px 5px -6px rgb(3, 31, 55);
 
 		.movie-image-container {
 			width: 100%;
@@ -24,7 +24,7 @@
 				top: 0;
 				width: 100%;
 				overflow: hidden;
-				background-color: rgb(11, 80, 17);
+				background-color: rgb(3, 31, 55);
 				transition: 0.5s ease;
 				opacity: 0.8;
 				cursor: pointer;
@@ -45,7 +45,7 @@
 			}
 		}
 		.card-title {
-			color: rgb(114, 255, 95);
+			color: white;
 			text-align: center;
 			padding: 1rem 0 0.7rem 0.5rem;
 			font-size: 1.2rem;
