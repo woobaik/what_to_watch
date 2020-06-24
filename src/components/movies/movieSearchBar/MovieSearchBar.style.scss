@@ -1,6 +1,14 @@
 .search-form-container {
-	position: relative;
+	position: fixed;
 	padding-top: 4rem;
+	z-index: 999;
+	width: 100%;
+	top: 0px;
+	transition: top 1s;
+
+	&.hidden {
+		transform: translateY(-50px);
+	}
 	// form
 	.search-form {
 		width: 100%;

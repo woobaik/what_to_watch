@@ -9,6 +9,7 @@ import MovieSearchBar from "../../movies/movieSearchBar/MovieSearchBar.component
 const Header = () => {
 	const [scrollY, setScrollY] = useState(window.pageYOffset)
 	const [visible, setVisible] = useState(true)
+	const [searchVisible, setSearchVisible] = useState(false)
 
 	const handleScroll = () => {
 		const currentScrollPosition = window.pageYOffset
@@ -18,7 +19,6 @@ const Header = () => {
 
 	useEffect(() => {
 		document.addEventListener("scroll", handleScroll)
-
 		return () => document.removeEventListener("scroll", handleScroll)
 	})
 
@@ -34,10 +34,12 @@ const Header = () => {
 						<div className="header-search"></div>
 					</div>
 
-					<MovieNavigation />
+					<MovieNavigation
+						toggleSearch={() => setSearchVisible(!searchVisible)}
+					/>
 				</header>
 			</div>
-			<MovieSearchBar />
+			{searchVisible ? <MovieSearchBar /> : ""}
 		</Fragment>
 	)
 }

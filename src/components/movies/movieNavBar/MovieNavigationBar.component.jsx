@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 
 import MovieSearchBar from "../movieSearchBar/MovieSearchBar.component"
 
-const MovieNavigationBar = () => {
+const MovieNavigationBar = (props) => {
 	return (
 		<div className="Movie-navigation">
 			<div className="dropdown-container">
@@ -58,7 +58,7 @@ const MovieNavigationBar = () => {
 				</div>
 			</div>
 			<div className="dropdown-container">
-				<FiSearch className="nav-button" />
+				<FiSearch className="nav-button" onClick={() => props.toggleSearch()} />
 			</div>
 		</div>
 	)
