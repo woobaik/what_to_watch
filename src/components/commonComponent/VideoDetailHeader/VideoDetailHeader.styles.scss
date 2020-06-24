@@ -1,101 +1,101 @@
 .Movie-detail-header::before {
-  content: "";
-  display: block;
-  background: radial-gradient(#000000, #545454);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0.9;
-  z-index: 0;
+	content: "";
+	display: block;
+	background: radial-gradient(#000000, #545454);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0.9;
+	z-index: 0;
 }
 
 .Movie-detail-header {
-  position: relative;
-  background-position: center;
-  background-size: cover;
+	position: relative;
+	background-position: center;
+	background-size: cover;
 }
 
 .Movie-detail-header > * {
-  z-index: 999;
-  position: relative;
+	z-index: 999;
+	position: relative;
 }
 // sass style
 .movie-detail-header-summary {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  padding: 40px;
-  margin: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	padding: 40px;
+	margin: 5rem;
 
-  .movie-detail-header-movie-poster {
-    .no-image {
-      width: 300px;
-      height: 450px;
-      background-color: gray;
-      font-size: 12rem;
-      text-align: center;
-      padding-top: 80px;
+	.movie-detail-header-movie-poster {
+		.no-image {
+			width: 300px;
+			height: 450px;
+			background-color: gray;
+			font-size: 12rem;
+			text-align: center;
+			padding-top: 80px;
 
-      .no-image-text {
-        font-size: 1rem;
-      }
-    }
-  }
+			.no-image-text {
+				font-size: 1rem;
+			}
+		}
+	}
 
-  .movie-detail-header-info {
-    width: 700px;
-    padding-left: 40px;
+	.movie-detail-header-info {
+		width: 700px;
+		padding-left: 40px;
 
-    .movie-detail-header-info-title {
-      font-weight: bold;
-      font-size: 38px;
-      margin-bottom: 1rem;
-    }
+		.movie-detail-header-info-title {
+			font-weight: bold;
+			font-size: 38px;
+			margin-bottom: 1rem;
+		}
 
-    .movie-detail-header-info-title-year {
-      font-size: 27px;
-      color: lightgray;
-    }
+		.movie-detail-header-info-title-year {
+			font-size: 27px;
+			color: lightgray;
+		}
 
-    .movie-detail-header-info-icons {
-      margin-bottom: 2rem;
-      color: greenyellow;
-      font-size: 1.2rem;
-      transition: all 0.2s ease-in-out;
-      cursor: pointer;
-    }
+		.movie-detail-header-info-icons {
+			margin-bottom: 2rem;
+			color: greenyellow;
+			font-size: 1.2rem;
+			transition: all 0.2s ease-in-out;
+			cursor: pointer;
+		}
 
-    .movie-detail-header-info-icons:hover {
-      color: indianred;
-    }
+		.movie-detail-header-info-icons:hover {
+			color: indianred;
+		}
 
-    .movie-detail-header-info-overview {
-      margin-bottom: 3em;
-    }
+		.movie-detail-header-info-overview {
+			margin-bottom: 3em;
+		}
 
-    .movie-detail-header-info-featured-crew {
-      .featured-crew-list {
-        display: flex;
-      }
-    }
-  }
+		.movie-detail-header-info-featured-crew {
+			.featured-crew-list {
+				display: flex;
+			}
+		}
+	}
 }
 
 @media (max-width: 825px) {
-  .movie-detail-header-summary {
-    display: block;
-    text-align: center;
+	.movie-detail-header-summary {
+		display: block;
+		text-align: center;
 
-    .movie-detail-header-info {
-      width: 100%;
-      padding-left: 0;
+		.movie-detail-header-info {
+			width: 100%;
+			padding-left: 0;
 
-      .movie-detail-header-info-featured-crew {
-        display: none;
-      }
-    }
-  }
+			.movie-detail-header-info-featured-crew {
+				display: none;
+			}
+		}
+	}
 }

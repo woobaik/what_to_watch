@@ -1,13 +1,10 @@
 .Movie-navigation {
-	background-color: rgb(47, 163, 119);
 	color: white;
 	height: 5rem;
 	display: flex;
-	align-items: flex-start;
-	justify-content: space-around;
+
 	padding: 0 5rem;
 	font-family: "Source Sans Pro", sans-serif;
-	letter-spacing: 0.2rem;
 	flex-wrap: none;
 	font-size: 1.2rem;
 	padding-top: 1rem;
@@ -53,6 +50,7 @@
 
 .nav-button {
 	color: rgb(255, 255, 255);
+	margin-left: 5rem;
 }
 
 .nav-button:hover {

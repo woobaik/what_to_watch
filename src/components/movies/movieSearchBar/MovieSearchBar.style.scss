@@ -1,10 +1,9 @@
 .search-form-container {
 	position: relative;
+	padding-top: 4rem;
 	// form
 	.search-form {
-		position: fixed;
 		width: 100%;
-		z-index: 99999;
 
 		appearance: none;
 		//whole container for suggestions
