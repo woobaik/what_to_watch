@@ -32,7 +32,9 @@ const Header = () => {
 							<div className="logo-name">WHAT TO WATCH?</div>
 							<div className="logo-pill"></div>
 						</Link>
-						<div className="header-burger">
+						<div
+							className="header-burger"
+							onClick={() => console.log("sidebar")}>
 							<GiHamburgerMenu />
 						</div>
 					</div>
