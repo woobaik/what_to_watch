@@ -12,11 +12,19 @@ const Header = () => {
 	const [scrollY, setScrollY] = useState(window.pageYOffset)
 	const [visible, setVisible] = useState(true)
 	const [searchVisible, setSearchVisible] = useState(false)
+	const [sidebarOpen, setSidebarOpen] = useState(false)
 
+	// handle scroll, if scroll, hide header
 	const handleScroll = () => {
 		const currentScrollPosition = window.pageYOffset
 		setVisible(scrollY > currentScrollPosition)
 		setScrollY(currentScrollPosition)
+	}
+
+	//handle sidebar if hamburger clicked
+
+	const handleSideBar = () => {
+		setSidebarOpen(false)
 	}
 
 	useEffect(() => {
@@ -33,9 +41,7 @@ const Header = () => {
 							<div className="logo-name">WHAT TO WATCH?</div>
 							<div className="logo-pill"></div>
 						</Link>
-						<div
-							className="header-burger"
-							onClick={() => console.log("sidebar")}>
+						<div className="header-burger" onClick={() => setSidebarOpen(true)}>
 							<GiHamburgerMenu />
 						</div>
 					</div>
@@ -45,7 +51,7 @@ const Header = () => {
 				</header>
 			</div>
 			{searchVisible ? <MovieSearchBar /> : ""}
-			<SideBar />
+			<SideBar sidebarOpen={sidebarOpen} handleSideBar={handleSideBar} />
 		</Fragment>
 	)
 }

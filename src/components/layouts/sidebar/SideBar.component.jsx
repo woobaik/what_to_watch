@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import "./SideBar.style.scss"
 
 import { Link } from "react-router-dom"
@@ -7,15 +7,19 @@ import { MdLocalMovies } from "react-icons/md"
 import { FiMonitor } from "react-icons/fi"
 import { BsPersonFill } from "react-icons/bs"
 
-const SideBar = () => {
-	const [closedSidebar, setClosedSideBar] = useState(false)
+const SideBar = (props) => {
+	const [closedSidebar, setClosedSideBar] = useState(!props.sidebarOpen)
 	const [toggleMovie, setToggleMovie] = useState(false)
 	const [toggleTvShow, setToggleTvShow] = useState(true)
 
 	// handle sidebar close
+	useEffect(() => {
+		setClosedSideBar(!props.sidebarOpen)
+	}, [props])
 
 	const handleClose = () => {
 		setClosedSideBar(true)
+		props.handleSideBar()
 	}
 
 	// handle drawer open/close
