@@ -4,8 +4,6 @@ import "./MovieNavigationBar.style.scss"
 import { FiSearch } from "react-icons/fi"
 import { Link } from "react-router-dom"
 
-import MovieSearchBar from "../movieSearchBar/MovieSearchBar.component"
-
 const MovieNavigationBar = (props) => {
 	return (
 		<div className="Movie-navigation">

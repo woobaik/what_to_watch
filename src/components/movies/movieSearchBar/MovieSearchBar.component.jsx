@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { connect } from "react-redux"
 import Autosuggest from "react-autosuggest"
 import "./MovieSearchBar.style.scss"
-import { IoIosSearch } from "react-icons/io"
+
 import { MdLocalMovies, MdTv, MdPerson, MdSearch } from "react-icons/md"
 
 import { withRouter } from "react-router-dom"
@@ -78,7 +78,7 @@ const MovieSearch = (props) => {
 		return () => document.removeEventListener("scroll", handleScroll)
 	})
 
-	const status = props.isLoading ? "Loading..." : "Type to load suggestions"
+	// const status = props.isLoading ? "Loading..." : "Type to load suggestions"
 
 	const getSuggestionValue = (suggestion) => {
 		return suggestion.name || suggestion.title
