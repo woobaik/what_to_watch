@@ -2,10 +2,11 @@ import React, { useEffect, useState, Fragment } from "react"
 import { Link } from "react-router-dom"
 import "./Header.styles.scss"
 
+import { GiHamburgerMenu } from "react-icons/gi"
+
 import MovieNavigation from "../../movies/movieNavBar/MovieNavigationBar.component"
 import MovieSearchBar from "../../movies/movieSearchBar/MovieSearchBar.component"
-
-import { GiHamburgerMenu } from "react-icons/gi"
+import SideBar from "../sidebar/SideBar.component"
 
 const Header = () => {
 	const [scrollY, setScrollY] = useState(window.pageYOffset)
@@ -44,6 +45,7 @@ const Header = () => {
 				</header>
 			</div>
 			{searchVisible ? <MovieSearchBar /> : ""}
+			<SideBar />
 		</Fragment>
 	)
 }
