@@ -10,7 +10,7 @@ import { BsPersonFill } from "react-icons/bs"
 const SideBar = (props) => {
 	const [closedSidebar, setClosedSideBar] = useState(!props.sidebarOpen)
 	const [toggleMovie, setToggleMovie] = useState(false)
-	const [toggleTvShow, setToggleTvShow] = useState(true)
+	const [toggleTvShow, setToggleTvShow] = useState(false)
 
 	// handle sidebar close
 	useEffect(() => {
@@ -51,10 +51,26 @@ const SideBar = (props) => {
 					<MdLocalMovies /> <span onClick={(e) => handleDrawer(e)}>Movies</span>
 					<ul
 						className={`sidebar-category-menu ${toggleMovie ? "" : "hidden"}`}>
-						<li>Popular</li>
-						<li>Top Rated</li>
-						<li>Upcoming</li>
-						<li>Now Playing</li>
+						<li>
+							<Link to={"/movies"} onClick={handleClose}>
+								Popular
+							</Link>
+						</li>
+						<li>
+							<Link to={"/movies/top-rated"} onClick={handleClose}>
+								Top Rated
+							</Link>
+						</li>
+						<li>
+							<Link to={"/movies/upcoming"} onClick={handleClose}>
+								Upcoming
+							</Link>
+						</li>
+						<li>
+							<Link to={"/movies/now-playing"} onClick={handleClose}>
+								Now Playing
+							</Link>
+						</li>
 					</ul>
 				</div>
 				<div className="sidebar-category">
@@ -62,14 +78,31 @@ const SideBar = (props) => {
 					<span onClick={(e) => handleDrawer(e)}>Tv Shows</span>
 					<ul
 						className={`sidebar-category-menu ${toggleTvShow ? "" : "hidden"}`}>
-						<li>Popular</li>
-						<li>Top Rated</li>
-						<li>Upcoming</li>
-						<li>Now Playing</li>
+						<li>
+							<Link to={"/tvs"} onClick={handleClose}>
+								Popular
+							</Link>
+						</li>
+						<li>
+							<Link to={"/tvs/top-rated"} onClick={handleClose}>
+								Top Rated
+							</Link>
+						</li>
+						<li>
+							<Link to={"/tvs/on-the-air"} onClick={handleClose}>
+								On TV
+							</Link>
+						</li>
+						<li>
+							<Link to={"/tvs/airing-today"} onClick={handleClose}>
+								Airing Today
+							</Link>
+						</li>
 					</ul>
 				</div>
 				<div className="sidebar-category">
 					<BsPersonFill />
+
 					<span>People</span>
 				</div>
 			</div>
