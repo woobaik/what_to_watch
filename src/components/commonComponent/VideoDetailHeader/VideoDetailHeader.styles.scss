@@ -75,6 +75,7 @@
 
 		.movie-detail-header-info-overview {
 			margin-bottom: 3em;
+			width: 88%;
 		}
 
 		.movie-detail-header-info-featured-crew {
@@ -87,13 +88,17 @@
 
 @media (max-width: 825px) {
 	.movie-detail-header-summary {
-		display: block;
+		display: flex;
 		text-align: center;
-
+		flex-direction: column;
 		.movie-detail-header-info {
-			width: 100%;
 			padding-left: 0;
+			width: 80vw;
 
+			.movie-detail-header-info-overview {
+				margin-bottom: 3em;
+				width: auto;
+			}
 			.movie-detail-header-info-featured-crew {
 				display: none;
 			}
