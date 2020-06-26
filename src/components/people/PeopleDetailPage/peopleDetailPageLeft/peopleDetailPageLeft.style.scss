@@ -1,58 +1,59 @@
 .People-detail-page-left {
-  background: #f1f1f1;
-  height: 100%;
+	background: #f1f1f1;
+	height: 100%;
 
-  .people-detail-left-image {
-    padding-top: 3rem;
-    text-align: center;
+	.people-detail-left-image {
+		padding-top: 3rem;
+		text-align: center;
 
-    .people-detail-left-image-image {
-      -webkit-box-shadow: 10px 10px 5px -6px rgba(170, 227, 177, 1);
-      -moz-box-shadow: 10px 10px 5px -6px rgba(170, 227, 177, 1);
-      box-shadow: 10px 10px 5px -6px rgba(170, 227, 177, 1);
-    }
+		.people-detail-left-image-image {
+			border: 1px solid #aae3b1;
+			-webkit-box-shadow: 9px 10px 5px -9px rgba(170, 227, 177, 1);
+			-moz-box-shadow: 9px 10px 5px -9px rgba(170, 227, 177, 1);
+			box-shadow: 9px 10px 5px -9px rgba(170, 227, 177, 1);
+		}
 
-    .people-detail-left-no-image {
-      background-color: rgb(194, 194, 194);
-      margin: 0 auto;
-      width: 300px;
-      height: 450px;
-      font-size: 15rem;
-      color: rgb(136, 135, 136);
+		.people-detail-left-no-image {
+			background-color: rgb(194, 194, 194);
+			margin: 0 auto;
+			width: 300px;
+			height: 450px;
+			font-size: 15rem;
+			color: rgb(136, 135, 136);
 
-      .people-detail-left-no-image-text {
-        font-size: 1rem;
-        color: rgb(104, 104, 104);
-      }
-    }
-  }
+			.people-detail-left-no-image-text {
+				font-size: 1rem;
+				color: rgb(104, 104, 104);
+			}
+		}
+	}
 
-  .people-detail-left-info {
-    text-align: center;
-    .people-detail-left-info-title {
-      font-size: 1.5rem;
-      margin: 1.4rem 0rem;
-      border-bottom: 1px solid rgb(155, 152, 152);
+	.people-detail-left-info {
+		text-align: center;
+		.people-detail-left-info-title {
+			font-size: 1.5rem;
+			margin: 1.4rem 0rem;
+			border-bottom: 1px solid rgb(155, 152, 152);
 
-      font-weight: bold;
-    }
+			font-weight: bold;
+		}
 
-    .people-detail-left-info-item {
-      margin-bottom: 1rem;
-      .detail-info-item-title {
-        font-weight: bold;
-        font-size: 1.1rem;
-      }
+		.people-detail-left-info-item {
+			margin-bottom: 1rem;
+			.detail-info-item-title {
+				font-weight: bold;
+				font-size: 1.1rem;
+			}
 
-      .detail-info-item-content {
-        padding-top: 0.3rem;
-      }
-    }
-  }
+			.detail-info-item-content {
+				padding-top: 0.3rem;
+			}
+		}
+	}
 }
 
 @media (max-width: 970px) {
-  .People-detail-page-left {
-    text-align: center;
-  }
+	.People-detail-page-left {
+		text-align: center;
+	}
 }

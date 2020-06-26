@@ -29,7 +29,6 @@ const SideBar = (props) => {
 			setToggleMovie(!toggleMovie)
 		} else if (category === "Tv Shows") {
 			setToggleTvShow(!toggleTvShow)
-			console.log(toggleTvShow)
 		} else {
 			return true
 		}
@@ -102,8 +101,12 @@ const SideBar = (props) => {
 				</div>
 				<div className="sidebar-category">
 					<BsPersonFill />
-
-					<span>People</span>
+					<Link
+						to={"/people"}
+						onClick={handleClose}
+						class={"category-for-people"}>
+						People
+					</Link>
 				</div>
 			</div>
 		</div>

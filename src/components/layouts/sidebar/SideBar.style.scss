@@ -51,6 +51,16 @@
 				margin-left: 1.2rem;
 			}
 
+			.category-for-people {
+				color: white !important;
+				margin-top: 2rem;
+
+				width: 100%;
+				padding-bottom: 0.7rem;
+				padding-left: 1.5rem;
+				cursor: pointer;
+			}
+
 			.sidebar-category-menu {
 				color: gray;
 				margin: 0.5rem 0 0 1.5rem;
@@ -69,6 +79,14 @@
 					width: fit-content;
 					&:hover {
 						color: red;
+					}
+
+					a {
+						color: white;
+
+						&:hover {
+							color: lightgray;
+						}
 					}
 				}
 			}
