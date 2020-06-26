@@ -1,65 +1,66 @@
 .MovieDetailInfoRight {
-  text-align: left;
-  margin-left: 2rem;
-  padding-bottom: 5rem;
+	text-align: left;
 
-  .social-icons {
-    font-size: 2rem;
-    margin: 1rem 0;
+	padding-bottom: 5rem;
+	padding-left: 2rem;
 
-    a {
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
-      color: black;
-    }
+	.social-icons {
+		font-size: 2rem;
+		margin: 1rem 0;
 
-    #facebook {
-      color: #1777f2;
-    }
+		a {
+			cursor: pointer;
+			transition: all 0.2s ease-in-out;
+			color: black;
+		}
 
-    #twitter {
-      color: #38a1f3;
-    }
+		#facebook {
+			color: #1777f2;
+		}
 
-    #instagram {
-      color: #dd2a7b;
-    }
+		#twitter {
+			color: #38a1f3;
+		}
 
-    svg:hover {
-      color: gray;
-    }
-  }
+		#instagram {
+			color: #dd2a7b;
+		}
 
-  .social-icons > * {
-    margin: 0 0.2rem;
-  }
+		svg:hover {
+			color: gray;
+		}
+	}
 
-  .right-info-item {
-    margin-top: 1.5rem;
-    h5 {
-      font-weight: bold;
-      color: rgb(29, 15, 15);
-    }
+	.social-icons > * {
+		margin: 0 0.2rem;
+	}
 
-    h6 {
-      color: rgb(5, 3, 3);
-    }
+	.right-info-item {
+		margin-top: 1.5rem;
+		h5 {
+			font-weight: bold;
+			color: rgb(29, 15, 15);
+		}
 
-    .network-title {
-      padding-bottom: 10px;
-    }
-  }
+		h6 {
+			color: rgb(5, 3, 3);
+		}
 
-  .button-holder {
-    padding-left: 0;
+		.network-title {
+			padding-bottom: 10px;
+		}
+	}
 
-    .custom-button {
-      padding: 4px 10px;
-      font-size: 0.9rem;
-      margin-right: 0.5rem;
-      margin-top: 0.5rem;
-      border: 1px solid rgb(158, 158, 0);
-      border-radius: 4px;
-    }
-  }
+	.button-holder {
+		padding-left: 0;
+
+		.custom-button {
+			padding: 4px 10px;
+			font-size: 0.9rem;
+			margin-right: 0.5rem;
+			margin-top: 0.5rem;
+			border: 1px solid rgb(158, 158, 0);
+			border-radius: 4px;
+		}
+	}
 }
