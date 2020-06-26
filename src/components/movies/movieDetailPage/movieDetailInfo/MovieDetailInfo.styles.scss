@@ -29,3 +29,25 @@
 		width: 90vw;
 	}
 }
+
+@media (max-width: 600px) {
+	.Movie-category-detail-page {
+		width: 100vw;
+
+		.Movie-category-detail-page-content {
+			width: 100%;
+			.Movie-category-detail-card {
+				width: 95%;
+				flex-direction: column;
+
+				.category-detail-card-image {
+					text-align: center;
+					margin-top: 2rem;
+				}
+
+				.category-detail-card-content {
+				}
+			}
+		}
+	}
+}

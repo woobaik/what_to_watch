@@ -1,70 +1,83 @@
 .Paginate {
-  color: #222;
-  font-size: 1.3rem;
-  margin: 1rem 0;
-  margin-top: 3rem;
+	color: #222;
+	font-size: 1.3rem;
+	margin: 1rem 0;
+	margin-top: 3rem;
 
-  .pagination {
-    li {
-      box-sizing: border-box;
-      text-align: center;
-      color: white;
-      margin: 0 0.3rem;
-      color: #2ecc71;
-      height: 30px;
-      width: 30px;
-      padding: 0;
-      cursor: pointer;
-      display: inline-block;
+	.pagination {
+		li {
+			box-sizing: border-box;
+			text-align: center;
+			color: white;
+			margin: 0 0.3rem;
+			color: #2ecc71;
+			height: 30px;
+			width: 30px;
+			padding: 0;
+			cursor: pointer;
+			display: inline-block;
 
-      a {
-        display: block;
-      }
-    }
+			a {
+				display: block;
+			}
+		}
 
-    .break-me {
-      color: black;
-    }
+		.break-me {
+			color: black;
+		}
 
-    .active {
-      color: white;
-      text-align: center;
-      background-color: #2ecc71;
-      border-radius: 50%;
-    }
+		.active {
+			color: white;
+			text-align: center;
+			background-color: #2ecc71;
+			border-radius: 50%;
+		}
 
-    .active:focus {
-      outline-color: #a75000;
-    }
+		.active:focus {
+			outline-color: #a75000;
+		}
 
-    .previous,
-    .next {
-      width: auto;
-      background-color: #2ecc71;
-      border-radius: 5px;
-      color: white;
+		.previous,
+		.next {
+			width: auto;
+			background-color: #2ecc71;
+			border-radius: 5px;
+			color: white;
 
-      font-size: 1.1rem;
-      text-align: center;
-      height: 30px;
-      padding-top: 2px;
-      display: inline-block;
+			font-size: 1.1rem;
+			text-align: center;
+			height: 30px;
+			padding-top: 2px;
+			display: inline-block;
 
-      a {
-        display: block;
-        cursor: pointer;
-        padding: 0 15px;
-      }
-    }
-    .previous {
-    }
+			a {
+				display: block;
+				cursor: pointer;
+				padding: 0 15px;
+			}
+		}
+		.previous {
+		}
 
-    .next {
-    }
+		.next {
+		}
 
-    .disabled {
-      background-color: darkgray;
-      color: black;
-    }
-  }
+		.disabled {
+			background-color: darkgray;
+			color: black;
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.pagination {
+		li {
+			margin: 0 !important;
+
+			&.previous,
+			&.next {
+				margin: 0 0.3rem !important;
+			}
+		}
+	}
 }

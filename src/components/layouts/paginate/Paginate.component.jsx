@@ -7,7 +7,7 @@ const Paginate = (props) => {
 			<ReactPaginate
 				previousLabel={"Previous"}
 				nextLabel={"Next"}
-				breakLabel={"..."}
+				breakLabel={".."}
 				breakClassName={"break-me"}
 				pageCount={500}
 				marginPagesDisplayed={1}
