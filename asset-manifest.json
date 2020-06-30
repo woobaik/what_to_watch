@@ -1,27 +1,29 @@
 {
   "files": {
-    "main.css": "/what_to_watch/static/css/main.246e06b3.chunk.css",
-    "main.js": "/what_to_watch/static/js/main.5e970bc9.chunk.js",
-    "main.js.map": "/what_to_watch/static/js/main.5e970bc9.chunk.js.map",
+    "main.css": "/what_to_watch/static/css/main.7c0b144b.chunk.css",
+    "main.js": "/what_to_watch/static/js/main.822ca6b4.chunk.js",
+    "main.js.map": "/what_to_watch/static/js/main.822ca6b4.chunk.js.map",
     "runtime-main.js": "/what_to_watch/static/js/runtime-main.ad715020.js",
     "runtime-main.js.map": "/what_to_watch/static/js/runtime-main.ad715020.js.map",
     "static/css/2.ef80fd5d.chunk.css": "/what_to_watch/static/css/2.ef80fd5d.chunk.css",
-    "static/js/2.713ffd78.chunk.js": "/what_to_watch/static/js/2.713ffd78.chunk.js",
-    "static/js/2.713ffd78.chunk.js.map": "/what_to_watch/static/js/2.713ffd78.chunk.js.map",
+    "static/js/2.77b14cd3.chunk.js": "/what_to_watch/static/js/2.77b14cd3.chunk.js",
+    "static/js/2.77b14cd3.chunk.js.map": "/what_to_watch/static/js/2.77b14cd3.chunk.js.map",
     "index.html": "/what_to_watch/index.html",
-    "precache-manifest.060a2d4966850e2e897a15b39d97c655.js": "/what_to_watch/precache-manifest.060a2d4966850e2e897a15b39d97c655.js",
+    "precache-manifest.8959fb26f33fd7481de74badc5229ace.js": "/what_to_watch/precache-manifest.8959fb26f33fd7481de74badc5229ace.js",
     "service-worker.js": "/what_to_watch/service-worker.js",
     "static/css/2.ef80fd5d.chunk.css.map": "/what_to_watch/static/css/2.ef80fd5d.chunk.css.map",
-    "static/css/main.246e06b3.chunk.css.map": "/what_to_watch/static/css/main.246e06b3.chunk.css.map",
-    "static/js/2.713ffd78.chunk.js.LICENSE.txt": "/what_to_watch/static/js/2.713ffd78.chunk.js.LICENSE.txt",
+    "static/css/main.7c0b144b.chunk.css.map": "/what_to_watch/static/css/main.7c0b144b.chunk.css.map",
+    "static/js/2.77b14cd3.chunk.js.LICENSE.txt": "/what_to_watch/static/js/2.77b14cd3.chunk.js.LICENSE.txt",
     "static/media/Joungwoo Baik-Resume.pdf": "/what_to_watch/static/media/Joungwoo Baik-Resume.2e10a906.pdf",
-    "static/media/styles.css": "/what_to_watch/static/media/revicons.2feb69cc.eot"
+    "static/media/LandingHero.style.scss": "/what_to_watch/static/media/wave-large.ef043b34.png",
+    "static/media/styles.css": "/what_to_watch/static/media/revicons.2feb69cc.eot",
+    "static/media/Footer.styles.scss": "/what_to_watch/static/media/wave-large-reversed.8aad2662.png"
   },
   "entrypoints": [
     "static/js/runtime-main.ad715020.js",
     "static/css/2.ef80fd5d.chunk.css",
-    "static/js/2.713ffd78.chunk.js",
-    "static/css/main.246e06b3.chunk.css",
-    "static/js/main.5e970bc9.chunk.js"
+    "static/js/2.77b14cd3.chunk.js",
+    "static/css/main.7c0b144b.chunk.css",
+    "static/js/main.822ca6b4.chunk.js"
   ]
 }
