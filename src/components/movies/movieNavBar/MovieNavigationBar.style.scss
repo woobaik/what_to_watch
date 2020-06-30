@@ -3,10 +3,10 @@
 	height: 5rem;
 	display: flex;
 
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: "Nunito", sans-serif;
 	flex-wrap: none;
 	font-size: 1.2rem;
-	padding-top: 1rem;
+	padding-top: 6px;
 }
 
 .dropdown-container {
@@ -14,6 +14,8 @@
 	position: relative;
 	transition: color 0.3s ease-in-out;
 	margin-top: 1rem;
+	text-align: center;
+	margin-left: 2rem;
 }
 
 .dropdown-hidden-container {
@@ -21,7 +23,6 @@
 	position: absolute;
 	font-size: 0.8rem;
 	font-weight: normal;
-	color: lightgray;
 }
 
 .dropdown-hidden-item {
@@ -50,7 +51,6 @@
 
 .nav-button {
 	color: rgb(255, 255, 255);
-	margin-left: 5rem;
 }
 
 .nav-button:hover {
@@ -63,7 +63,6 @@
 
 		.nav-button {
 			text-align: center;
-			margin-left: 2rem;
 		}
 	}
 }

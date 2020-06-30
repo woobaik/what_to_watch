@@ -50,7 +50,7 @@ const Header = () => {
 					/>
 				</header>
 			</div>
-			{searchVisible ? <MovieSearchBar /> : ""}
+
 			<SideBar sidebarOpen={sidebarOpen} handleSideBar={handleSideBar} />
 		</Fragment>
 	)

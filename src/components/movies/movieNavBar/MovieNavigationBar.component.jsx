@@ -55,9 +55,6 @@ const MovieNavigationBar = (props) => {
 					</Link>
 				</div>
 			</div>
-			<div className="dropdown-container">
-				<FiSearch className="nav-button" onClick={() => props.toggleSearch()} />
-			</div>
 		</div>
 	)
 }

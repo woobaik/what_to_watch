@@ -111,7 +111,9 @@ const MovieSearch = (props) => {
 	return (
 		<div
 			className={
-				visible ? "search-form-container" : "search-form-container-hidden"
+				visible || props.sticky
+					? "search-form-container"
+					: "search-form-container-hidden"
 			}>
 			<form className="search-form" onSubmit={handleSubmit}>
 				<Autosuggest
