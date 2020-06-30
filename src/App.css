@@ -1,7 +1,6 @@
 .App {
 	font-family: "Nunito", sans-serif;
 	box-sizing: border-box;
-	background-color: rgb(247, 255, 249);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

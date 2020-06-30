@@ -1,26 +1,26 @@
 .category-title {
-	font-family: "Nunito", sans-serif;
-	font-weight: 600;
-	font-size: 1.5rem;
-	margin: 2rem 0 3rem 0;
-	background-color: rgb(3, 37, 65);
-	width: 300px;
-	padding: 5px 20px;
-	border-radius: 20px;
+	font-family: "Aldrich", sans-serif;
+	margin: 5rem 0 3rem 0;
+	color: black;
+	text-align: center;
+	text-transform: uppercase;
 
-	span {
-		background: linear-gradient(
-			to right,
-			rgba(192, 254, 207, 1) 0%,
-			rgba(30, 213, 169, 1) 100%
-		);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
+	h5 {
+		letter-spacing: 4px;
+		color: lightgray;
+	}
+
+	h4 {
+		padding-bottom: 1rem;
+	}
+
+	h2 {
+		letter-spacing: 2px;
 	}
 }
 
 .category-card-deck {
-	margin: 1rem 1rem;
+	margin: 0rem 1rem 6rem 1rem;
 	.moive-category {
 		display: grid;
 		margin: auto;

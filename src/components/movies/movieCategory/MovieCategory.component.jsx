@@ -20,7 +20,13 @@ const MovieCategories = (props) => {
 	return (
 		<div className="category-card-deck">
 			<div className="category-title">
-				<span>{props.categoryName}</span>
+				<h5>What to watch</h5>
+				<h4>
+					{props.categoryName === "On TV"
+						? "Currently Airing TV Shows"
+						: "New Movies in Theaters Now "}
+				</h4>
+				<h2>Fan Favorites</h2>
 			</div>
 
 			<div className="moive-category">

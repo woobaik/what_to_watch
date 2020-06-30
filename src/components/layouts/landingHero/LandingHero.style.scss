@@ -20,6 +20,12 @@
 		.hero-content {
 			width: 80%;
 
+			.hero-text {
+				h1 {
+					padding-bottom: 1rem;
+				}
+			}
+
 			.hero-search-bar {
 				position: relative;
 				color: gray;
@@ -41,7 +47,7 @@
 		bottom: 0;
 		left: 0;
 		background: url("../../../assets/images/wave-large.png");
-		height: 19rem;
+		height: 20rem;
 		width: 100%;
 	}
 }
