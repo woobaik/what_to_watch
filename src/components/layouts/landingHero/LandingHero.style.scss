@@ -46,8 +46,41 @@
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		background: url("../../../assets/images/wave-large.png");
-		height: 20rem;
+		background: url("../../../assets/images/wave-large.png") center no-repeat;
+		height: 44vh;
 		width: 100%;
+	}
+}
+
+@media (max-width: 470px) {
+	.Landing-hero {
+		.hero-img-container::before {
+			background: url("../../../assets/images/wave-medium.png") center no-repeat;
+			height: 44vh;
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: 375px) {
+	.Landing-hero {
+		.hero-img-container {
+			.hero-content {
+				transform: translate(-3rem, -8rem);
+
+				.hero-search-bar {
+					.search-form-container {
+						padding: 0;
+					}
+				}
+			}
+
+			&::before {
+				background: url("../../../assets/images/wave-small.png") center
+					no-repeat;
+				height: 45vh;
+				width: 100%;
+			}
+		}
 	}
 }
